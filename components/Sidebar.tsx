@@ -156,7 +156,7 @@ export default function Sidebar() {
          href={item.path}
          className={classes}
        >
-         <span className="w-5 h-5 flex items-center justify-center flex-shrink-0">
+         <span className="w-5 h-5 flex items-center justify-center shrink-0">
            <i className={item.icon} />
          </span>
          <span className="truncate">{item.label}</span>
@@ -187,13 +187,13 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 z-40 h-full w-[280px] bg-cyber-bg-light border-r border-cyber-border flex flex-col transition-transform duration-300 ${
+        className={`fixed top-0 left-0 z-40 h-full w-70 bg-cyber-bg-light border-r border-cyber-border flex flex-col transition-transform duration-300 ${
           isMobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
         }`}
       >
         {/* Logo */}
         <div className="flex items-center gap-3 px-5 py-5 border-b border-cyber-border">
-          <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-cyber-bg-card">
+          <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-cyber-bg-card">
             <img
               src="https://public.readdy.ai/ai/img_res/cc10aa5d-f92d-40c5-8eda-b47e5becc5dd.png"
               alt="CyberSec Documentation Logo"

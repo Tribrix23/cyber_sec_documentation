@@ -1,6 +1,7 @@
 import './globals.css'
 import Sidebar from '@/components/Sidebar'
 import 'remixicon/fonts/remixicon.css'
+import '@/lib/lang';
 
 export const metadata = {
   title: 'CyberSec Docs',
@@ -17,7 +18,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-cyber-bg flex">
         <Sidebar />
 
-        <main className="flex-1 ml-0 md:ml-[280px] min-h-screen">
+        <main className="flex-1 ml-0 md:ml-70 min-h-screen">
           {children}
         </main>
       </body>

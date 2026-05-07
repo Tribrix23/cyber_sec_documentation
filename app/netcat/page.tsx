@@ -176,7 +176,7 @@ export default function NetcatPage() {
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-2">
             {commonFlags.map((f) => (
               <div key={f.flag} className="flex items-start gap-3 p-3 rounded-lg bg-cyber-bg-card/50 border border-cyber-border">
-                <span className="font-mono text-xs px-2 py-1 rounded bg-cyber-bg border border-cyber-border text-cyber-cyan flex-shrink-0 whitespace-nowrap">{f.flag}</span>
+                <span className="font-mono text-xs px-2 py-1 rounded bg-cyber-bg border border-cyber-border text-cyber-cyan shrink-0 whitespace-nowrap">{f.flag}</span>
                 <span className="text-sm text-cyber-text">{f.desc}</span>
               </div>
             ))}

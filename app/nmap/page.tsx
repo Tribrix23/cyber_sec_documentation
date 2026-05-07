@@ -118,7 +118,7 @@ export default function NmapLandingPage() {
                 className="cyber-card p-4 hover:border-cyber-amber/50 transition-all group"
               >
                 <div className="flex items-start gap-3">
-                  <span className="w-8 h-8 rounded-lg bg-cyber-bg-card border border-cyber-border flex items-center justify-center flex-shrink-0 text-cyber-amber group-hover:bg-cyber-amber/10 transition-colors">
+                  <span className="w-8 h-8 rounded-lg bg-cyber-bg-card border border-cyber-border flex items-center justify-center shrink-0 text-cyber-amber group-hover:bg-cyber-amber/10 transition-colors">
                     <i className={s.icon} />
                   </span>
                   <div>
