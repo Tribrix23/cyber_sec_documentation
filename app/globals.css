@@ -1,1 +1,235 @@
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    --cyber-bg: #050508;
+    --cyber-bg-secondary: #0a0a10;
+    --cyber-border: #1a1a24;
+    --cyber-text: #e8e8ec;
+    --cyber-text-dim: #6b6b7a;
+    --cyber-text-muted: #4a4a52;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--cyber-bg);
+    color: var(--cyber-text);
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--cyber-bg-secondary);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--cyber-border);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--cyber-text-muted);
+  }
+}
+
+@layer components {
+  .cyber-card {
+    background: linear-gradient(135deg, rgba(10, 10, 16, 0.9) 0%, rgba(15, 15, 25, 0.8) 100%);
+    border: 1px solid var(--cyber-border);
+    backdrop-filter: blur(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .cyber-card:hover {
+    border-color: rgba(0, 217, 255, 0.25);
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  }
+
+  .code-block {
+    background: linear-gradient(135deg, #0a0a10 0%, #0f0f18 50%, #0a0a10 100%);
+    border: 1px solid var(--cyber-border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .code-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(90deg, transparent 50%, rgba(0, 217, 255, 0.015) 50%),
+      linear-gradient(rgba(0, 217, 255, 0.015) 50%, transparent 50%);
+    background-size: 20px 20px;
+    pointer-events: none;
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.15), 0 0 40px rgba(0, 217, 255, 0.05);
+  }
+
+  .glow-cyan:hover {
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.25), 0 0 60px rgba(0, 217, 255, 0.1);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px rgba(0, 255, 191, 0.15), 0 0 40px rgba(0, 255, 191, 0.05);
+  }
+
+  .glow-green:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 191, 0.25), 0 0 60px rgba(0, 255, 191, 0.1);
+  }
+
+  .text-cyber-cyan {
+    color: #00d9ff;
+  }
+
+  .bg-cyber-cyan {
+    background-color: #00d9ff;
+  }
+
+  .bg-cyber-cyan\/10 {
+    background-color: rgba(0, 217, 255, 0.1);
+  }
+
+  .border-cyber-cyan\/20 {
+    border-color: rgba(0, 217, 255, 0.2);
+  }
+
+  .bg-cyber-cyan\/5 {
+    background-color: rgba(0, 217, 255, 0.05);
+  }
+
+  .text-cyber-bg {
+    color: #050508;
+  }
+
+  .text-cyber-red {
+    color: #ff3366;
+  }
+
+  .bg-cyber-red {
+    background-color: #ff3366;
+  }
+
+  .bg-cyber-red\/10 {
+    background-color: rgba(255, 51, 102, 0.1);
+  }
+
+  .border-cyber-red\/20 {
+    border-color: rgba(255, 51, 102, 0.2);
+  }
+
+  .text-cyber-green {
+    color: #00ffbf;
+  }
+
+  .bg-cyber-green {
+    background-color: #00ffbf;
+  }
+
+  .bg-cyber-green\/10 {
+    background-color: rgba(0, 255, 191, 0.1);
+  }
+
+  .border-cyber-green\/20 {
+    border-color: rgba(0, 255, 191, 0.2);
+  }
+
+  .text-cyber-amber {
+    color: #ffaa00;
+  }
+
+  .bg-cyber-amber {
+    background-color: #ffaa00;
+  }
+
+  .bg-cyber-amber\/10 {
+    background-color: rgba(255, 170, 0, 0.1);
+  }
+
+  .bg-cyber-amber\/3 {
+    background-color: rgba(255, 170, 0, 0.3);
+  }
+
+  .border-cyber-amber\/20 {
+    border-color: rgba(255, 170, 0, 0.2);
+  }
+
+  .text-cyber-text {
+    color: #e8e8ec;
+  }
+
+  .text-cyber-text-dim {
+    color: #6b6b7a;
+  }
+
+  .text-cyber-text-muted {
+    color: #4a4a52;
+  }
+
+  .border-cyber-border {
+    border-color: var(--cyber-border);
+  }
+
+  .bg-cyber-bg {
+    background-color: var(--cyber-bg);
+  }
+
+  .bg-cyber-bg\/50 {
+    background-color: rgba(5, 5, 8, 0.5);
+  }
+
+  .hover\\:text-cyber-cyan:hover {
+    color: #00d9ff;
+  }
+
+  .hover\\:bg-cyber-cyan-dim:hover {
+    background-color: #00b8e6;
+  }
+
+  .hover\\:bg-cyber-amber\/20:hover {
+    background-color: rgba(255, 170, 0, 0.2);
+  }
+
+  .hover\\:bg-cyber-red\/20:hover {
+    background-color: rgba(255, 51, 102, 0.2);
+  }
+
+  .hover\\:bg-cyber-green\/20:hover {
+    background-color: rgba(0, 255, 191, 0.2);
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-pulse {
+      animation: none;
+    }
+  }
+}
