@@ -128,14 +128,14 @@ const stats = [
 ];
 
 const quickLinks = [
-  { label: 'Getting Started', path: '/getting-started', desc: 'Install Wireshark and capture your first packets' },
-  { label: 'Nmap Command Builder', path: '/nmap', desc: 'Generate Nmap commands interactively' },
-  { label: 'Filter Builder', path: '/filter-builder', desc: 'Build Wireshark display filters visually' },
-  { label: 'SQLMap Interactive', path: '/sqlmap', desc: 'Configure SQL injection commands with builder' },
-  { label: 'Netcat Builder', path: '/netcat', desc: 'Generate netcat connect/listen/shell commands' },
-  { label: 'Metasploit Workflow', path: '/metasploit', desc: 'Build exploit resource scripts step by step' },
-  { label: 'Wireshark Quiz', path: '/wireshark-quiz', desc: 'Test your Wireshark knowledge with 17 questions' },
-  { label: 'Nmap Quiz', path: '/nmap', desc: 'Test your Nmap knowledge inline on the docs page' },
+  { id: 'getting-started', label: 'Getting Started', path: '/getting-started', desc: 'Install Wireshark and capture your first packets' },
+  { id: 'nmap-builder', label: 'Nmap Command Builder', path: '/nmap', desc: 'Generate Nmap commands interactively' },
+  { id: 'filter-builder', label: 'Filter Builder', path: '/filter-builder', desc: 'Build Wireshark display filters visually' },
+  { id: 'sqlmap', label: 'SQLMap Interactive', path: '/sqlmap', desc: 'Configure SQL injection commands with builder' },
+  { id: 'netcat', label: 'Netcat Builder', path: '/netcat', desc: 'Generate netcat connect/listen/shell commands' },
+  { id: 'metasploit', label: 'Metasploit Workflow', path: '/metasploit', desc: 'Build exploit resource scripts step by step' },
+  { id: 'wireshark-quiz', label: 'Wireshark Quiz', path: '/wireshark-quiz', desc: 'Test your Wireshark knowledge with 17 questions' },
+  { id: 'nmap-quiz', label: 'Nmap Quiz', path: '/nmap/quiz', desc: 'Test your Nmap knowledge inline on the docs page' },
 ];
 
 const typewriterLines = [
@@ -477,7 +477,7 @@ export default function Home() {
             >
               {quickLinks.map((link, idx) => (
                 <motion.button
-                  key={link.path}
+                  key={link.id}
                   type="button"
                   onClick={() => navigate.push(link.path)}
                   className="w-full cyber-card px-5 py-4 flex items-center gap-4 text-left group cursor-pointer"
