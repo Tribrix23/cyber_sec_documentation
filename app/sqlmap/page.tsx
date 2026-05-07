@@ -135,8 +135,8 @@ export default function SQLMapPage() {
             SQL Injection Tool
           </div>
           <DocHeading level={1}>SQLMap</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
-            <strong className="text-white">SQLMap</strong> is an open-source penetration testing tool that automates the detection and exploitation of SQL injection vulnerabilities.
+           <p className="text-cyber-text leading-relaxed mt-3">
+             <strong className="text-cyber-cyan">SQLMap</strong> is an open-source penetration testing tool that automates the detection and exploitation of SQL injection vulnerabilities.
             It supports a wide range of database management systems including MySQL, Oracle, PostgreSQL, Microsoft SQL Server, SQLite, and more.
             SQLMap can extract data, read/write files, and even execute OS commands on vulnerable systems.
           </p>
@@ -160,7 +160,7 @@ export default function SQLMapPage() {
               'WAF/IDS evasion with tamper scripts',
               'Tor and proxy support',
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2.5 text-sm text-cyber-text-muted">
+              <div key={i} className="flex items-center gap-2.5 text-sm text-cyber-text">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyber-red flex-shrink-0" />
                 {item}
               </div>
@@ -190,7 +190,7 @@ export default function SQLMapPage() {
         {/* Injection Techniques */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="techniques">Injection Techniques</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             SQLMap supports six injection techniques. Use <InlineCode>--technique=BEUSTQ</InlineCode> to specify which ones to try.
           </p>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -207,7 +207,7 @@ export default function SQLMapPage() {
                   </span>
                   <div>
                     <h4 className="text-sm font-semibold text-white">{t.name}</h4>
-                    <p className="text-xs text-cyber-text-muted mt-1">{t.desc}</p>
+                    <p className="text-xs text-cyber-text mt-1">{t.desc}</p>
                   </div>
                 </div>
               </button>
@@ -226,7 +226,7 @@ export default function SQLMapPage() {
             {commonFlags.map((f) => (
               <div key={f.flag} className="flex items-start gap-3 p-3 rounded-lg bg-cyber-bg-card/50 border border-cyber-border">
                 <span className="font-mono text-xs px-2 py-1 rounded bg-cyber-bg border border-cyber-border text-cyber-cyan flex-shrink-0 whitespace-nowrap">{f.flag}</span>
-                <span className="text-sm text-cyber-text-muted">{f.desc}</span>
+                <span className="text-sm text-cyber-text">{f.desc}</span>
               </div>
             ))}
           </div>
@@ -235,14 +235,14 @@ export default function SQLMapPage() {
         {/* Tamper Scripts */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="tamper">Tamper Scripts (WAF Bypass)</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Tamper scripts modify payloads to bypass Web Application Firewalls (WAFs) and input filters.
           </p>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {tamperScripts.map((t) => (
               <div key={t.name} className="cyber-card p-4">
                 <span className="font-mono text-xs px-2 py-0.5 rounded bg-cyber-bg border border-cyber-border text-cyber-amber">{t.name}</span>
-                <p className="text-xs text-cyber-text-muted mt-2">{t.desc}</p>
+                <p className="text-xs text-cyber-text mt-2">{t.desc}</p>
               </div>
             ))}
           </div>
@@ -280,7 +280,7 @@ export default function SQLMapPage() {
               <div className="flex gap-2">
                 {['GET', 'POST'].map((m) => (
                   <button key={m} type="button" onClick={() => setBuilderMethod(m)}
-                    className={`px-4 py-2 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${builderMethod === m ? 'bg-cyber-red/10 border-cyber-red text-cyber-red' : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-red/50'}`}>
+                    className={`px-4 py-2 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${builderMethod === m ? 'bg-cyber-red/10 border-cyber-red text-cyber-red' : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-red/50'}`}>
                     {m}
                   </button>
                 ))}
@@ -327,7 +327,7 @@ export default function SQLMapPage() {
               <div className="flex flex-wrap gap-2">
                 {['--dbs', '--tables', '--columns', '--dump', '--os-shell'].map((a) => (
                   <button key={a} type="button" onClick={() => setBuilderAction(a)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${builderAction === a ? 'bg-cyber-red/10 border-cyber-red text-cyber-red' : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-red/50'}`}>
+                    className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${builderAction === a ? 'bg-cyber-red/10 border-cyber-red text-cyber-red' : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-red/50'}`}>
                     {a}
                   </button>
                 ))}
@@ -362,7 +362,7 @@ export default function SQLMapPage() {
               <div className="flex flex-wrap gap-2">
                 {['--batch', '--random-agent', '--tor', '--flush-session', '-v 3'].map((f) => (
                   <button key={f} type="button" onClick={() => toggleFlag(f)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${builderFlags.includes(f) ? 'bg-cyber-red/10 border-cyber-red text-cyber-red' : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-red/50'}`}>
+                    className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${builderFlags.includes(f) ? 'bg-cyber-red/10 border-cyber-red text-cyber-red' : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-red/50'}`}>
                     {f}
                   </button>
                 ))}

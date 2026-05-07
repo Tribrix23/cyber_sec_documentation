@@ -162,7 +162,7 @@ export default function WiresharkQuizPage() {
               <i className="ri-trophy-line text-4xl text-cyber-green" />
             </div>
             <h2 className="text-3xl font-bold text-white">Quiz Complete!</h2>
-            <p className="mt-3 text-cyber-text-muted">
+            <p className="mt-3 text-cyber-text">
               You scored <span className="text-cyber-cyan font-bold text-xl">{correctCount}/{total}</span> ({pct}%)
             </p>
             <div className="mt-4 w-full max-w-xs mx-auto h-3 bg-cyber-bg rounded-full overflow-hidden">
@@ -191,7 +191,7 @@ export default function WiresharkQuizPage() {
             <i className="ri-questionnaire-line" /> Wireshark Quiz
           </div>
           <DocHeading level={1}>Wireshark Knowledge Check</DocHeading>
-          <p className="text-cyber-text-muted mt-3">Test your understanding of packet analysis, filters, protocols, and Wireshark features.</p>
+          <p className="text-cyber-text mt-3">Test your understanding of packet analysis, filters, protocols, and Wireshark features.</p>
         </motion.div>
 
         <motion.div className="mt-6 flex items-center gap-3" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
@@ -216,14 +216,14 @@ export default function WiresharkQuizPage() {
                     <span className={`w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 text-xs font-bold ${showCorrect ? 'border-cyber-green text-cyber-green' : showWrong ? 'border-cyber-red text-cyber-red' : isSelected ? 'border-cyber-amber text-cyber-amber' : 'border-cyber-border text-cyber-text-dim'}`}>
                       {showCorrect ? <i className="ri-check-line" /> : showWrong ? <i className="ri-close-line" /> : String.fromCharCode(65 + idx)}
                     </span>
-                    <span className={`text-sm ${showCorrect ? 'text-cyber-green' : showWrong ? 'text-cyber-red' : 'text-cyber-text-muted'}`}>{opt}</span>
+                    <span className={`text-sm ${showCorrect ? 'text-cyber-green' : showWrong ? 'text-cyber-red' : 'text-cyber-text'}`}>{opt}</span>
                   </button>
                 );
               })}
             </div>
             {answered && (
               <motion.div className="mt-5 p-4 rounded-lg bg-cyber-bg border border-cyber-border" initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }}>
-                <p className="text-sm text-cyber-text-muted leading-relaxed"><span className="text-cyber-amber font-semibold">Explanation: </span>{q.explanation}</p>
+                <p className="text-sm text-cyber-text leading-relaxed"><span className="text-cyber-amber font-semibold">Explanation: </span>{q.explanation}</p>
               </motion.div>
             )}
           </motion.div>

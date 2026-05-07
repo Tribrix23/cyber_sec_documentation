@@ -39,7 +39,7 @@ export default function CaptureFilters() {
   return (
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-4xl">
         <DocHeading level={1}>Capture Filters</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed text-lg">
+        <p className="text-cyber-text leading-relaxed text-lg">
           Capture filters are applied before Wireshark records packets. They use the Berkeley Packet Filter (BPF) syntax and are much faster than display filters because they drop packets at the kernel level.
         </p>
 
@@ -48,12 +48,12 @@ export default function CaptureFilters() {
         </Callout>
 
         <DocHeading level={2} id="where-to-set">Where to Set Capture Filters</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           Before starting a capture, enter your filter in the <strong>Capture Filter</strong> field at the top of the main window, next to the interface list. You can also set them via the command line.
         </p>
 
         <DocHeading level={2} id="basic-syntax">Basic Syntax</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           BPF expressions consist of one or more primitives. Primitives usually consist of an identifier (name or number) preceded by one or more qualifiers.
         </p>
 
@@ -75,35 +75,35 @@ export default function CaptureFilters() {
             <tbody className="divide-y divide-cyber-border">
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">host</td>
-                <td className="px-4 py-3 text-cyber-text-muted">IP or hostname</td>
+                <td className="px-4 py-3 text-cyber-text">IP or hostname</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">net</td>
-                <td className="px-4 py-3 text-cyber-text-muted">Network with optional mask (e.g., /24)</td>
+                <td className="px-4 py-3 text-cyber-text">Network with optional mask (e.g., /24)</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">port</td>
-                <td className="px-4 py-3 text-cyber-text-muted">TCP or UDP port number</td>
+                <td className="px-4 py-3 text-cyber-text">TCP or UDP port number</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">portrange</td>
-                <td className="px-4 py-3 text-cyber-text-muted">Range of ports</td>
+                <td className="px-4 py-3 text-cyber-text">Range of ports</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">src</td>
-                <td className="px-4 py-3 text-cyber-text-muted">Source qualifier (can prefix host/port)</td>
+                <td className="px-4 py-3 text-cyber-text">Source qualifier (can prefix host/port)</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">dst</td>
-                <td className="px-4 py-3 text-cyber-text-muted">Destination qualifier (can prefix host/port)</td>
+                <td className="px-4 py-3 text-cyber-text">Destination qualifier (can prefix host/port)</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">ether</td>
-                <td className="px-4 py-3 text-cyber-text-muted">Ethernet (MAC) address</td>
+                <td className="px-4 py-3 text-cyber-text">Ethernet (MAC) address</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">proto</td>
-                <td className="px-4 py-3 text-cyber-text-muted">Protocol (ip, ip6, arp, rarp, tcp, udp, icmp)</td>
+                <td className="px-4 py-3 text-cyber-text">Protocol (ip, ip6, arp, rarp, tcp, udp, icmp)</td>
               </tr>
             </tbody>
           </table>
@@ -114,7 +114,7 @@ export default function CaptureFilters() {
           {basicFilters.map((f) => (
             <div key={f.syntax} className="cyber-card p-4 group">
               <CodeBlock code={f.syntax} language="bpf" showLineNumbers={false} />
-              <p className="text-sm text-cyber-text-muted mt-2">{f.desc}</p>
+              <p className="text-sm text-cyber-text mt-2">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -124,13 +124,13 @@ export default function CaptureFilters() {
           {protocolFilters.map((f) => (
             <div key={f.syntax} className="cyber-card p-4 group">
               <CodeBlock code={f.syntax} language="bpf" showLineNumbers={false} />
-              <p className="text-sm text-cyber-text-muted mt-2">{f.desc}</p>
+              <p className="text-sm text-cyber-text mt-2">{f.desc}</p>
             </div>
           ))}
         </div>
 
         <DocHeading level={2} id="advanced-bpf">Advanced BPF Expressions</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           You can combine primitives with logical operators: <InlineCode>and</InlineCode>, <InlineCode>or</InlineCode>, <InlineCode>not</InlineCode>, and <InlineCode>()</InlineCode> for grouping. You can also inspect raw packet bytes.
         </p>
 
@@ -138,7 +138,7 @@ export default function CaptureFilters() {
           {advancedFilters.map((f) => (
             <div key={f.syntax} className="cyber-card p-4 group">
               <CodeBlock code={f.syntax} language="bpf" showLineNumbers={false} />
-              <p className="text-sm text-cyber-text-muted mt-2">{f.desc}</p>
+              <p className="text-sm text-cyber-text mt-2">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -177,7 +177,7 @@ port 80 or port 443 or port 22"
         />
 
         <DocHeading level={2} id="cli-capture-filters">Using with tshark / dumpcap</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           Capture filters work identically in command-line tools:
         </p>
         <CodeBlock

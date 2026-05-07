@@ -17,8 +17,8 @@ const moduleTypes = [
   { type: 'payload', name: 'Payload', color: 'text-cyber-amber', desc: 'Code that executes after a successful exploit — reverse shell, meterpreter, etc.' },
   { type: 'auxiliary', name: 'Auxiliary', color: 'text-cyber-cyan', desc: 'Scanner, fuzzer, or DoS tool that does not directly exploit vulnerabilities.' },
   { type: 'post', name: 'Post-Exploitation', color: 'text-cyber-green', desc: 'Modules for actions after compromise — hashdump, keylogging, persistence.' },
-  { type: 'encoder', name: 'Encoder', color: 'text-cyber-text-muted', desc: 'Transforms payloads to evade antivirus and signature detection.' },
-  { type: 'nop', name: 'NOP', color: 'text-cyber-text-muted', desc: 'No-operation sled for buffer overflow exploits to ensure reliable payload execution.' },
+  { type: 'encoder', name: 'Encoder', color: 'text-cyber-text', desc: 'Transforms payloads to evade antivirus and signature detection.' },
+  { type: 'nop', name: 'NOP', color: 'text-cyber-text', desc: 'No-operation sled for buffer overflow exploits to ensure reliable payload execution.' },
   { type: 'evasion', name: 'Evasion', color: 'text-cyber-amber', desc: 'Advanced anti-virus evasion beyond simple encoders.' },
 ];
 
@@ -138,8 +138,8 @@ exploit`;
             Penetration Testing Framework
           </div>
           <DocHeading level={1}>Metasploit Framework</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
-            <strong className="text-white">Metasploit Framework</strong> is the world&apos;s most widely used penetration testing framework.
+          <p className="text-cyber-text leading-relaxed mt-3">
+             <strong className="text-cyber-cyan">Metasploit Framework</strong> is the world&apos;s most widely used penetration testing framework.
             It provides a comprehensive environment for developing, testing, and executing exploit code against remote targets.
             Originally created by H.D. Moore in 2003, it is now maintained by Rapid7 and includes thousands of exploits, payloads, and post-exploitation modules.
           </p>
@@ -159,7 +159,7 @@ exploit`;
               'Armitage GUI frontend',
               'Community and Pro editions',
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2.5 text-sm text-cyber-text-muted">
+              <div key={i} className="flex items-center gap-2.5 text-sm text-cyber-text">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyber-amber flex-shrink-0" />
                 {item}
               </div>
@@ -201,7 +201,7 @@ exploit`;
         {/* Module Types */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="modules">Module Types</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Metasploit is built around a modular architecture. Understanding each module type is essential for effective use.
           </p>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -218,7 +218,7 @@ exploit`;
                   </span>
                   <div>
                     <h4 className={`text-sm font-semibold ${m.color}`}>{m.name}</h4>
-                    <p className="text-xs text-cyber-text-muted mt-1">{m.desc}</p>
+                    <p className="text-xs text-cyber-text mt-1">{m.desc}</p>
                   </div>
                 </div>
               </button>
@@ -234,7 +234,7 @@ exploit`;
               <div key={c.cmd} className="flex items-start gap-3 p-3 rounded-lg bg-cyber-bg-card/50 border border-cyber-border">
                 <span className="font-mono text-xs px-2 py-1 rounded bg-cyber-bg border border-cyber-border text-cyber-amber flex-shrink-0 whitespace-nowrap">{c.cmd}</span>
                 <div>
-                  <span className="text-sm text-cyber-text-muted">{c.desc}</span>
+                  <span className="text-sm text-cyber-text">{c.desc}</span>
                   <code className="block text-xs font-mono text-cyber-green mt-1">{c.example}</code>
                 </div>
               </div>
@@ -245,7 +245,7 @@ exploit`;
         {/* Payloads */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="payloads">Common Payloads</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Payloads determine what happens after a successful exploit. Choose the right one for your target OS and network conditions.
           </p>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -255,7 +255,7 @@ exploit`;
                   <span className="text-xs px-2 py-0.5 rounded bg-cyber-bg border border-cyber-border text-cyber-text-dim">{p.type}</span>
                 </div>
                 <code className="text-xs font-mono text-cyber-cyan">{p.name}</code>
-                <p className="text-xs text-cyber-text-muted mt-1">{p.desc}</p>
+                <p className="text-xs text-cyber-text mt-1">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -264,7 +264,7 @@ exploit`;
         {/* Meterpreter */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="meterpreter">Meterpreter Commands</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Meterpreter is Metasploit&apos;s advanced payload that provides an interactive shell with many built-in commands.
             It runs entirely in memory, making it harder to detect.
           </p>
@@ -272,7 +272,7 @@ exploit`;
             {meterpreterCommands.map((c) => (
               <div key={c.cmd} className="flex items-start gap-3 p-3 rounded-lg bg-cyber-bg-card/50 border border-cyber-border">
                 <span className="font-mono text-xs px-2 py-1 rounded bg-cyber-bg border border-cyber-border text-cyber-green flex-shrink-0">{c.cmd}</span>
-                <span className="text-sm text-cyber-text-muted">{c.desc}</span>
+                <span className="text-sm text-cyber-text">{c.desc}</span>
               </div>
             ))}
           </div>
@@ -284,7 +284,7 @@ exploit`;
         {/* Database Setup */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="database">Database Setup</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Metasploit uses PostgreSQL to store scan results, hosts, services, and vulnerabilities. Setting it up enables powerful features like <InlineCode>db_nmap</InlineCode> and workspace management.
           </p>
           <div className="mt-4 space-y-3">
@@ -300,7 +300,7 @@ exploit`;
         {/* Exploit Workflow */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="workflow">Exploit Workflow</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Click each step to see the exact command sequence for a typical exploit.
           </p>
           <div className="mt-4 space-y-3">
@@ -337,7 +337,7 @@ exploit`;
         {/* Interactive Exploit Builder */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="builder">Interactive Exploit Script Builder</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Configure your exploit parameters and copy the generated msfconsole resource script.
           </p>
           <div className="mt-5 cyber-card p-5 md:p-6">

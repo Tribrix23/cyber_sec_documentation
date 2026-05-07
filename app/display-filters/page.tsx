@@ -39,7 +39,7 @@ export default function DisplayFilters() {
   return (
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-4xl">
         <DocHeading level={1}>Display Filters</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed text-lg">
+        <p className="text-cyber-text leading-relaxed text-lg">
           Display filters control which packets are shown in the Wireshark GUI after capture. Unlike capture filters, they are incredibly flexible — you can filter by protocol fields, byte values, string matches, and even expressions.
         </p>
 
@@ -48,7 +48,7 @@ export default function DisplayFilters() {
         </Callout>
 
         <DocHeading level={2} id="syntax">Filter Syntax</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           A display filter expression consists of one or more primitives combined with logical operators.
         </p>
 
@@ -71,7 +71,7 @@ export default function DisplayFilters() {
               {comparisonOps.map((op) => (
                 <tr key={op.op} className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                   <td className="px-4 py-3 font-mono text-cyber-text">{op.op}</td>
-                  <td className="px-4 py-3 text-cyber-text-muted">{op.desc}</td>
+                  <td className="px-4 py-3 text-cyber-text">{op.desc}</td>
                 </tr>
               ))}
             </tbody>
@@ -96,13 +96,13 @@ export default function DisplayFilters() {
           {commonFilters.map((f) => (
             <div key={f.syntax} className="cyber-card p-4">
               <CodeBlock code={f.syntax} language="wireshark" showLineNumbers={false} />
-              <p className="text-sm text-cyber-text-muted mt-2">{f.desc}</p>
+              <p className="text-sm text-cyber-text mt-2">{f.desc}</p>
             </div>
           ))}
         </div>
 
         <DocHeading level={2} id="string-matching">String Matching</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           You can match strings in packet payloads using <InlineCode>contains</InlineCode>, <InlineCode>matches</InlineCode>, or <InlineCode>~</InlineCode> (regex).
         </p>
 
@@ -123,7 +123,7 @@ frame contains "GET /admin"`}
         />
 
         <DocHeading level={2} id="protocol-fields">Protocol Field Reference</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           Wireshark exposes thousands of protocol fields. Use <strong>View &gt; Internals &gt; Supported Protocols</strong> or right-click any field in the packet details pane and select <strong>Prepare as Filter</strong>.
         </p>
 
@@ -138,35 +138,35 @@ frame contains "GET /admin"`}
             <tbody className="divide-y divide-cyber-border">
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">ip</td>
-                <td className="px-4 py-3 text-cyber-text-muted">ip.src, ip.dst, ip.addr, ip.proto, ip.len, ip.ttl</td>
+                <td className="px-4 py-3 text-cyber-text">ip.src, ip.dst, ip.addr, ip.proto, ip.len, ip.ttl</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">tcp</td>
-                <td className="px-4 py-3 text-cyber-text-muted">tcp.srcport, tcp.dstport, tcp.port, tcp.flags, tcp.seq, tcp.ack</td>
+                <td className="px-4 py-3 text-cyber-text">tcp.srcport, tcp.dstport, tcp.port, tcp.flags, tcp.seq, tcp.ack</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">udp</td>
-                <td className="px-4 py-3 text-cyber-text-muted">udp.srcport, udp.dstport, udp.port, udp.length</td>
+                <td className="px-4 py-3 text-cyber-text">udp.srcport, udp.dstport, udp.port, udp.length</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">http</td>
-                <td className="px-4 py-3 text-cyber-text-muted">http.request, http.response, http.host, http.uri, http.method</td>
+                <td className="px-4 py-3 text-cyber-text">http.request, http.response, http.host, http.uri, http.method</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">dns</td>
-                <td className="px-4 py-3 text-cyber-text-muted">dns.qry.name, dns.qry.type, dns.resp.name, dns.flags.response</td>
+                <td className="px-4 py-3 text-cyber-text">dns.qry.name, dns.qry.type, dns.resp.name, dns.flags.response</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">ssl / tls</td>
-                <td className="px-4 py-3 text-cyber-text-muted">ssl.handshake.type, tls.handshake.extensions_sni, ssl.record.content_type</td>
+                <td className="px-4 py-3 text-cyber-text">ssl.handshake.type, tls.handshake.extensions_sni, ssl.record.content_type</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">icmp</td>
-                <td className="px-4 py-3 text-cyber-text-muted">icmp.type, icmp.code, icmp.data_time</td>
+                <td className="px-4 py-3 text-cyber-text">icmp.type, icmp.code, icmp.data_time</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 font-mono text-cyber-text">frame</td>
-                <td className="px-4 py-3 text-cyber-text-muted">frame.number, frame.time, frame.len, frame.protocols</td>
+                <td className="px-4 py-3 text-cyber-text">frame.number, frame.time, frame.len, frame.protocols</td>
               </tr>
             </tbody>
           </table>
@@ -177,7 +177,7 @@ frame contains "GET /admin"`}
         </Callout>
 
         <DocHeading level={2} id="coloring-rules">Coloring Rules with Filters</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           You can colorize packets in the list using display filters via <strong>View &gt; Coloring Rules</strong>. For example:
         </p>
         <CodeBlock

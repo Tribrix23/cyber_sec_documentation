@@ -91,7 +91,7 @@ const tools = [
     id: 'comparer',
     name: 'Comparer',
     icon: 'ri-arrow-left-right-line',
-    color: 'text-cyber-text-muted',
+    color: 'text-cyber-text',
     desc: 'Visually compare two pieces of data — useful for spotting differences between responses.',
     features: [
       'Word-level diff highlighting',
@@ -171,8 +171,8 @@ export default function BurpSuitePage() {
             Web Application Security Testing
           </div>
           <DocHeading level={1}>Burp Suite</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
-            <strong className="text-white">Burp Suite</strong> by PortSwigger is the industry-standard platform for web application security testing.
+          <p className="text-cyber-text leading-relaxed mt-3">
+             <strong className="text-cyber-cyan">Burp Suite</strong> by PortSwigger is the industry-standard platform for web application security testing.
             It acts as an intercepting proxy between your browser and the target, allowing you to inspect, modify, and replay HTTP/HTTPS traffic.
             Used by penetration testers, bug bounty hunters, and security researchers worldwide.
           </p>
@@ -183,7 +183,7 @@ export default function BurpSuitePage() {
           <DocHeading level={2} id="editions">Editions</DocHeading>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { name: 'Community', price: 'Free', features: ['Proxy, Repeater, Decoder', 'Intruder (throttled)', 'Basic Scanner', 'Extensions (limited)'], color: 'text-cyber-text-muted', border: 'border-cyber-border' },
+              { name: 'Community', price: 'Free', features: ['Proxy, Repeater, Decoder', 'Intruder (throttled)', 'Basic Scanner', 'Extensions (limited)'], color: 'text-cyber-text', border: 'border-cyber-border' },
               { name: 'Professional', price: '$449/yr', features: ['Full Intruder speed', 'Automated Scanner', 'Collaborator', 'All extensions', 'Project files'], color: 'text-cyber-amber', border: 'border-cyber-amber/30' },
               { name: 'Enterprise', price: 'Custom', features: ['CI/CD integration', 'Scheduled scans', 'Team management', 'API access', 'DAST platform'], color: 'text-cyber-cyan', border: 'border-cyber-cyan/30' },
             ].map((ed) => (
@@ -192,7 +192,7 @@ export default function BurpSuitePage() {
                 <p className="text-sm text-cyber-text-dim mt-1">{ed.price}</p>
                 <ul className="mt-3 space-y-1.5">
                   {ed.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-xs text-cyber-text-muted">
+                    <li key={f} className="flex items-center gap-2 text-xs text-cyber-text">
                       <i className="ri-check-line text-cyber-green" />
                       {f}
                     </li>
@@ -209,7 +209,7 @@ export default function BurpSuitePage() {
           <div className="mt-4 space-y-4">
             <div>
               <h4 className="text-sm font-semibold text-white mb-2">Download</h4>
-              <p className="text-sm text-cyber-text-muted mb-2">
+              <p className="text-sm text-cyber-text mb-2">
                 Download from <a href="https://portswigger.net/burp/releases" target="_blank" rel="noopener noreferrer nofollow" className="text-cyber-cyan hover:underline">portswigger.net/burp/releases</a>. Available for Windows, macOS, and Linux.
               </p>
             </div>
@@ -234,7 +234,7 @@ export default function BurpSuitePage() {
         {/* Tools */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="tools">Core Tools</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Click any tool card to expand its features and tips.
           </p>
           <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -251,7 +251,7 @@ export default function BurpSuitePage() {
                   </div>
                   <div className="flex-1">
                     <h4 className={`text-sm font-semibold ${tool.color}`}>{tool.name}</h4>
-                    <p className="text-xs text-cyber-text-muted mt-1">{tool.desc}</p>
+                    <p className="text-xs text-cyber-text mt-1">{tool.desc}</p>
                     <AnimatePresence>
                       {activeTool === tool.id && (
                         <motion.div
@@ -262,7 +262,7 @@ export default function BurpSuitePage() {
                         >
                           <ul className="space-y-1">
                             {tool.features.map((f) => (
-                              <li key={f} className="flex items-center gap-2 text-xs text-cyber-text-muted">
+                              <li key={f} className="flex items-center gap-2 text-xs text-cyber-text">
                                 <i className="ri-arrow-right-s-line text-cyber-amber" />
                                 {f}
                               </li>
@@ -286,7 +286,7 @@ export default function BurpSuitePage() {
         {/* Intruder Attack Types */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="intruder">Intruder Attack Types</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Intruder supports four attack types. Choosing the right one is critical for efficiency.
           </p>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -298,7 +298,7 @@ export default function BurpSuitePage() {
                 className={`cyber-card p-4 text-left cursor-pointer ${activeAttack === attack.name ? 'border-cyber-red' : ''}`}
               >
                 <h4 className="text-sm font-semibold text-cyber-red">{attack.name}</h4>
-                <p className="text-xs text-cyber-text-muted mt-1">{attack.desc}</p>
+                <p className="text-xs text-cyber-text mt-1">{attack.desc}</p>
                 {activeAttack === attack.name && (
                   <motion.p
                     initial={{ opacity: 0 }}
@@ -325,7 +325,7 @@ export default function BurpSuitePage() {
                 </span>
                 <div>
                   <h4 className="text-sm font-semibold text-white">{s.title}</h4>
-                  <p className="text-xs text-cyber-text-muted mt-0.5">{s.desc}</p>
+                  <p className="text-xs text-cyber-text mt-0.5">{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -339,7 +339,7 @@ export default function BurpSuitePage() {
             {shortcuts.map((s) => (
               <div key={s.key} className="flex items-center gap-3 p-3 rounded-lg bg-cyber-bg-card/50 border border-cyber-border">
                 <kbd className="px-2 py-1 rounded bg-cyber-bg border border-cyber-border text-cyber-cyan font-mono text-xs whitespace-nowrap">{s.key}</kbd>
-                <span className="text-sm text-cyber-text-muted">{s.action}</span>
+                <span className="text-sm text-cyber-text">{s.action}</span>
               </div>
             ))}
           </div>
@@ -348,14 +348,14 @@ export default function BurpSuitePage() {
         {/* Extensions */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="extensions">Must-Have Extensions</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Install extensions from the BApp Store (Extender tab). These are the most useful for pentesters:
           </p>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {extensions.map((ext) => (
               <div key={ext.name} className="cyber-card p-4">
                 <h4 className="text-sm font-semibold text-cyber-amber">{ext.name}</h4>
-                <p className="text-xs text-cyber-text-muted mt-1">{ext.desc}</p>
+                <p className="text-xs text-cyber-text mt-1">{ext.desc}</p>
               </div>
             ))}
           </div>
@@ -364,7 +364,7 @@ export default function BurpSuitePage() {
         {/* Interactive Proxy Config */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="config">Interactive Proxy Configurator</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Configure your Burp proxy settings and copy the configuration summary.
           </p>
           <div className="mt-5 cyber-card p-5 md:p-6">
@@ -409,7 +409,7 @@ export default function BurpSuitePage() {
                     className={`px-4 py-2 rounded-lg text-xs font-mono border transition-all whitespace-nowrap uppercase ${
                       interceptMode === m
                         ? 'bg-cyber-amber/10 border-cyber-amber text-cyber-amber'
-                        : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-amber/50'
+                        : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-amber/50'
                     }`}
                   >
                     {m}

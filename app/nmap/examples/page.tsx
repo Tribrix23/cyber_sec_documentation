@@ -173,7 +173,7 @@ export default function NmapExamplesPage() {
             Nmap Section 9 of 13
           </div>
           <DocHeading level={1}>Usage Examples</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Real-world Nmap commands organized by use case. Each example includes the command, a detailed explanation of what it does, and guidance on when to use it.
           </p>
         </motion.div>
@@ -186,7 +186,7 @@ export default function NmapExamplesPage() {
                 <div key={i} className="cyber-card p-5">
                   <h3 className="text-sm font-semibold text-white mb-2">{ex.title}</h3>
                   <CodeBlock code={ex.cmd} />
-                  <p className="text-xs text-cyber-text-muted leading-relaxed mt-3">{ex.desc}</p>
+                  <p className="text-xs text-cyber-text leading-relaxed mt-3">{ex.desc}</p>
                   <p className="text-xs text-cyber-amber mt-2">
                     <i className="ri-lightbulb-line mr-1" />
                     {ex.when}
@@ -199,14 +199,14 @@ export default function NmapExamplesPage() {
 
         <motion.section className="mt-12 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <Callout type="danger">
-            All examples assume you have <strong className="text-white">written authorization</strong> to scan the target. Never run these commands against networks you do not own without explicit permission.
+                         All examples assume you have <strong className="text-cyber-cyan">written authorization</strong> to scan the target. Never run these commands against networks you do not own without explicit permission.
           </Callout>
 
           <div className="mt-8 flex gap-3">
             <a href="/nmap/command-builder" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-cyber-bg text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
               Next: Command Builder <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/nmap/installation" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+            <a href="/nmap/installation" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

@@ -102,7 +102,7 @@ export default function GobusterInstallationPage() {
             Gobuster Section 8 of 13
           </div>
           <DocHeading level={1}>Installation</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Gobuster runs on all major operating systems. This guide covers installation on Linux, macOS, Windows, Docker, and building from source.
           </p>
         </motion.div>
@@ -114,7 +114,7 @@ export default function GobusterInstallationPage() {
               {plat.methods.map((method) => (
                 <div key={method.title}>
                   <h3 className="text-sm font-semibold text-white mb-2">{method.title}</h3>
-                  <p className="text-xs text-cyber-text-muted mb-2">{method.desc}</p>
+                  <p className="text-xs text-cyber-text mb-2">{method.desc}</p>
                   <CodeBlock code={method.code} />
                 </div>
               ))}
@@ -124,7 +124,7 @@ export default function GobusterInstallationPage() {
 
         <motion.section className="mt-12 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>First Run</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             After installation, verify Gobuster works with a simple help command, then try your first scan.
           </p>
           <div className="mt-4 space-y-3">
@@ -140,7 +140,7 @@ export default function GobusterInstallationPage() {
             <a href="/gobuster/examples" className="px-5 py-2.5 rounded-lg bg-cyber-red text-white text-sm font-semibold hover:bg-cyber-red/80 transition-all whitespace-nowrap">
               Next: Usage Examples <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/gobuster/wordlists" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
+            <a href="/gobuster/wordlists" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

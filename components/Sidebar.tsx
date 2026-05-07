@@ -142,26 +142,26 @@ export default function Sidebar() {
     return pathname === path;
   };
 
-const renderNavItem = (item: NavItem) => {
-    const active = isActivePath(item.path);
-    const classes = `flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors cursor-pointer ${
-      active
-        ? 'nav-active font-medium bg-cyber-cyan/15 text-cyber-cyan'
-        : 'text-cyber-text-muted hover:text-cyber-cyan'
-    }`;
+ const renderNavItem = (item: NavItem) => {
+     const active = isActivePath(item.path);
+     const classes = `flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors cursor-pointer ${
+       active
+         ? 'nav-active font-medium bg-cyber-cyan/15 text-cyber-cyan'
+         : 'text-cyber-text hover:text-cyber-cyan'
+     }`;
 
-    return (
-      <Link
-        href={item.path}
-        className={classes}
-      >
-        <span className="w-5 h-5 flex items-center justify-center flex-shrink-0">
-          <i className={item.icon} />
-        </span>
-        <span className="truncate">{item.label}</span>
-      </Link>
-    );
-  };
+     return (
+       <Link
+         href={item.path}
+         className={classes}
+       >
+         <span className="w-5 h-5 flex items-center justify-center flex-shrink-0">
+           <i className={item.icon} />
+         </span>
+         <span className="truncate">{item.label}</span>
+       </Link>
+     );
+   };
 
   return (
     <>
@@ -203,20 +203,20 @@ const renderNavItem = (item: NavItem) => {
             <span className="text-sm font-semibold text-cyber-text tracking-tight">
               cybersec.devctr
             </span>
-            <span className="text-[11px] text-cyber-text-dim font-mono">Security Tool Docs</span>
+            <span className="text-[11px] text-cyber-text font-mono">Security Tool Docs</span>
           </div>
         </div>
 
         {/* Search */}
         <div className="px-4 py-4">
           <div className="relative">
-            <i className="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-cyber-text-dim text-sm" />
+            <i className="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-cyber-text text-sm" />
             <input
               type="text"
               placeholder="Search docs..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-cyber-bg border border-cyber-border rounded-lg pl-9 pr-3 py-2 text-sm text-cyber-text placeholder:text-cyber-text-dim focus:outline-none focus:border-cyber-cyan transition-colors"
+               className="w-full bg-cyber-bg border border-cyber-border rounded-lg pl-9 pr-3 py-2 text-sm text-cyber-text placeholder:text-cyber-text focus:outline-none focus:border-cyber-cyan transition-colors"
             />
           </div>
         </div>
@@ -225,11 +225,11 @@ const renderNavItem = (item: NavItem) => {
         <nav className="flex-1 overflow-y-auto px-3 pb-4">
           {filteredSections.map((section) => (
             <div key={section.title} className="mb-3">
-              <button
-                type="button"
-                onClick={() => toggleSection(section.title)}
-                className="flex items-center justify-between w-full px-3 py-2 text-[11px] font-semibold tracking-wider text-cyber-text-muted hover:text-cyber-cyan transition-colors"
-              >
+               <button
+                 type="button"
+                 onClick={() => toggleSection(section.title)}
+                 className="flex items-center justify-between w-full px-3 py-2 text-[11px] font-semibold tracking-wider text-cyber-text hover:text-cyber-cyan transition-colors"
+               >
                 <span>{section.title}</span>
                 <i
                   className={`ri-arrow-down-s-line text-sm transition-transform ${
@@ -252,7 +252,7 @@ const renderNavItem = (item: NavItem) => {
 
         {/* Footer */}
         <div className="px-4 py-3 border-t border-cyber-border">
-          <div className="flex items-center justify-between text-xs text-cyber-text-dim">
+          <div className="flex items-center justify-between text-xs text-cyber-text">
             <span className="font-mono">v3.1.0</span>
             <a
               href="https://nmap.org"

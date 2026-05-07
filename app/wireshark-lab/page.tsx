@@ -149,7 +149,7 @@ export default function WiresharkLabPage() {
               <i className="ri-flask-line text-4xl text-cyber-cyan" />
             </div>
             <h2 className="text-3xl font-bold text-white">Lab Complete!</h2>
-            <p className="mt-3 text-cyber-text-muted">
+            <p className="mt-3 text-cyber-text">
               You completed <span className="text-cyber-cyan font-bold text-xl">{correctCount}/{total}</span> tasks correctly
             </p>
             <div className="mt-4 w-full max-w-xs mx-auto h-3 bg-cyber-bg rounded-full overflow-hidden">
@@ -178,7 +178,7 @@ export default function WiresharkLabPage() {
             <i className="ri-flask-line" /> Wireshark Lab
           </div>
           <DocHeading level={1}>Wireshark Hands-On Lab</DocHeading>
-          <p className="text-cyber-text-muted mt-3">Apply your knowledge by typing the exact filters, commands, and menu paths for each scenario.</p>
+          <p className="text-cyber-text mt-3">Apply your knowledge by typing the exact filters, commands, and menu paths for each scenario.</p>
         </motion.div>
 
         <motion.div className="mt-6 flex items-center gap-3" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
@@ -194,7 +194,7 @@ export default function WiresharkLabPage() {
               <span className="text-[10px] font-semibold tracking-wider text-cyber-text-dim uppercase">Task {task.id}</span>
             </div>
             <h4 className="text-base font-semibold text-white mb-3">{task.title}</h4>
-            <p className="text-sm text-cyber-text-muted leading-relaxed mb-4">{task.description}</p>
+            <p className="text-sm text-cyber-text leading-relaxed mb-4">{task.description}</p>
 
             <div className="space-y-3">
               <label className="text-sm font-semibold text-white block">Your Answer</label>

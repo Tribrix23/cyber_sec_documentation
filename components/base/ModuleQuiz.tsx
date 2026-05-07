@@ -61,7 +61,7 @@ export default function ModuleQuiz({ title, questions }: ModuleQuizProps) {
           <i className="ri-trophy-line text-3xl text-cyber-green" />
         </div>
         <h3 className="text-xl font-bold text-white">Quiz Complete!</h3>
-        <p className="mt-2 text-cyber-text-muted">
+        <p className="mt-2 text-cyber-text">
           You scored <span className="text-cyber-cyan font-bold text-lg">{correctCount}/{total}</span> ({pct}%)
         </p>
         <div className="mt-4 w-full max-w-xs mx-auto h-2.5 bg-cyber-bg rounded-full overflow-hidden">
@@ -163,7 +163,7 @@ export default function ModuleQuiz({ title, questions }: ModuleQuizProps) {
                       String.fromCharCode(65 + idx)
                     )}
                   </span>
-                  <span className={`text-sm ${showCorrect ? 'text-cyber-green' : showWrong ? 'text-cyber-red' : 'text-cyber-text-muted'}`}>
+                  <span className={`text-sm ${showCorrect ? 'text-cyber-green' : showWrong ? 'text-cyber-red' : 'text-cyber-text'}`}>
                     {opt}
                   </span>
                 </button>
@@ -177,7 +177,7 @@ export default function ModuleQuiz({ title, questions }: ModuleQuizProps) {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
             >
-              <p className="text-sm text-cyber-text-muted leading-relaxed">
+              <p className="text-sm text-cyber-text leading-relaxed">
                 <span className="text-cyber-amber font-semibold">Explanation: </span>
                 {q.explanation}
               </p>

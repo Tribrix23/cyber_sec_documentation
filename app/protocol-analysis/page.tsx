@@ -79,7 +79,7 @@ export default function ProtocolAnalysis() {
   return (
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-4xl">
         <DocHeading level={1}>Protocol Analysis</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed text-lg">
+        <p className="text-cyber-text leading-relaxed text-lg">
           Wireshark dissects over 3,000 protocols. Understanding the most common ones — TCP, UDP, HTTP, DNS, and SSL/TLS — is essential for effective network troubleshooting and security analysis.
         </p>
 
@@ -93,7 +93,7 @@ export default function ProtocolAnalysis() {
               {proto.name} — {proto.short}
             </DocHeading>
 
-            <p className="text-cyber-text-muted leading-relaxed">
+            <p className="text-cyber-text leading-relaxed">
               Common display filters for {proto.name} analysis:
             </p>
 
@@ -101,20 +101,20 @@ export default function ProtocolAnalysis() {
               {proto.filters.map((f) => (
                 <div key={f.syntax} className="cyber-card p-4">
                   <CodeBlock code={f.syntax} language="wireshark" showLineNumbers={false} />
-                  <p className="text-sm text-cyber-text-muted mt-2">{f.desc}</p>
+                  <p className="text-sm text-cyber-text mt-2">{f.desc}</p>
                 </div>
               ))}
             </div>
 
             <div className="mt-4 cyber-card p-4">
               <h4 className="text-sm font-semibold text-cyber-amber mb-2">Key Fields</h4>
-              <p className="text-sm text-cyber-text-muted font-mono">{proto.fields}</p>
+              <p className="text-sm text-cyber-text font-mono">{proto.fields}</p>
             </div>
           </section>
         ))}
 
         <DocHeading level={2} id="tcp-handshake">TCP Three-Way Handshake</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           Understanding the TCP handshake is fundamental. Here is how Wireshark shows it:
         </p>
 
@@ -123,27 +123,27 @@ export default function ProtocolAnalysis() {
             <div className="w-8 h-8 rounded-full bg-cyber-cyan/10 flex items-center justify-center text-cyber-cyan font-bold font-mono text-sm flex-shrink-0">1</div>
             <div>
               <h4 className="text-white font-semibold">SYN</h4>
-              <p className="text-sm text-cyber-text-muted mt-1">Client sends a SYN packet to initiate connection. Filter: <InlineCode>tcp.flags.syn == 1 and tcp.flags.ack == 0</InlineCode></p>
+              <p className="text-sm text-cyber-text mt-1">Client sends a SYN packet to initiate connection. Filter: <InlineCode>tcp.flags.syn == 1 and tcp.flags.ack == 0</InlineCode></p>
             </div>
           </div>
           <div className="cyber-card p-4 flex items-start gap-4">
             <div className="w-8 h-8 rounded-full bg-cyber-amber/10 flex items-center justify-center text-cyber-amber font-bold font-mono text-sm flex-shrink-0">2</div>
             <div>
               <h4 className="text-white font-semibold">SYN-ACK</h4>
-              <p className="text-sm text-cyber-text-muted mt-1">Server responds with SYN and ACK flags. Filter: <InlineCode>tcp.flags.syn == 1 and tcp.flags.ack == 1</InlineCode></p>
+              <p className="text-sm text-cyber-text mt-1">Server responds with SYN and ACK flags. Filter: <InlineCode>tcp.flags.syn == 1 and tcp.flags.ack == 1</InlineCode></p>
             </div>
           </div>
           <div className="cyber-card p-4 flex items-start gap-4">
             <div className="w-8 h-8 rounded-full bg-cyber-green/10 flex items-center justify-center text-cyber-green font-bold font-mono text-sm flex-shrink-0">3</div>
             <div>
               <h4 className="text-white font-semibold">ACK</h4>
-              <p className="text-sm text-cyber-text-muted mt-1">Client sends final ACK. Connection established. Filter: <InlineCode>tcp.flags.syn == 0 and tcp.flags.ack == 1</InlineCode></p>
+              <p className="text-sm text-cyber-text mt-1">Client sends final ACK. Connection established. Filter: <InlineCode>tcp.flags.syn == 0 and tcp.flags.ack == 1</InlineCode></p>
             </div>
           </div>
         </div>
 
         <DocHeading level={2} id="analyzing-conversations">Analyzing Conversations</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           Use <strong>Statistics &gt; Conversations</strong> to see all unique connections between endpoints, sorted by packet count or bytes.
         </p>
 

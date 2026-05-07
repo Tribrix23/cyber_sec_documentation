@@ -44,7 +44,7 @@ const portStates = [
   },
   {
     state: 'unfiltered',
-    color: 'text-cyber-text-muted',
+    color: 'text-cyber-text',
     bg: 'bg-cyber-bg-card',
     border: 'border-cyber-border',
     definition: 'The port is accessible but Nmap cannot determine if it is open or closed.',
@@ -54,7 +54,7 @@ const portStates = [
   },
   {
     state: 'open|filtered',
-    color: 'text-cyber-text-muted',
+    color: 'text-cyber-text',
     bg: 'bg-cyber-bg-card',
     border: 'border-cyber-border',
     definition: 'Nmap cannot distinguish between an open port and a filtered port.',
@@ -64,7 +64,7 @@ const portStates = [
   },
   {
     state: 'closed|filtered',
-    color: 'text-cyber-text-muted',
+    color: 'text-cyber-text',
     bg: 'bg-cyber-bg-card',
     border: 'border-cyber-border',
     definition: 'Nmap cannot distinguish between a closed port and a filtered port.',
@@ -114,7 +114,7 @@ export default function NmapPortStatesPage() {
             Nmap Section 4 of 13
           </div>
           <DocHeading level={1}>Understanding Port States</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Nmap classifies every tested port into one of six possible states. Reading Nmap output correctly is a fundamental skill — misinterpreting a "filtered" port as "closed" could mean missing a critical attack vector.
           </p>
         </motion.div>
@@ -132,9 +132,9 @@ export default function NmapPortStatesPage() {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <p className="text-xs text-cyber-text-muted leading-relaxed"><strong className="text-white">Definition:</strong> {s.definition}</p>
-                  <p className="text-xs text-cyber-text-muted leading-relaxed"><strong className="text-white">Behavior:</strong> {s.behavior}</p>
-                  <p className="text-xs text-cyber-text-muted leading-relaxed"><strong className="text-white">What it means:</strong> {s.meaning}</p>
+                  <p className="text-xs text-cyber-text leading-relaxed"><strong className="text-cyber-cyan">Definition:</strong> {s.definition}</p>
+                  <p className="text-xs text-cyber-text leading-relaxed"><strong className="text-cyber-cyan">Behavior:</strong> {s.behavior}</p>
+                  <p className="text-xs text-cyber-text leading-relaxed"><strong className="text-cyber-cyan">What it means:</strong> {s.meaning}</p>
                   <code className="block text-xs font-mono text-cyber-green bg-cyber-bg border border-cyber-border rounded px-2 py-1 mt-2">
                     {s.example}
                   </code>
@@ -147,7 +147,7 @@ export default function NmapPortStatesPage() {
         {/* State Transition Table */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>How Scan Types Produce Different States</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             The same port can produce different states depending on which scan technique you use. This table shows how Nmap classifies responses from each scan type.
           </p>
           <div className="mt-6 overflow-x-auto">
@@ -177,7 +177,7 @@ export default function NmapPortStatesPage() {
         {/* Reading Output */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Reading Nmap Output</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Nmap output follows a consistent format. Learning to read it quickly is essential during time-sensitive engagements like CTFs and live penetration tests.
           </p>
 
@@ -188,21 +188,21 @@ export default function NmapPortStatesPage() {
                 <code className="text-xs font-mono text-cyber-green block">
                   PORT    STATE    SERVICE    VERSION
                 </code>
-                <code className="text-xs font-mono text-cyber-text-muted block mt-1">
+                <code className="text-xs font-mono text-cyber-text block mt-1">
                   22/tcp  open     ssh        OpenSSH 8.2p1 Ubuntu 4ubuntu0.5
                 </code>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-cyber-text-muted">
-                <div><strong className="text-white">PORT:</strong> Protocol (tcp/udp/sctp) and port number</div>
-                <div><strong className="text-white">STATE:</strong> One of the six port states</div>
-                <div><strong className="text-white">SERVICE:</strong> Best guess from nmap-services database</div>
-                <div><strong className="text-white">VERSION:</strong> Only shown with -sV or -A enabled</div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-cyber-text">
+                <div><strong className="text-cyber-cyan">PORT:</strong> Protocol (tcp/udp/sctp) and port number</div>
+                <div><strong className="text-cyber-cyan">STATE:</strong> One of the six port states</div>
+                <div><strong className="text-cyber-cyan">SERVICE:</strong> Best guess from nmap-services database</div>
+                <div><strong className="text-cyber-cyan">VERSION:</strong> Only shown with -sV or -A enabled</div>
               </div>
             </div>
           </div>
 
           <Callout type="info" className="mt-4">
-            The <strong className="text-white">service</strong> column is a best-effort guess based on the port number and the <InlineCode>nmap-services</InlineCode> file. It is often wrong if a service runs on a non-standard port. Always use <InlineCode>-sV</InlineCode> to confirm the actual service.
+             The <strong className="text-cyber-cyan">service</strong> column is a best-effort guess based on the port number and the <InlineCode>nmap-services</InlineCode> file. It is often wrong if a service runs on a non-standard port. Always use <InlineCode>-sV</InlineCode> to confirm the actual service.
           </Callout>
         </motion.section>
 
@@ -225,7 +225,7 @@ export default function NmapPortStatesPage() {
             <a href="/nmap/timing" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-cyber-bg text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
               Next: Timing Templates <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/nmap/scan-types" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+            <a href="/nmap/scan-types" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

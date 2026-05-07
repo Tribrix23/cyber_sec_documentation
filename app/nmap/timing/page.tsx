@@ -127,7 +127,7 @@ export default function NmapTimingPage() {
             Nmap Section 5 of 13
           </div>
           <DocHeading level={1}>Timing Templates</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Timing templates control how fast Nmap scans and how much network load it generates. The right choice depends on your network conditions, target resilience, and whether you need to evade detection. Nmap offers six templates from Paranoid to Insane.
           </p>
         </motion.div>
@@ -135,7 +135,7 @@ export default function NmapTimingPage() {
         {/* Templates */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>The Six Timing Templates</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Click any template to expand and see its full technical behavior, ideal use cases, and tradeoffs.
           </p>
 
@@ -154,7 +154,7 @@ export default function NmapTimingPage() {
                   <div className="flex-1 text-left">
                     <div className="flex items-center gap-2 flex-wrap">
                       <h3 className="text-sm font-semibold text-white">{t.name}</h3>
-                      <span className={`text-[10px] px-1.5 py-0.5 rounded border ${t.flag === '-T0' || t.flag === '-T1' ? 'bg-cyber-green/10 text-cyber-green border-cyber-green/20' : t.flag === '-T5' ? 'bg-cyber-red/10 text-cyber-red border-cyber-red/20' : 'bg-cyber-bg-card text-cyber-text-muted border-cyber-border'}`}>
+                      <span className={`text-[10px] px-1.5 py-0.5 rounded border ${t.flag === '-T0' || t.flag === '-T1' ? 'bg-cyber-green/10 text-cyber-green border-cyber-green/20' : t.flag === '-T5' ? 'bg-cyber-red/10 text-cyber-red border-cyber-red/20' : 'bg-cyber-bg-card text-cyber-text border-cyber-border'}`}>
                         {t.flag === '-T0' || t.flag === '-T1' ? 'Stealth' : t.flag === '-T5' ? 'Loud' : 'Balanced'}
                       </span>
                     </div>
@@ -166,12 +166,12 @@ export default function NmapTimingPage() {
                         animate={{ opacity: 1, height: 'auto' }}
                         className="mt-4 space-y-3 text-left"
                       >
-                        <p className="text-xs text-cyber-text-muted leading-relaxed">{t.detail}</p>
+                        <p className="text-xs text-cyber-text leading-relaxed">{t.detail}</p>
                         <div>
                           <span className="text-[10px] font-semibold text-cyber-text-dim uppercase tracking-wider">Best For</span>
                           <ul className="mt-1 space-y-1">
                             {t.useCases.map((uc, i) => (
-                              <li key={i} className="text-xs text-cyber-text-muted flex items-start gap-2">
+                              <li key={i} className="text-xs text-cyber-text flex items-start gap-2">
                                 <span className="w-1 h-1 rounded-full bg-cyber-amber mt-1.5 flex-shrink-0" />
                                 {uc}
                               </li>
@@ -182,7 +182,7 @@ export default function NmapTimingPage() {
                           <span className="text-[10px] font-semibold text-cyber-text-dim uppercase tracking-wider">Tradeoffs</span>
                           <ul className="mt-1 space-y-1">
                             {t.tradeoffs.map((tr, i) => (
-                              <li key={i} className="text-xs text-cyber-text-muted flex items-start gap-2">
+                              <li key={i} className="text-xs text-cyber-text flex items-start gap-2">
                                 <span className="w-1 h-1 rounded-full bg-cyber-red mt-1.5 flex-shrink-0" />
                                 {tr}
                               </li>
@@ -201,7 +201,7 @@ export default function NmapTimingPage() {
         {/* Visual Speed Comparison */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Speed Comparison</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Relative speed of each template when scanning 1000 ports on a local network with a responsive target.
           </p>
           <div className="mt-6 space-y-3">
@@ -214,7 +214,7 @@ export default function NmapTimingPage() {
               { label: 'Insane (-T5)', pct: 100, time: '~15 seconds', color: 'bg-cyber-red' },
             ].map((bar) => (
               <div key={bar.label} className="flex items-center gap-3">
-                <span className="text-xs font-mono text-cyber-text-muted w-24 flex-shrink-0 text-right">{bar.label}</span>
+                <span className="text-xs font-mono text-cyber-text w-24 flex-shrink-0 text-right">{bar.label}</span>
                 <div className="flex-1 h-6 bg-cyber-bg-card rounded-full overflow-hidden">
                   <motion.div
                     className={`h-full ${bar.color} rounded-full`}
@@ -233,14 +233,14 @@ export default function NmapTimingPage() {
         {/* Advanced Timing */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Advanced Timing Controls</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             For fine-grained control beyond the six templates, Nmap offers individual timing flags that let you precisely tune scan behavior.
           </p>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3">
             {advancedTiming.map((at) => (
               <div key={at.flag} className="cyber-card p-4">
                 <code className="text-xs font-mono text-cyber-cyan">{at.flag}</code>
-                <p className="text-xs text-cyber-text-muted mt-2 leading-relaxed">{at.desc}</p>
+                <p className="text-xs text-cyber-text mt-2 leading-relaxed">{at.desc}</p>
               </div>
             ))}
           </div>
@@ -265,7 +265,7 @@ export default function NmapTimingPage() {
             <a href="/nmap/flags" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-cyber-bg text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
               Next: Common Flags <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/nmap/port-states" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+            <a href="/nmap/port-states" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

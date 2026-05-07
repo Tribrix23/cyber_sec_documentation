@@ -144,7 +144,7 @@ export default function GobusterQuizPage() {
             Gobuster Section 12 of 13
           </div>
           <DocHeading level={1}>Gobuster Quiz</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Test your understanding of Gobuster with 17 multiple-choice questions covering modes, flags, wordlists, and practical usage. You need 80% to pass.
           </p>
         </motion.div>
@@ -158,7 +158,7 @@ export default function GobusterQuizPage() {
             <a href="/gobuster/lab" className="px-5 py-2.5 rounded-lg bg-cyber-red text-white text-sm font-semibold hover:bg-cyber-red/80 transition-all whitespace-nowrap">
               Next: Lab Exercises <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/gobuster/pro-tips" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
+            <a href="/gobuster/pro-tips" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

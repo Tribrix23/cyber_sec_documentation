@@ -57,7 +57,7 @@ export default function CodeBlock({ code, language = 'bash', showLineNumbers = t
                   {idx + 1}
                 </span>
               )}
-              <span className="text-cyber-text-muted whitespace-pre">{line || ' '}</span>
+              <span className="text-cyber-text whitespace-pre">{line || ' '}</span>
             </div>
           ))}
         </pre>

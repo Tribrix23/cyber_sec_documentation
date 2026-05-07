@@ -156,7 +156,7 @@ export default function NmapInstallationPage() {
             Nmap Section 8 of 13
           </div>
           <DocHeading level={1}>Installation</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Nmap runs on all major operating systems. This guide covers installation on Linux distributions, macOS, Windows, Docker, and building from source.
           </p>
         </motion.div>
@@ -168,7 +168,7 @@ export default function NmapInstallationPage() {
               {plat.methods.map((method) => (
                 <div key={method.title}>
                   <h3 className="text-sm font-semibold text-white mb-2">{method.title}</h3>
-                  <p className="text-xs text-cyber-text-muted mb-2">{method.desc}</p>
+                  <p className="text-xs text-cyber-text mb-2">{method.desc}</p>
                   <CodeBlock code={method.code} />
                 </div>
               ))}
@@ -179,14 +179,14 @@ export default function NmapInstallationPage() {
         {/* Build from Source */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Build from Source</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Building from source gives you the latest features, custom compile options, and the ability to modify Nmap's behavior. This is recommended for developers and users who need cutting-edge features.
           </p>
           <div className="mt-6 space-y-4">
             {buildFromSource.map((bs) => (
               <div key={bs.step} className="cyber-card p-4">
                 <h3 className="text-sm font-semibold text-white mb-2">{bs.step}</h3>
-                <p className="text-xs text-cyber-text-muted mb-2">{bs.desc}</p>
+                <p className="text-xs text-cyber-text mb-2">{bs.desc}</p>
                 <CodeBlock code={bs.code} />
               </div>
             ))}
@@ -199,13 +199,13 @@ export default function NmapInstallationPage() {
         {/* Verify */}
         <motion.section className="mt-12 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Verification & First Scan</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             After installation, verify Nmap works by running a simple scan against scanme.nmap.org — a test server maintained by the Nmap project specifically for this purpose.
           </p>
           <div className="mt-4">
             <CodeBlock code="nmap scanme.nmap.org" />
           </div>
-          <p className="text-sm text-cyber-text-muted mt-3">
+          <p className="text-sm text-cyber-text mt-3">
             You should see output showing open ports, services, and possibly OS detection results. If this works, your Nmap installation is complete and functional.
           </p>
 
@@ -213,7 +213,7 @@ export default function NmapInstallationPage() {
             <a href="/nmap/examples" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-cyber-bg text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
               Next: Usage Examples <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/nmap/nse-scripts" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+            <a href="/nmap/nse-scripts" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

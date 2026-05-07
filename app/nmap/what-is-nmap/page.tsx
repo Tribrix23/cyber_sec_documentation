@@ -116,15 +116,15 @@ export default function NmapWhatIsPage() {
             Nmap Section 1 of 13
           </div>
           <DocHeading level={1}>What is Nmap</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
-            <strong className="text-white">Nmap (Network Mapper)</strong> is a free, open-source network scanner used to discover hosts, services, open ports, operating systems, and vulnerabilities on computer networks. Created by Gordon Lyon (Fyodor) in 1997, it has become the most widely used and referenced port scanner in the cybersecurity industry.
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
+                         <strong className="text-cyber-cyan">Nmap (Network Mapper)</strong> is a free, open-source network scanner used to discover hosts, services, open ports, operating systems, and vulnerabilities on computer networks. Created by Gordon Lyon (Fyodor) in 1997, it has become the most widely used and referenced port scanner in the cybersecurity industry.
           </p>
         </motion.div>
 
         {/* Core Capabilities */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Core Capabilities</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Nmap is far more than a simple port scanner. It is a comprehensive network reconnaissance platform with six major capability areas that work together to paint a complete picture of target networks.
           </p>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -136,7 +136,7 @@ export default function NmapWhatIsPage() {
                   </span>
                   <h3 className="text-sm font-semibold text-white">{cap.title}</h3>
                 </div>
-                <p className="text-xs text-cyber-text-muted leading-relaxed">{cap.desc}</p>
+                <p className="text-xs text-cyber-text leading-relaxed">{cap.desc}</p>
               </div>
             ))}
           </div>
@@ -145,13 +145,13 @@ export default function NmapWhatIsPage() {
         {/* Why Nmap Matters */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Why Nmap Matters in Cybersecurity</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
-            Network reconnaissance is the foundation of both offensive and defensive security. Before an attacker can exploit a vulnerability, they must first know what exists. Before a defender can protect an asset, they must first know it is there. Nmap answers the fundamental question: <strong className="text-white">What is on my network?</strong>
+          <p className="text-cyber-text leading-relaxed mt-3">
+            Network reconnaissance is the foundation of both offensive and defensive security. Before an attacker can exploit a vulnerability, they must first know what exists. Before a defender can protect an asset, they must first know it is there.              Nmap answers the fundamental question: <strong className="text-cyber-cyan">What is on my network?</strong>
           </p>
 
           <div className="mt-6 space-y-4">
             <Callout type="info">
-              Nmap is referenced in the <strong className="text-white">OSCP</strong> (Offensive Security Certified Professional), <strong className="text-white">CEH</strong> (Certified Ethical Hacker), and <strong className="text-white">CISSP</strong> certification curricula. It is considered an essential tool for any cybersecurity professional.
+                             Nmap is referenced in the <strong className="text-cyber-cyan">OSCP</strong> (Offensive Security Certified Professional), <strong className="text-cyber-cyan">CEH</strong> (Certified Ethical Hacker), and <strong className="text-cyber-cyan">CISSP</strong> certification curricula. It is considered an essential tool for any cybersecurity professional.
             </Callout>
           </div>
 
@@ -159,7 +159,7 @@ export default function NmapWhatIsPage() {
             {useCases.map((uc) => (
               <div key={uc.role} className="cyber-card p-5">
                 <h3 className="text-sm font-semibold text-cyber-cyan mb-2">{uc.role}</h3>
-                <p className="text-xs text-cyber-text-muted leading-relaxed">{uc.desc}</p>
+                <p className="text-xs text-cyber-text leading-relaxed">{uc.desc}</p>
               </div>
             ))}
           </div>
@@ -168,7 +168,7 @@ export default function NmapWhatIsPage() {
         {/* History */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>History of Nmap</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Understanding Nmap&apos;s evolution helps you appreciate its depth and why certain design decisions were made. Nmap has grown from a simple C program to a multi-tool security platform over 25 years.
           </p>
           <div className="mt-6 space-y-4">
@@ -184,7 +184,7 @@ export default function NmapWhatIsPage() {
                 </div>
                 <div className="cyber-card p-4 flex-1">
                   <h3 className="text-sm font-semibold text-white mb-1">{item.title}</h3>
-                  <p className="text-xs text-cyber-text-muted leading-relaxed">{item.desc}</p>
+                  <p className="text-xs text-cyber-text leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -194,7 +194,7 @@ export default function NmapWhatIsPage() {
         {/* Architecture */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Nmap Architecture</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Nmap is written in C and C++ with Lua for scripting. It uses raw sockets and libpcap for packet capture, which requires root privileges on Unix systems. The architecture is modular, allowing each scanning phase to be independently configured or skipped.
           </p>
 
@@ -214,7 +214,7 @@ export default function NmapWhatIsPage() {
                   <span className="text-xs font-bold text-cyber-amber font-mono flex-shrink-0">{s.step.split('.')[0]}</span>
                   <div>
                     <span className="text-xs font-semibold text-white">{s.step.split('. ')[1]}</span>
-                    <p className="text-xs text-cyber-text-muted mt-1">{s.desc}</p>
+                    <p className="text-xs text-cyber-text mt-1">{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -225,14 +225,14 @@ export default function NmapWhatIsPage() {
         {/* First Scan */}
         <motion.section className="mt-12 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Your First Nmap Scan</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             The simplest Nmap command scans the top 1,000 most common TCP ports on a single target. If Nmap is installed and you have network access, you can run this immediately.
           </p>
           <div className="mt-4">
             <CodeBlock code="nmap scanme.nmap.org" />
           </div>
-          <p className="text-sm text-cyber-text-muted mt-4 leading-relaxed">
-            <strong className="text-white">scanme.nmap.org</strong> is a test server maintained by the Nmap project specifically for learning and testing. It is safe to scan and responds like a typical Linux server. Nmap will show which of the top 1,000 ports are open, the services running on them, and their versions if version detection is enabled.
+          <p className="text-sm text-cyber-text mt-4 leading-relaxed">
+                         <strong className="text-cyber-cyan">scanme.nmap.org</strong> is a test server maintained by the Nmap project specifically for learning and testing. It is safe to scan and responds like a typical Linux server. Nmap will show which of the top 1,000 ports are open, the services running on them, and their versions if version detection is enabled.
           </p>
 
           <Callout type="danger" className="mt-4">
@@ -243,7 +243,7 @@ export default function NmapWhatIsPage() {
             <a href="/nmap/how-it-works" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-cyber-bg text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
               Next: How Nmap Works <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/nmap/scan-types" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+            <a href="/nmap/scan-types" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
               Skip to Scan Types
             </a>
           </div>

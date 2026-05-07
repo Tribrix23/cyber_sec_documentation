@@ -8,18 +8,18 @@ export default function AdvancedFeatures() {
   return (
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-4xl">
         <DocHeading level={1}>Advanced Features</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed text-lg">
+        <p className="text-cyber-text leading-relaxed text-lg">
           Once you are comfortable with basic captures and filters, Wireshark offers powerful advanced tools for deep analysis: stream reconstruction, expert info, statistics, and custom dissectors.
         </p>
 
         <DocHeading level={2} id="follow-streams">Follow TCP/UDP/SSL Streams</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           Wireshark can reassemble the full payload of a conversation. Right-click any packet and select <strong>Follow &gt; TCP Stream</strong> (or UDP/SSL).
         </p>
 
         <div className="mt-4 cyber-card p-5">
           <h4 className="text-white font-semibold mb-3">Stream View Options</h4>
-          <ul className="space-y-2 text-sm text-cyber-text-muted">
+          <ul className="space-y-2 text-sm text-cyber-text">
             <li className="flex items-start gap-2">
               <i className="ri-arrow-right-s-line text-cyber-cyan mt-0.5 flex-shrink-0" />
               <span><strong>Entire conversation</strong> — Both directions combined</span>
@@ -46,7 +46,7 @@ ssl.stream eq 2`}
         />
 
         <DocHeading level={2} id="expert-info">Expert Information</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           <strong>Analyze &gt; Expert Information</strong> shows a categorized summary of anomalies: errors, warnings, notes, and chats. This is incredibly useful for spotting issues at a glance.
         </p>
 
@@ -61,32 +61,32 @@ ssl.stream eq 2`}
             <tbody className="divide-y divide-cyber-border">
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 text-cyber-red font-semibold">Error</td>
-                <td className="px-4 py-3 text-cyber-text-muted">Malformed packets, checksum errors</td>
+                <td className="px-4 py-3 text-cyber-text">Malformed packets, checksum errors</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 text-cyber-amber font-semibold">Warning</td>
-                <td className="px-4 py-3 text-cyber-text-muted">Retransmissions, out-of-order packets, duplicate ACKs</td>
+                <td className="px-4 py-3 text-cyber-text">Retransmissions, out-of-order packets, duplicate ACKs</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 text-cyber-cyan font-semibold">Note</td>
-                <td className="px-4 py-3 text-cyber-text-muted">TCP window full, zero-window probes</td>
+                <td className="px-4 py-3 text-cyber-text">TCP window full, zero-window probes</td>
               </tr>
               <tr className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                 <td className="px-4 py-3 text-cyber-green font-semibold">Chat</td>
-                <td className="px-4 py-3 text-cyber-text-muted">Regular TCP segments, keep-alives</td>
+                <td className="px-4 py-3 text-cyber-text">Regular TCP segments, keep-alives</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <DocHeading level={2} id="io-graphs">IO Graphs</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           <strong>Statistics &gt; IO Graphs</strong> lets you visualize traffic over time. You can plot packets per second, bytes per second, or apply custom display filters to each graph line.
         </p>
 
         <div className="cyber-card p-5 mt-4">
           <h4 className="text-white font-semibold mb-3">Graph Configuration Tips</h4>
-          <ul className="space-y-2 text-sm text-cyber-text-muted">
+          <ul className="space-y-2 text-sm text-cyber-text">
             <li className="flex items-start gap-2">
               <i className="ri-arrow-right-s-line text-cyber-cyan mt-0.5 flex-shrink-0" />
               <span>Add multiple lines with different colors for different protocols</span>
@@ -103,7 +103,7 @@ ssl.stream eq 2`}
         </div>
 
         <DocHeading level={2} id="statistics">Statistics Menu</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           Wireshark provides built-in statistics for high-level overview. Here is a quick reference:
         </p>
 
@@ -120,13 +120,13 @@ ssl.stream eq 2`}
           ].map((stat) => (
             <div key={stat.name} className="cyber-card p-4">
               <h4 className="text-white font-semibold text-sm">{stat.name}</h4>
-              <p className="text-sm text-cyber-text-muted mt-1">{stat.desc}</p>
+              <p className="text-sm text-cyber-text mt-1">{stat.desc}</p>
             </div>
           ))}
         </div>
 
         <DocHeading level={2} id="decrypt-ssl">Decrypting SSL/TLS</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           Wireshark can decrypt SSL/TLS if you provide the session keys. This requires capturing the (pre)-master secret.
         </p>
 
@@ -145,7 +145,7 @@ export SSLKEYLOGFILE=/tmp/ssl-keys.log
         </Callout>
 
         <DocHeading level={2} id="custom-dissectors">Custom Dissectors (Lua)</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           For proprietary or unsupported protocols, you can write Lua dissectors. Place them in your Wireshark plugins directory.
         </p>
 

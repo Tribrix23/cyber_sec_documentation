@@ -103,8 +103,8 @@ export default function GobusterLandingPage() {
             Module 2 — Directory & Subdomain Bruteforcing
           </div>
           <DocHeading level={1}>Gobuster</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
-            <strong className="text-white">Gobuster</strong> is a fast, multi-threaded tool written in Go for brute forcing URIs, DNS subdomains, virtual hosts, AWS S3 buckets, and generic HTTP fuzzing. It is significantly faster than Python-based alternatives due to Go&apos;s concurrency model.
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
+                         <strong className="text-cyber-cyan">Gobuster</strong> is a fast, multi-threaded tool written in Go for brute forcing URIs, DNS subdomains, virtual hosts, AWS S3 buckets, and generic HTTP fuzzing. It is significantly faster than Python-based alternatives due to Go&apos;s concurrency model.
           </p>
         </motion.div>
 
@@ -123,7 +123,7 @@ export default function GobusterLandingPage() {
                   </span>
                   <div>
                     <h3 className="text-sm font-semibold text-white group-hover:text-cyber-red transition-colors">{s.title}</h3>
-                    <p className="text-xs text-cyber-text-muted mt-1 leading-relaxed">{s.desc}</p>
+                    <p className="text-xs text-cyber-text mt-1 leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
               </a>
@@ -134,7 +134,7 @@ export default function GobusterLandingPage() {
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <h2 className="text-lg font-semibold text-white mb-4">Quick Start</h2>
           <div className="cyber-card p-5">
-            <p className="text-sm text-cyber-text-muted mb-3">
+            <p className="text-sm text-cyber-text mb-3">
               New to Gobuster? Start with these three sections in order:
             </p>
             <ol className="space-y-2">
@@ -150,7 +150,7 @@ export default function GobusterLandingPage() {
                     </span>
                     <div>
                       <span className="text-sm font-semibold text-white">{step.title}</span>
-                      <p className="text-xs text-cyber-text-muted">{step.desc}</p>
+                      <p className="text-xs text-cyber-text">{step.desc}</p>
                     </div>
                   </a>
                 </li>

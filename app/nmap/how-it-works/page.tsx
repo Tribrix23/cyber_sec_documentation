@@ -110,7 +110,7 @@ export default function NmapHowItWorksPage() {
             Nmap Section 2 of 13
           </div>
           <DocHeading level={1}>How Nmap Works</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Nmap does not simply "scan ports." It follows a carefully designed pipeline of distinct phases, each of which can be independently configured, skipped, or extended. Understanding this pipeline is essential for interpreting scan results and troubleshooting when things go wrong.
           </p>
         </motion.div>
@@ -118,7 +118,7 @@ export default function NmapHowItWorksPage() {
         {/* The 7 Phases */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>The Seven Phases of an Nmap Scan</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Every Nmap scan follows the same fundamental pipeline. While some phases can be disabled with flags, the default behavior processes targets through all seven stages sequentially.
           </p>
 
@@ -132,7 +132,7 @@ export default function NmapHowItWorksPage() {
                   <div className="flex-1">
                     <h3 className="text-sm font-semibold text-white">{phase.title}</h3>
                     <p className="text-xs text-cyber-text-dim mt-0.5">{phase.short}</p>
-                    <p className="text-xs text-cyber-text-muted leading-relaxed mt-3">{phase.detail}</p>
+                    <p className="text-xs text-cyber-text leading-relaxed mt-3">{phase.detail}</p>
                     <div className="mt-3 space-y-1.5">
                       {phase.flags.map((flag, idx) => (
                         <code key={idx} className="block text-xs font-mono text-cyber-green bg-cyber-bg border border-cyber-border rounded px-2 py-1">
@@ -150,7 +150,7 @@ export default function NmapHowItWorksPage() {
         {/* Packet Types */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Packet Types Nmap Sends</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Nmap is fundamentally a packet crafter. It builds and sends specific packet types to elicit responses that reveal information about the target. Understanding these packets helps you read Nmap output and troubleshoot scan issues.
           </p>
           <div className="mt-6 overflow-x-auto">
@@ -166,8 +166,8 @@ export default function NmapHowItWorksPage() {
                 {packetTypes.map((pt) => (
                   <tr key={pt.type} className="hover:bg-cyber-bg-card/50 transition-colors">
                     <td className="px-4 py-3 font-mono text-cyber-amber text-xs">{pt.type}</td>
-                    <td className="px-4 py-3 text-cyber-text-muted text-xs">{pt.purpose}</td>
-                    <td className="px-4 py-3 text-cyber-text-muted text-xs">{pt.response}</td>
+                    <td className="px-4 py-3 text-cyber-text text-xs">{pt.purpose}</td>
+                    <td className="px-4 py-3 text-cyber-text text-xs">{pt.response}</td>
                   </tr>
                 ))}
               </tbody>
@@ -178,14 +178,14 @@ export default function NmapHowItWorksPage() {
         {/* Privileges */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Privilege Requirements</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Many of Nmap&apos;s most powerful features require elevated privileges because they craft raw packets that bypass the operating system&apos;s TCP/IP stack. This is a security feature of modern operating systems.
           </p>
 
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="cyber-card p-5">
               <h3 className="text-sm font-semibold text-cyber-green mb-2"><i className="ri-shield-check-line mr-1" /> Root / Administrator</h3>
-              <ul className="space-y-1.5 text-xs text-cyber-text-muted">
+              <ul className="space-y-1.5 text-xs text-cyber-text">
                 <li><InlineCode>-sS</InlineCode> (TCP SYN scan) — raw packet crafting</li>
                 <li><InlineCode>-sU</InlineCode> (UDP scan) — raw UDP packets</li>
                 <li><InlineCode>-sN/sF/sX</InlineCode> — NULL, FIN, Xmas scans</li>
@@ -195,7 +195,7 @@ export default function NmapHowItWorksPage() {
             </div>
             <div className="cyber-card p-5">
               <h3 className="text-sm font-semibold text-cyber-amber mb-2"><i className="ri-user-line mr-1" /> Unprivileged User</h3>
-              <ul className="space-y-1.5 text-xs text-cyber-text-muted">
+              <ul className="space-y-1.5 text-xs text-cyber-text">
                 <li><InlineCode>-sT</InlineCode> (TCP Connect scan) — uses OS connect()</li>
                 <li><InlineCode>-sV</InlineCode> (Version detection) — application layer only</li>
                 <li><InlineCode>--script</InlineCode> (NSE scripts) — most scripts work fine</li>
@@ -213,32 +213,32 @@ export default function NmapHowItWorksPage() {
         {/* Performance */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Scan Performance Fundamentals</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Nmap scan speed depends on multiple factors: network latency, target responsiveness, firewall behavior, the number of ports scanned, and the timing template selected. Understanding these interactions helps you choose the right settings for your environment.
           </p>
 
           <div className="mt-6 space-y-4">
             <div className="cyber-card p-4">
               <h3 className="text-sm font-semibold text-white mb-2">Parallelism</h3>
-              <p className="text-xs text-cyber-text-muted leading-relaxed">
+              <p className="text-xs text-cyber-text leading-relaxed">
                 Nmap sends multiple probes in parallel to different targets and ports. The <InlineCode>-T</InlineCode> templates control the maximum number of parallel probes, timeouts, and retry limits. Higher templates increase parallelism but also increase network load and IDS visibility.
               </p>
             </div>
             <div className="cyber-card p-4">
               <h3 className="text-sm font-semibold text-white mb-2">Retransmissions</h3>
-              <p className="text-xs text-cyber-text-muted leading-relaxed">
+              <p className="text-xs text-cyber-text leading-relaxed">
                 If a probe receives no response, Nmap assumes packet loss and retransmits. The number of retries depends on the timing template. On unreliable networks, Nmap may retransmit several times before marking a port as filtered. Use <InlineCode>--max-retries 0</InlineCode> to disable retransmissions for faster (but less accurate) scans.
               </p>
             </div>
             <div className="cyber-card p-4">
               <h3 className="text-sm font-semibold text-white mb-2">RTT Estimation</h3>
-              <p className="text-xs text-cyber-text-muted leading-relaxed">
+              <p className="text-xs text-cyber-text leading-relaxed">
                 Nmap continuously estimates round-trip time (RTT) to each target and adjusts probe timing accordingly. This dynamic adaptation prevents scans from being too aggressive on slow networks or too slow on fast ones. You can override this with <InlineCode>--min-rtt-timeout</InlineCode> and <InlineCode>--max-rtt-timeout</InlineCode>.
               </p>
             </div>
             <div className="cyber-card p-4">
               <h3 className="text-sm font-semibold text-white mb-2">Host Groups</h3>
-              <p className="text-xs text-cyber-text-muted leading-relaxed">
+              <p className="text-xs text-cyber-text leading-relaxed">
                 Nmap processes targets in groups rather than one at a time. This allows efficient parallel scanning across many hosts. The default group size is optimized for most networks, but you can adjust it with <InlineCode>--min-hostgroup</InlineCode> and <InlineCode>--max-hostgroup</InlineCode> for very large or small scans.
               </p>
             </div>
@@ -267,7 +267,7 @@ export default function NmapHowItWorksPage() {
             <a href="/nmap/scan-types" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-cyber-bg text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
               Next: Scan Types <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/nmap/what-is-nmap" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+            <a href="/nmap/what-is-nmap" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

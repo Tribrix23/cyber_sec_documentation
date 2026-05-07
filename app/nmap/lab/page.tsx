@@ -122,7 +122,7 @@ export default function NmapLabPage() {
             Nmap Section 13 of 13
           </div>
           <DocHeading level={1}>Nmap Lab</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Apply everything you learned. Type the exact Nmap command for each of these 12 scenarios. You can use hints if you get stuck, but try to solve each task from memory first.
           </p>
         </motion.div>
@@ -134,7 +134,7 @@ export default function NmapLabPage() {
         <motion.section className="mt-8 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <div className="cyber-card p-5">
             <h3 className="text-sm font-semibold text-white mb-2">How to Practice for Real</h3>
-            <p className="text-xs text-cyber-text-muted leading-relaxed">
+            <p className="text-xs text-cyber-text leading-relaxed">
               These exercises test your command syntax knowledge. For hands-on practice with real targets, set up a vulnerable lab using VMs like Metasploitable, DVWA, or VulnHub machines. scanme.nmap.org is also available for safe, legal practice.
             </p>
           </div>

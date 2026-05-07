@@ -66,15 +66,15 @@ export default function GobusterDirectoryPage() {
             Gobuster Section 1 of 13
           </div>
           <DocHeading level={1}>Directory & File Bruteforce</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
-            The <strong className="text-white">dir</strong> mode is Gobuster&apos;s original and most widely used feature. It discovers hidden directories, files, and endpoints on web servers by systematically testing a wordlist against a target URL.
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
+                         The <strong className="text-cyber-cyan">dir</strong> mode is Gobuster&apos;s original and most widely used feature. It discovers hidden directories, files, and endpoints on web servers by systematically testing a wordlist against a target URL.
           </p>
         </motion.div>
 
         {/* How it works */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>How Directory Scanning Works</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Gobuster takes each word from your wordlist and appends it to the target URL, sending an HTTP GET request for each combination. If the server responds with anything other than a 404 status code, Gobuster reports it as a potential finding. This simple but effective approach reveals admin panels, backup files, configuration files, API endpoints, and hidden application routes.
           </p>
 
@@ -92,7 +92,7 @@ export default function GobusterDirectoryPage() {
                   <span className="text-xs font-bold text-cyber-red font-mono flex-shrink-0">{s.step.split('.')[0]}</span>
                   <div>
                     <span className="text-xs font-semibold text-white">{s.step.split('. ')[1]}</span>
-                    <p className="text-xs text-cyber-text-muted mt-1">{s.desc}</p>
+                    <p className="text-xs text-cyber-text mt-1">{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -107,7 +107,7 @@ export default function GobusterDirectoryPage() {
             {techniques.map((t) => (
               <div key={t.title} className="cyber-card p-5">
                 <h3 className="text-sm font-semibold text-white mb-2">{t.title}</h3>
-                <p className="text-xs text-cyber-text-muted leading-relaxed mb-3">{t.desc}</p>
+                <p className="text-xs text-cyber-text leading-relaxed mb-3">{t.desc}</p>
                 <CodeBlock code={t.cmd} />
               </div>
             ))}
@@ -117,7 +117,7 @@ export default function GobusterDirectoryPage() {
         {/* Status Codes */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Understanding HTTP Status Codes</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Reading Gobuster output correctly means understanding what each HTTP status code tells you about the target resource.
           </p>
           <div className="mt-6 overflow-x-auto">
@@ -133,8 +133,8 @@ export default function GobusterDirectoryPage() {
                 {statusCodes.map((sc) => (
                   <tr key={sc.code} className="hover:bg-cyber-bg-card/50 transition-colors">
                     <td className="px-4 py-3 font-mono text-cyber-red text-xs">{sc.code}</td>
-                    <td className="px-4 py-3 text-cyber-text-muted text-xs">{sc.meaning}</td>
-                    <td className="px-4 py-3 text-cyber-text-muted text-xs">{sc.action}</td>
+                    <td className="px-4 py-3 text-cyber-text text-xs">{sc.meaning}</td>
+                    <td className="px-4 py-3 text-cyber-text text-xs">{sc.action}</td>
                   </tr>
                 ))}
               </tbody>
@@ -161,7 +161,7 @@ export default function GobusterDirectoryPage() {
             <a href="/gobuster/dns" className="px-5 py-2.5 rounded-lg bg-cyber-red text-white text-sm font-semibold hover:bg-cyber-red/80 transition-all whitespace-nowrap">
               Next: DNS Subdomain <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/gobuster" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
+            <a href="/gobuster" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

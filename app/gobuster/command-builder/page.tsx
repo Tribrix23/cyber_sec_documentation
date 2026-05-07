@@ -97,7 +97,7 @@ export default function GobusterCommandBuilderPage() {
             Gobuster Section 10 of 13
           </div>
           <DocHeading level={1}>Interactive Command Builder</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Select a mode, configure options, and generate copy-ready Gobuster commands. This tool helps you learn flag combinations and build complex commands visually.
           </p>
         </motion.div>
@@ -116,7 +116,7 @@ export default function GobusterCommandBuilderPage() {
                     className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${
                       mode === m.value
                         ? 'bg-cyber-red/10 border-cyber-red text-cyber-red'
-                        : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-red/50'
+                        : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-red/50'
                     }`}
                   >
                     {m.label}
@@ -201,7 +201,7 @@ export default function GobusterCommandBuilderPage() {
                     className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${
                       flags.includes(f.value)
                         ? 'bg-cyber-red/10 border-cyber-red text-cyber-red'
-                        : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-red/50'
+                        : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-red/50'
                     }`}
                   >
                     {f.label}
@@ -266,14 +266,14 @@ export default function GobusterCommandBuilderPage() {
 
         <motion.section className="mt-8 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <Callout type="tip">
-            Try combining <strong className="text-white">dir</strong> mode with <strong className="text-white">-x php,txt,bak</strong> for comprehensive web enumeration. Add <strong className="text-white">-k</strong> when scanning HTTPS with self-signed certificates.
+            Try combining <strong className="text-cyber-cyan">dir</strong> mode with <strong className="text-cyber-cyan">-x php,txt,bak</strong> for comprehensive web enumeration.              Add <strong className="text-cyber-cyan">-k</strong> when scanning HTTPS with self-signed certificates.
           </Callout>
 
           <div className="mt-8 flex gap-3">
             <a href="/gobuster/pro-tips" className="px-5 py-2.5 rounded-lg bg-cyber-red text-white text-sm font-semibold hover:bg-cyber-red/80 transition-all whitespace-nowrap">
               Next: Pro Tips <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/gobuster/examples" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
+            <a href="/gobuster/examples" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

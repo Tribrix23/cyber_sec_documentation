@@ -72,7 +72,7 @@ export default function LabExercise({ title, tasks }: LabExerciseProps) {
           <i className="ri-flask-line text-3xl text-cyber-cyan" />
         </div>
         <h3 className="text-xl font-bold text-white">Lab Complete!</h3>
-        <p className="mt-2 text-cyber-text-muted">
+        <p className="mt-2 text-cyber-text">
           You completed <span className="text-cyber-cyan font-bold text-lg">{correctCount}/{total}</span> tasks correctly
         </p>
         <div className="mt-4 w-full max-w-xs mx-auto h-2.5 bg-cyber-bg rounded-full overflow-hidden">
@@ -134,7 +134,7 @@ export default function LabExercise({ title, tasks }: LabExerciseProps) {
             </span>
           </div>
           <h4 className="text-base font-semibold text-white mb-3">{task.title}</h4>
-          <p className="text-sm text-cyber-text-muted leading-relaxed mb-4">
+          <p className="text-sm text-cyber-text leading-relaxed mb-4">
             {task.description}
           </p>
 

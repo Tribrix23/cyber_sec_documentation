@@ -126,7 +126,7 @@ export default function FilterBuilder() {
   return (
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-4xl">
         <DocHeading level={1}>Filter Builder</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed text-lg">
+        <p className="text-cyber-text leading-relaxed text-lg">
           Build Wireshark display filters interactively. Select protocol, field, operator, and value — then generate the filter string.
         </p>
 
@@ -136,14 +136,14 @@ export default function FilterBuilder() {
 
         {/* Presets */}
         <div className="mt-8">
-          <h3 className="text-sm font-semibold text-cyber-text-muted uppercase tracking-wider mb-3">Quick Presets</h3>
+          <h3 className="text-sm font-semibold text-cyber-text uppercase tracking-wider mb-3">Quick Presets</h3>
           <div className="flex flex-wrap gap-2">
             {predefinedPresets.map((preset) => (
               <button
                 key={preset.label}
                 type="button"
                 onClick={() => applyPreset(preset.filter)}
-                className="px-3 py-1.5 rounded-full bg-cyber-bg-card border border-cyber-border text-xs text-cyber-text-muted hover:border-cyber-cyan hover:text-cyber-cyan transition-all whitespace-nowrap"
+                className="px-3 py-1.5 rounded-full bg-cyber-bg-card border border-cyber-border text-xs text-cyber-text hover:border-cyber-cyan hover:text-cyber-cyan transition-all whitespace-nowrap"
               >
                 {preset.label}
               </button>
@@ -226,7 +226,7 @@ export default function FilterBuilder() {
             <button
               type="button"
               onClick={addRow}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-md border border-cyber-border text-sm text-cyber-text-muted hover:border-cyber-cyan hover:text-cyber-cyan transition-all"
+              className="flex items-center gap-1.5 px-3 py-2 rounded-md border border-cyber-border text-sm text-cyber-text hover:border-cyber-cyan hover:text-cyber-cyan transition-all"
             >
               <i className="ri-add-line" />
               Add Condition
@@ -244,7 +244,7 @@ export default function FilterBuilder() {
             <button
               type="button"
               onClick={clearAll}
-              className="px-5 py-2.5 border border-cyber-border text-cyber-text-muted font-semibold rounded-lg hover:border-cyber-text-muted transition-all whitespace-nowrap"
+              className="px-5 py-2.5 border border-cyber-border text-cyber-text font-semibold rounded-lg hover:border-cyber-text-muted transition-all whitespace-nowrap"
             >
               Clear All
             </button>
@@ -274,7 +274,7 @@ export default function FilterBuilder() {
         {/* Usage hint */}
         <div className="mt-8 cyber-card p-5">
           <h4 className="text-white font-semibold mb-3">How to Use This Filter</h4>
-          <ol className="space-y-2 text-sm text-cyber-text-muted">
+          <ol className="space-y-2 text-sm text-cyber-text">
             <li className="flex gap-2">
               <span className="text-cyber-cyan font-mono">1.</span>
               <span>Copy the generated filter string above.</span>

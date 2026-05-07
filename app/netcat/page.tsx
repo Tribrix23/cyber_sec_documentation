@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect } from 'react';
 import DocHeading from '@/components/base/DocHeading';
 import Callout from '@/components/base/Callout';
@@ -119,7 +120,7 @@ export default function NetcatPage() {
             Networking Swiss Army Knife
           </div>
           <DocHeading level={1}>Netcat (nc)</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             <strong className="text-white">Netcat</strong> is a versatile networking utility that reads and writes data across network connections using TCP or UDP.
             Often called the &quot;Swiss Army Knife&quot; of networking, it is used for port scanning, banner grabbing, file transfer, reverse shells, bind shells, and network debugging.
             Available as <InlineCode>nc</InlineCode>, <InlineCode>ncat</InlineCode> (Nmap version), and <InlineCode>netcat</InlineCode>.
@@ -141,7 +142,7 @@ export default function NetcatPage() {
                   <i className={`${uc.icon} text-lg`} />
                 </div>
                 <h4 className={`text-sm font-semibold ${uc.color}`}>{uc.name}</h4>
-                <p className="text-xs text-cyber-text-muted mt-1">{uc.desc}</p>
+                <p className="text-xs text-cyber-text mt-1">{uc.desc}</p>
               </button>
             ))}
           </div>
@@ -176,7 +177,7 @@ export default function NetcatPage() {
             {commonFlags.map((f) => (
               <div key={f.flag} className="flex items-start gap-3 p-3 rounded-lg bg-cyber-bg-card/50 border border-cyber-border">
                 <span className="font-mono text-xs px-2 py-1 rounded bg-cyber-bg border border-cyber-border text-cyber-cyan flex-shrink-0 whitespace-nowrap">{f.flag}</span>
-                <span className="text-sm text-cyber-text-muted">{f.desc}</span>
+                <span className="text-sm text-cyber-text">{f.desc}</span>
               </div>
             ))}
           </div>
@@ -185,7 +186,7 @@ export default function NetcatPage() {
         {/* Reverse Shell Payloads */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="shells">Reverse Shell Payloads</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             First, start a listener on your machine: <InlineCode>nc -lvp 4444</InlineCode>
             <br />
             Then execute one of these payloads on the target (replace ATTACKER_IP with your IP):
@@ -238,7 +239,7 @@ export default function NetcatPage() {
               <div className="flex flex-wrap gap-2">
                 {['connect', 'listen', 'scan'].map((m) => (
                   <button key={m} type="button" onClick={() => setBuilderMode(m)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap capitalize ${builderMode === m ? 'bg-cyber-cyan/10 border-cyber-cyan text-cyber-cyan' : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-cyan/50'}`}>
+                    className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap capitalize ${builderMode === m ? 'bg-cyber-cyan/10 border-cyber-cyan text-cyber-cyan' : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-cyan/50'}`}>
                     {m}
                   </button>
                 ))}
@@ -263,7 +264,7 @@ export default function NetcatPage() {
               <div className="flex gap-2">
                 {['tcp', 'udp'].map((p) => (
                   <button key={p} type="button" onClick={() => setBuilderProto(p)}
-                    className={`px-4 py-2 rounded-lg text-xs font-mono border transition-all whitespace-nowrap uppercase ${builderProto === p ? 'bg-cyber-cyan/10 border-cyber-cyan text-cyber-cyan' : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-cyan/50'}`}>
+                    className={`px-4 py-2 rounded-lg text-xs font-mono border transition-all whitespace-nowrap uppercase ${builderProto === p ? 'bg-cyber-cyan/10 border-cyber-cyan text-cyber-cyan' : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-cyan/50'}`}>
                     {p}
                   </button>
                 ))}
@@ -282,7 +283,7 @@ export default function NetcatPage() {
               <div className="flex flex-wrap gap-2">
                 {['-n', '-w 3', '-k'].map((f) => (
                   <button key={f} type="button" onClick={() => toggleFlag(f)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${builderFlags.includes(f) ? 'bg-cyber-cyan/10 border-cyber-cyan text-cyber-cyan' : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-cyan/50'}`}>
+                    className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${builderFlags.includes(f) ? 'bg-cyber-cyan/10 border-cyber-cyan text-cyber-cyan' : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-cyan/50'}`}>
                     {f}
                   </button>
                 ))}

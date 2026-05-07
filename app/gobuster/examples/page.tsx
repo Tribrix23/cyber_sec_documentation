@@ -111,7 +111,7 @@ export default function GobusterExamplesPage() {
             Gobuster Section 9 of 13
           </div>
           <DocHeading level={1}>Usage Examples</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Real-world Gobuster commands organized by mode. Each example includes the command, a detailed explanation, and guidance on when to use it.
           </p>
         </motion.div>
@@ -124,7 +124,7 @@ export default function GobusterExamplesPage() {
                 <div key={i} className="cyber-card p-5">
                   <h3 className="text-sm font-semibold text-white mb-2">{ex.title}</h3>
                   <CodeBlock code={ex.cmd} />
-                  <p className="text-xs text-cyber-text-muted leading-relaxed mt-3">{ex.desc}</p>
+                  <p className="text-xs text-cyber-text leading-relaxed mt-3">{ex.desc}</p>
                 </div>
               ))}
             </div>
@@ -133,14 +133,14 @@ export default function GobusterExamplesPage() {
 
         <motion.section className="mt-12 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <Callout type="danger">
-            All examples assume you have <strong className="text-white">written authorization</strong> to test the target. Never run brute-force tools against networks or applications you do not own without explicit permission.
+                         All examples assume you have <strong className="text-cyber-cyan">written authorization</strong> to test the target. Never run brute-force tools against networks or applications you do not own without explicit permission.
           </Callout>
 
           <div className="mt-8 flex gap-3">
             <a href="/gobuster/command-builder" className="px-5 py-2.5 rounded-lg bg-cyber-red text-white text-sm font-semibold hover:bg-cyber-red/80 transition-all whitespace-nowrap">
               Next: Command Builder <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/gobuster/installation" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
+            <a href="/gobuster/installation" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

@@ -161,8 +161,8 @@ export default function JohnTheRipperPage() {
             Password Cracker
           </div>
           <DocHeading level={1}>John the Ripper</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
-            <strong className="text-white">John the Ripper (JtR)</strong> is an open-source password cracking tool originally developed by Alexander Peslyak (Solar Designer).
+          <p className="text-cyber-text leading-relaxed mt-3">
+             <strong className="text-cyber-cyan">John the Ripper (JtR)</strong> is an open-source password cracking tool originally developed by Alexander Peslyak (Solar Designer).
             It supports hundreds of hash and cipher types, including Unix crypts, Windows NTLM, Office documents, PDFs, archives, and more.
             It is the standard tool for password auditing and CTF challenges.
           </p>
@@ -171,7 +171,7 @@ export default function JohnTheRipperPage() {
         {/* Overview */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="overview">What is John the Ripper</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             John combines several cracking modes, an efficient wordlist-based attack engine, and support for multiple CPUs/GPUs (via OpenCL).
             Its rule engine can mutate wordlists with thousands of transformations like appending numbers, leet speak, and case changes.
           </p>
@@ -184,7 +184,7 @@ export default function JohnTheRipperPage() {
               'GPU acceleration via OpenCL',
               'Session save/restore functionality',
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2.5 text-sm text-cyber-text-muted">
+              <div key={i} className="flex items-center gap-2.5 text-sm text-cyber-text">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyber-cyan flex-shrink-0" />
                 {item}
               </div>
@@ -221,7 +221,7 @@ export default function JohnTheRipperPage() {
         {/* Cracking Modes */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="modes">Cracking Modes</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             John supports four main cracking modes. Each serves a different purpose and should be used at the right stage of your attack.
           </p>
           <div className="mt-5 space-y-3">
@@ -238,7 +238,7 @@ export default function JohnTheRipperPage() {
                   </span>
                   <div className="flex-1">
                     <h4 className="text-sm font-semibold text-white">{mode.name}</h4>
-                    <p className="text-xs text-cyber-text-muted mt-1">{mode.desc}</p>
+                    <p className="text-xs text-cyber-text mt-1">{mode.desc}</p>
                     {activeMode === mode.mode && (
                       <motion.div
                         initial={{ opacity: 0, height: 0 }}
@@ -265,14 +265,14 @@ export default function JohnTheRipperPage() {
         {/* Hash Formats */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="formats">Supported Hash Formats</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             John supports over 400 hash formats. You can list all supported formats with <InlineCode>john --list=formats</InlineCode>. Here are the most common:
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
             {hashFormats.map((h) => (
               <div key={h.format} className="flex items-start gap-2 p-3 rounded-lg bg-cyber-bg-card/50 border border-cyber-border">
                 <span className="font-mono text-xs px-1.5 py-0.5 rounded bg-cyber-bg border border-cyber-border text-cyber-green flex-shrink-0">{h.format}</span>
-                <span className="text-xs text-cyber-text-muted">{h.desc}</span>
+                <span className="text-xs text-cyber-text">{h.desc}</span>
               </div>
             ))}
           </div>
@@ -285,7 +285,7 @@ export default function JohnTheRipperPage() {
         {/* Rules */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="rules">Rules</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Rules transform wordlist entries by appending numbers, changing case, applying leet speak, and more.
             They massively increase your chances without needing a larger wordlist.
           </p>
@@ -293,7 +293,7 @@ export default function JohnTheRipperPage() {
             {rules.map((r) => (
               <div key={r.name} className="cyber-card p-4">
                 <h4 className="text-sm font-semibold text-white">{r.name}</h4>
-                <p className="text-xs text-cyber-text-muted mt-1">{r.desc}</p>
+                <p className="text-xs text-cyber-text mt-1">{r.desc}</p>
               </div>
             ))}
           </div>
@@ -309,7 +309,7 @@ export default function JohnTheRipperPage() {
         {/* Hash Extraction Tools */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="extraction">Hash Extraction Utilities</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Before cracking files, you need to extract their password hashes into a format John can understand. Jumbo John ships with many conversion tools:
           </p>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -318,7 +318,7 @@ export default function JohnTheRipperPage() {
                 <div className="flex items-center gap-2 mb-1.5">
                   <span className="font-mono text-xs px-2 py-0.5 rounded bg-cyber-bg border border-cyber-border text-cyber-cyan">{h.tool}</span>
                 </div>
-                <p className="text-xs text-cyber-text-muted mb-2">{h.desc}</p>
+                <p className="text-xs text-cyber-text mb-2">{h.desc}</p>
                 <code className="text-xs font-mono text-cyber-green break-all">{h.example}</code>
               </div>
             ))}
@@ -344,7 +344,7 @@ export default function JohnTheRipperPage() {
         {/* Interactive Command Builder */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="builder">Interactive Command Builder</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Configure your cracking session and copy the generated John command.
           </p>
 
@@ -361,7 +361,7 @@ export default function JohnTheRipperPage() {
                     className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap capitalize ${
                       builderMode === m
                         ? 'bg-cyber-cyan/10 border-cyber-cyan text-cyber-cyan'
-                        : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-cyan/50'
+                        : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-cyan/50'
                     }`}
                   >
                     {m}

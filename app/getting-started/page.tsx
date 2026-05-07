@@ -76,19 +76,19 @@ export default function GettingStarted() {
             Getting Started
           </div>
           <DocHeading level={1}>Cybersecurity Fundamentals</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
-            Welcome to <strong className="text-white">cybersec.devctr.com</strong> — your interactive learning platform for mastering essential offensive and defensive security tools. Before diving into tools, you need to understand the foundations.
-          </p>
+           <p className="text-cyber-text leading-relaxed mt-3 text-lg">
+             Welcome to <strong className="text-cyber-cyan">cybersec.devctr.com</strong> — your interactive learning platform for mastering essential offensive and defensive security tools. Before diving into tools, you need to understand the foundations.
+           </p>
         </motion.div>
 
         {/* Section 1: What is Cybersecurity */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2} id="what-is-cybersecurity">What is Cybersecurity</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks. These attacks are usually aimed at accessing, changing, or destroying sensitive information; extorting money from users; or interrupting normal business processes.
           </p>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
-            It encompasses multiple domains including network security, application security, information security, operational security, and disaster recovery. In this course we focus primarily on the <strong className="text-white">network and application layers</strong> where the tools you will learn operate.
+          <p className="text-cyber-text leading-relaxed mt-3">
+            It encompasses multiple domains including network security, application security, information security, operational security, and disaster recovery. In this course we focus primarily on the <strong className="text-cyber-cyan">network and application layers</strong> where the tools you will learn operate.
           </p>
           <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
@@ -97,7 +97,7 @@ export default function GettingStarted() {
               'Information Security — Data protection, encryption, DLP',
               'Operational Security — Procedures, policies, access control',
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2.5 text-sm text-cyber-text-muted">
+              <div key={i} className="flex items-center gap-2.5 text-sm text-cyber-text">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyber-cyan flex-shrink-0" />
                 {item}
               </div>
@@ -108,7 +108,7 @@ export default function GettingStarted() {
         {/* Section 2: The CIA Triad */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2} id="cia-triad">The CIA Triad</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             The CIA Triad is the foundational model for information security policy. Every security control exists to protect one or more of these three principles:
           </p>
 
@@ -120,7 +120,7 @@ export default function GettingStarted() {
                 </div>
                 <h4 className="text-white font-semibold">Confidentiality</h4>
               </div>
-              <p className="text-sm text-cyber-text-muted leading-relaxed">
+              <p className="text-sm text-cyber-text leading-relaxed">
                 Ensures that information is accessible only to those authorized to have access. Encryption, access controls, and authentication mechanisms enforce confidentiality.
               </p>
               <p className="text-xs text-cyber-text-dim mt-2 font-mono">
@@ -135,7 +135,7 @@ export default function GettingStarted() {
                 </div>
                 <h4 className="text-white font-semibold">Integrity</h4>
               </div>
-              <p className="text-sm text-cyber-text-muted leading-relaxed">
+              <p className="text-sm text-cyber-text leading-relaxed">
                 Ensures the accuracy and completeness of data. Integrity controls prevent unauthorized modification, corruption, or deletion of information.
               </p>
               <p className="text-xs text-cyber-text-dim mt-2 font-mono">
@@ -150,7 +150,7 @@ export default function GettingStarted() {
                 </div>
                 <h4 className="text-white font-semibold">Availability</h4>
               </div>
-              <p className="text-sm text-cyber-text-muted leading-relaxed">
+              <p className="text-sm text-cyber-text leading-relaxed">
                 Ensures that authorized users can access systems and data when needed. Redundancy, load balancing, and DDoS protection maintain availability.
               </p>
               <p className="text-xs text-cyber-text-dim mt-2 font-mono">
@@ -160,19 +160,19 @@ export default function GettingStarted() {
           </div>
 
           <Callout type="info" className="mt-5">
-            Beyond the CIA Triad, modern security also considers <strong className="text-white">Non-repudiation</strong> (proof of action), <strong className="text-white">Authentication</strong> (proving identity), and <strong className="text-white">Authorization</strong> (permission to act).
+            Beyond the CIA Triad, modern security also considers <strong className="text-cyber-cyan">Non-repudiation</strong> (proof of action), <strong className="text-cyber-cyan">Authentication</strong> (proving identity), and <strong className="text-cyber-cyan">Authorization</strong> (permission to act).
           </Callout>
         </motion.section>
 
         {/* Section 3: Networking Prerequisite */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2} id="networking-prerequisite">Networking Prerequisite</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             You cannot secure what you do not understand. Every tool in this course operates at the network layer or above. You must understand how data moves across networks before you can analyze, scan, or exploit it.
           </p>
 
           <DocHeading level={3} id="osi-model">The OSI Model</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             The Open Systems Interconnection (OSI) model is a conceptual framework that standardizes network communication into seven layers. Every protocol and device operates at one or more of these layers.
           </p>
 
@@ -194,7 +194,7 @@ export default function GettingStarted() {
                       {layer.proto}
                     </span>
                   </div>
-                  <p className="text-xs text-cyber-text-muted mt-1">{layer.desc}</p>
+                  <p className="text-xs text-cyber-text mt-1">{layer.desc}</p>
                   {activeLayer === layer.num && (
                     <motion.p
                       initial={{ opacity: 0, height: 0 }}
@@ -218,7 +218,7 @@ export default function GettingStarted() {
                 </div>
                 <h4 className="text-white font-semibold">TCP (Transmission Control Protocol)</h4>
               </div>
-              <ul className="space-y-2 text-sm text-cyber-text-muted">
+              <ul className="space-y-2 text-sm text-cyber-text">
                 <li className="flex gap-2"><span className="text-cyber-green">+</span> Connection-oriented (three-way handshake)</li>
                 <li className="flex gap-2"><span className="text-cyber-green">+</span> Reliable delivery with acknowledgments</li>
                 <li className="flex gap-2"><span className="text-cyber-green">+</span> Ordered data delivery</li>
@@ -233,7 +233,7 @@ export default function GettingStarted() {
                 </div>
                 <h4 className="text-white font-semibold">UDP (User Datagram Protocol)</h4>
               </div>
-              <ul className="space-y-2 text-sm text-cyber-text-muted">
+              <ul className="space-y-2 text-sm text-cyber-text">
                 <li className="flex gap-2"><span className="text-cyber-green">+</span> Connectionless — no handshake</li>
                 <li className="flex gap-2"><span className="text-cyber-green">+</span> Low overhead, fast transmission</li>
                 <li className="flex gap-2"><span className="text-cyber-green">+</span> Supports multicast and broadcast</li>
@@ -244,7 +244,7 @@ export default function GettingStarted() {
           </div>
 
           <DocHeading level={3} id="ports-protocols">Common Ports &amp; Protocols</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Ports are numeric identifiers (0-65535) that distinguish different services on a single host. The first 1024 are "well-known" and reserved by IANA.
           </p>
           <div className="mt-4 overflow-x-auto">
@@ -260,8 +260,8 @@ export default function GettingStarted() {
                 {commonPorts.map((p) => (
                   <tr key={p.port} className="hover:bg-cyber-bg-card/50 transition-colors">
                     <td className="px-4 py-2.5 font-mono text-cyber-cyan">{p.port}</td>
-                    <td className="px-4 py-2.5 text-cyber-text-muted">{p.proto}</td>
-                    <td className="px-4 py-2.5 text-cyber-text-muted">{p.service}</td>
+                    <td className="px-4 py-2.5 text-cyber-text">{p.proto}</td>
+                    <td className="px-4 py-2.5 text-cyber-text">{p.service}</td>
                   </tr>
                 ))}
               </tbody>
@@ -269,13 +269,13 @@ export default function GettingStarted() {
           </div>
 
           <DocHeading level={3} id="ip-subnet">IP Addressing &amp; Subnetting</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             An IPv4 address is a 32-bit number divided into four octets. Subnetting splits a network into smaller segments using a subnet mask.
           </p>
           <div className="mt-4 space-y-3">
             <div className="cyber-card p-4">
               <h4 className="text-sm font-semibold text-white mb-2">CIDR Notation</h4>
-              <p className="text-sm text-cyber-text-muted">
+              <p className="text-sm text-cyber-text">
                 CIDR (Classless Inter-Domain Routing) expresses networks as <InlineCode>IP/prefix</InlineCode>. For example, <InlineCode>192.168.1.0/24</InlineCode> means the first 24 bits are the network portion, leaving 8 bits for hosts (256 addresses).
               </p>
               <CodeBlock code={`# Common CIDR ranges
@@ -287,7 +287,7 @@ export default function GettingStarted() {
             </div>
             <div className="cyber-card p-4">
               <h4 className="text-sm font-semibold text-white mb-2">Private IP Ranges (RFC 1918)</h4>
-              <p className="text-sm text-cyber-text-muted">
+              <p className="text-sm text-cyber-text">
                 These addresses are not routable on the public internet and are used inside local networks:
               </p>
               <CodeBlock code={`10.0.0.0    - 10.255.255.255    (10/8)
@@ -300,7 +300,7 @@ export default function GettingStarted() {
         {/* Section 4: Common Terminology */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2} id="terminology">Essential Terminology</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Every field has its vocabulary. Understanding these terms is essential before reading security reports, CVEs, or tool documentation.
           </p>
           <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -320,7 +320,7 @@ export default function GettingStarted() {
                     <AnimatePresence>
                       {activeTerm === i && (
                         <motion.p
-                          className="text-xs text-cyber-text-muted mt-2 leading-relaxed"
+                          className="text-xs text-cyber-text mt-2 leading-relaxed"
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: 'auto' }}
                           exit={{ opacity: 0, height: 0 }}
@@ -340,7 +340,7 @@ export default function GettingStarted() {
         {/* Section 5: The Kill Chain */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2} id="kill-chain">The Cyber Kill Chain</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Developed by Lockheed Martin, the Cyber Kill Chain describes the stages of a typical cyber intrusion. Defenders try to break the chain at any stage; attackers try to advance through it.
           </p>
 
@@ -356,20 +356,20 @@ export default function GettingStarted() {
             ].map((s, i) => (
               <div key={i} className={`cyber-card p-4 border-l-[3px] ${s.color}`}>
                 <h4 className="text-sm font-semibold text-white mb-1">{s.stage}</h4>
-                <p className="text-xs text-cyber-text-muted leading-relaxed">{s.desc}</p>
+                <p className="text-xs text-cyber-text leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
 
           <Callout type="info" className="mt-4">
-            Tools in this course map to specific kill chain stages: <strong className="text-white">Nmap</strong> = Reconnaissance, <strong className="text-white">Metasploit</strong> = Exploitation &amp; Installation, <strong className="text-white">Netcat</strong> = C2, <strong className="text-white">Wireshark</strong> = Detection across all stages.
+            Tools in this course map to specific kill chain stages: <strong className="text-cyber-cyan">Nmap</strong> = Reconnaissance, <strong className="text-cyber-cyan">Metasploit</strong> = Exploitation &amp; Installation, <strong className="text-cyber-cyan">Netcat</strong> = C2, <strong className="text-cyber-cyan">Wireshark</strong> = Detection across all stages.
           </Callout>
         </motion.section>
 
         {/* Section 6: Course Structure */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2} id="course-structure">How This Course Works</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Each tool module follows a consistent learning path designed to take you from zero knowledge to hands-on proficiency. Every module contains:
           </p>
 
@@ -386,7 +386,7 @@ export default function GettingStarted() {
                 </div>
                 <span className="text-[10px] font-mono text-cyber-text-dim">{s.step}</span>
                 <h4 className="text-sm font-semibold text-white mt-1">{s.title}</h4>
-                <p className="text-xs text-cyber-text-muted mt-1.5">{s.desc}</p>
+                <p className="text-xs text-cyber-text mt-1.5">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -399,7 +399,7 @@ export default function GettingStarted() {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-white">{mod.name}</h4>
-                  <p className="text-xs text-cyber-text-muted mt-1">{mod.desc}</p>
+                  <p className="text-xs text-cyber-text mt-1">{mod.desc}</p>
                 </div>
               </div>
             ))}
@@ -412,7 +412,7 @@ export default function GettingStarted() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyber-cyan/5 rounded-full blur-[100px]" />
             <div className="relative z-10">
               <h3 className="text-xl font-bold text-white">Ready to Begin?</h3>
-              <p className="mt-2 text-cyber-text-muted max-w-lg mx-auto">
+              <p className="mt-2 text-cyber-text max-w-lg mx-auto">
                 Start with the Wireshark module or jump directly into any tool. Each module is self-contained and includes interactive builders, quizzes, and labs.
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-3">

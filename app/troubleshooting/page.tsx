@@ -36,7 +36,7 @@ export default function Troubleshooting() {
   return (
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-4xl">
         <DocHeading level={1}>Troubleshooting</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed text-lg">
+        <p className="text-cyber-text leading-relaxed text-lg">
           Common issues, solutions, and performance tips when working with Wireshark in production environments.
         </p>
 
@@ -50,7 +50,7 @@ export default function Troubleshooting() {
               </div>
               <h4 className="text-white font-semibold">Reduce Capture Load</h4>
             </div>
-            <ul className="space-y-1.5 text-sm text-cyber-text-muted">
+            <ul className="space-y-1.5 text-sm text-cyber-text">
               <li>Use capture filters (BPF) to limit what enters the buffer</li>
               <li>Disable name resolution: <InlineCode>-n</InlineCode> flag or Preferences</li>
               <li>Use dumpcap instead of Wireshark GUI for long captures</li>
@@ -65,7 +65,7 @@ export default function Troubleshooting() {
               </div>
               <h4 className="text-white font-semibold">Disk & Memory</h4>
             </div>
-            <ul className="space-y-1.5 text-sm text-cyber-text-muted">
+            <ul className="space-y-1.5 text-sm text-cyber-text">
               <li>Write captures to fast SSDs, not network drives</li>
               <li>Use ring buffers to limit total file count and size</li>
               <li>Increase Wireshark memory limits for large captures</li>
@@ -80,7 +80,7 @@ export default function Troubleshooting() {
               </div>
               <h4 className="text-white font-semibold">Display Speed</h4>
             </div>
-            <ul className="space-y-1.5 text-sm text-cyber-text-muted">
+            <ul className="space-y-1.5 text-sm text-cyber-text">
               <li>Use display filters to reduce visible packets</li>
               <li>Disable unnecessary columns in the packet list</li>
               <li>Turn off coloring rules if they slow rendering</li>
@@ -119,7 +119,7 @@ editcap -c 50000 huge.pcap chunk.pcap`}
                 </div>
                 <div>
                   <h4 className="text-white font-semibold text-sm">{faq.q}</h4>
-                  <p className="text-sm text-cyber-text-muted mt-2 leading-relaxed">{faq.a}</p>
+                  <p className="text-sm text-cyber-text mt-2 leading-relaxed">{faq.a}</p>
                 </div>
               </div>
             </div>

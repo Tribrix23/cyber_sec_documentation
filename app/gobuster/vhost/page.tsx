@@ -24,17 +24,17 @@ export default function GobusterVhostPage() {
             Gobuster Section 3 of 13
           </div>
           <DocHeading level={1}>Virtual Host Bruteforce</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
-            The <strong className="text-white">vhost</strong> mode tests different <InlineCode>Host</InlineCode> HTTP headers against a target IP to discover virtual hosts configured on shared hosting, load balancers, and reverse proxies.
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
+             The <strong className="text-cyber-cyan">vhost</strong> mode tests different <InlineCode>Host</InlineCode> HTTP headers against a target IP to discover virtual hosts configured on shared hosting, load balancers, and reverse proxies.
           </p>
         </motion.div>
 
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>What are Virtual Hosts</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Virtual hosting allows multiple websites to share a single IP address. The web server (Apache, Nginx, etc.) decides which site to serve based on the <InlineCode>Host</InlineCode> header in the HTTP request. When you visit <InlineCode>example.com</InlineCode>, your browser sends <InlineCode>Host: example.com</InlineCode>. If you send <InlineCode>Host: admin.example.com</InlineCode> to the same IP, you might get a completely different website.
           </p>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             This is extremely common in cloud environments, shared hosting, and CDNs. A single load balancer might route traffic for dozens of different domains and subdomains. Virtual host enumeration helps you discover these hidden websites that share the same infrastructure.
           </p>
 
@@ -51,7 +51,7 @@ export default function GobusterVhostPage() {
                   <span className="text-xs font-bold text-cyber-red font-mono flex-shrink-0">{s.step.split('.')[0]}</span>
                   <div>
                     <span className="text-xs font-semibold text-white">{s.step.split('. ')[1]}</span>
-                    <p className="text-xs text-cyber-text-muted mt-1">{s.desc}</p>
+                    <p className="text-xs text-cyber-text mt-1">{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -65,22 +65,22 @@ export default function GobusterVhostPage() {
             <div>
               <h3 className="text-sm font-semibold text-white mb-2">Basic Virtual Host Scan</h3>
               <CodeBlock code="gobuster vhost -u http://10.0.0.1/ -w /usr/share/wordlists/vhosts.txt" />
-              <p className="text-xs text-cyber-text-muted mt-2">Tests each word from vhosts.txt as a Host header against 10.0.0.1.</p>
+              <p className="text-xs text-cyber-text mt-2">Tests each word from vhosts.txt as a Host header against 10.0.0.1.</p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-white mb-2">With Automatic Domain Appending</h3>
               <CodeBlock code="gobuster vhost -u http://10.0.0.1/ -w /usr/share/wordlists/common.txt --append-domain -d example.com" />
-              <p className="text-xs text-cyber-text-muted mt-2">The --append-domain flag adds .example.com to each wordlist entry automatically.</p>
+              <p className="text-xs text-cyber-text mt-2">The --append-domain flag adds .example.com to each wordlist entry automatically.</p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-white mb-2">Higher Thread Count</h3>
               <CodeBlock code="gobuster vhost -u http://10.0.0.1/ -w vhosts.txt -t 50" />
-              <p className="text-xs text-cyber-text-muted mt-2">Increases parallelism for faster scanning against responsive targets.</p>
+              <p className="text-xs text-cyber-text mt-2">Increases parallelism for faster scanning against responsive targets.</p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-white mb-2">Save Results</h3>
               <CodeBlock code="gobuster vhost -u http://10.0.0.1/ -w vhosts.txt -o vhosts-found.txt" />
-              <p className="text-xs text-cyber-text-muted mt-2">Saves discovered virtual hosts to a file for further investigation.</p>
+              <p className="text-xs text-cyber-text mt-2">Saves discovered virtual hosts to a file for further investigation.</p>
             </div>
           </div>
         </motion.section>
@@ -103,7 +103,7 @@ export default function GobusterVhostPage() {
             <a href="/gobuster/s3" className="px-5 py-2.5 rounded-lg bg-cyber-red text-white text-sm font-semibold hover:bg-cyber-red/80 transition-all whitespace-nowrap">
               Next: S3 Buckets <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/gobuster/dns" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
+            <a href="/gobuster/dns" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

@@ -48,7 +48,7 @@ export default function CommandLine() {
   return (
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-4xl">
         <DocHeading level={1}>Command Line Tools</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed text-lg">
+        <p className="text-cyber-text leading-relaxed text-lg">
           Wireshark includes powerful command-line utilities: <InlineCode>tshark</InlineCode> for capture and analysis, <InlineCode>dumpcap</InlineCode> for lightweight capture, and <InlineCode>editcap</InlineCode> for manipulating capture files.
         </p>
 
@@ -57,7 +57,7 @@ export default function CommandLine() {
         </Callout>
 
         <DocHeading level={2} id="tshark">tshark — The CLI Wireshark</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           tshark is the terminal version of Wireshark. It supports the same display filters, dissectors, and output formats.
         </p>
 
@@ -73,7 +73,7 @@ export default function CommandLine() {
               {tsharkOpts.map((opt) => (
                 <tr key={opt.flag} className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                   <td className="px-4 py-3 font-mono text-cyber-text whitespace-nowrap">{opt.flag}</td>
-                  <td className="px-4 py-3 text-cyber-text-muted">{opt.desc}</td>
+                  <td className="px-4 py-3 text-cyber-text">{opt.desc}</td>
                 </tr>
               ))}
             </tbody>
@@ -107,7 +107,7 @@ tshark -i eth0 -f "udp port 53" -l`}
         />
 
         <DocHeading level={2} id="dumpcap">dumpcap — Lightweight Capture</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           dumpcap is a minimal capture tool without dissection capabilities. It is faster and uses less memory than tshark, making it ideal for long-running captures.
         </p>
 
@@ -123,7 +123,7 @@ tshark -i eth0 -f "udp port 53" -l`}
               {dumpcapOpts.map((opt) => (
                 <tr key={opt.flag} className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                   <td className="px-4 py-3 font-mono text-cyber-text whitespace-nowrap">{opt.flag}</td>
-                  <td className="px-4 py-3 text-cyber-text-muted">{opt.desc}</td>
+                  <td className="px-4 py-3 text-cyber-text">{opt.desc}</td>
                 </tr>
               ))}
             </tbody>
@@ -147,7 +147,7 @@ dumpcap -D`}
         />
 
         <DocHeading level={2} id="editcap">editcap — File Manipulation</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           editcap manipulates pcap and pcapng files: split, merge, time-shift, deduplicate, and convert formats.
         </p>
 
@@ -163,7 +163,7 @@ dumpcap -D`}
               {editcapOpts.map((opt) => (
                 <tr key={opt.flag} className="bg-cyber-bg-card hover:bg-cyber-bg-hover transition-colors">
                   <td className="px-4 py-3 font-mono text-cyber-text whitespace-nowrap">{opt.flag}</td>
-                  <td className="px-4 py-3 text-cyber-text-muted">{opt.desc}</td>
+                  <td className="px-4 py-3 text-cyber-text">{opt.desc}</td>
                 </tr>
               ))}
             </tbody>
@@ -193,7 +193,7 @@ editcap -t 7200 capture.pcap shifted.pcap`}
         />
 
         <DocHeading level={2} id="mergecap">mergecap — Combine Files</DocHeading>
-        <p className="text-cyber-text-muted leading-relaxed">
+        <p className="text-cyber-text leading-relaxed">
           mergecap combines multiple capture files into one, sorting packets by timestamp.
         </p>
         <CodeBlock

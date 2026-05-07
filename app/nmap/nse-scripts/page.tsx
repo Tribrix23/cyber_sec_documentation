@@ -196,15 +196,15 @@ export default function NmapNseScriptsPage() {
             Nmap Section 7 of 13
           </div>
           <DocHeading level={1}>Nmap Scripting Engine (NSE)</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
-            The <strong className="text-white">Nmap Scripting Engine (NSE)</strong> is one of Nmap's most powerful features. It allows users to write and execute Lua scripts that interact with target services for vulnerability detection, service enumeration, brute forcing, and custom reconnaissance tasks. Hundreds of scripts ship with Nmap by default.
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
+                         The <strong className="text-cyber-cyan">Nmap Scripting Engine (NSE)</strong> is one of Nmap's most powerful features. It allows users to write and execute Lua scripts that interact with target services for vulnerability detection, service enumeration, brute forcing, and custom reconnaissance tasks. Hundreds of scripts ship with Nmap by default.
           </p>
         </motion.div>
 
         {/* What is NSE */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>What is NSE</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             NSE transforms Nmap from a port scanner into a full reconnaissance and vulnerability assessment platform. Scripts are written in Lua — a lightweight, embeddable scripting language — and can perform virtually any network interaction you can imagine.
           </p>
           <div className="mt-4 space-y-3">
@@ -217,7 +217,7 @@ export default function NmapNseScriptsPage() {
             {scriptPhases.map((sp) => (
               <div key={sp.phase} className="cyber-card p-4">
                 <h3 className="text-sm font-semibold text-cyber-cyan mb-1">{sp.phase}</h3>
-                <p className="text-xs text-cyber-text-muted leading-relaxed">{sp.desc}</p>
+                <p className="text-xs text-cyber-text leading-relaxed">{sp.desc}</p>
                 <p className="text-xs text-cyber-amber mt-2"><i className="ri-lightbulb-line mr-1" />{sp.example}</p>
               </div>
             ))}
@@ -227,7 +227,7 @@ export default function NmapNseScriptsPage() {
         {/* Categories */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Script Categories</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             NSE scripts are organized into 14 categories. Understanding these categories helps you choose the right scripts for your engagement and avoid accidentally running dangerous scripts on production systems.
           </p>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -236,7 +236,7 @@ export default function NmapNseScriptsPage() {
                 <div className="flex items-center gap-2 mb-2">
                   <span className="font-mono text-xs px-2 py-0.5 rounded bg-cyber-bg border border-cyber-border text-cyber-green">{cat.name}</span>
                 </div>
-                <p className="text-xs text-cyber-text-muted leading-relaxed">{cat.desc}</p>
+                <p className="text-xs text-cyber-text leading-relaxed">{cat.desc}</p>
                 <div className="mt-2 flex flex-wrap gap-1">
                   {cat.examples.map((ex) => (
                     <span key={ex} className="text-[10px] px-1.5 py-0.5 rounded bg-cyber-bg-card text-cyber-text-dim">{ex}</span>
@@ -250,7 +250,7 @@ export default function NmapNseScriptsPage() {
         {/* Popular Scripts */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Essential NSE Scripts</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             These twelve scripts are the ones you will use most often in real-world engagements. Each includes a full description, category, and usage example.
           </p>
           <div className="mt-6 space-y-4">
@@ -260,7 +260,7 @@ export default function NmapNseScriptsPage() {
                   <span className="font-mono text-xs px-2 py-0.5 rounded bg-cyber-bg border border-cyber-border text-cyber-green">{script.name}</span>
                   <span className="text-[10px] px-1.5 py-0.5 rounded bg-cyber-amber/10 text-cyber-amber border border-cyber-amber/20">{script.category}</span>
                 </div>
-                <p className="text-xs text-cyber-text-muted leading-relaxed">{script.desc}</p>
+                <p className="text-xs text-cyber-text leading-relaxed">{script.desc}</p>
                 <div className="mt-3 bg-cyber-bg border border-cyber-border rounded-lg p-3">
                   <span className="text-[10px] text-cyber-text-dim font-mono uppercase tracking-wider">Usage</span>
                   <code className="block text-xs font-mono text-cyber-green mt-1">{script.usage}</code>
@@ -277,7 +277,7 @@ export default function NmapNseScriptsPage() {
             <div>
               <h3 className="text-sm font-semibold text-white mb-2">Run default scripts</h3>
               <CodeBlock code="nmap -sC 10.0.0.1" />
-              <p className="text-xs text-cyber-text-muted mt-2">Equivalent to <InlineCode>--script=default</InlineCode>. Runs safe, non-intrusive scripts that provide useful information.</p>
+              <p className="text-xs text-cyber-text mt-2">Equivalent to <InlineCode>--script=default</InlineCode>. Runs safe, non-intrusive scripts that provide useful information.</p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-white mb-2">Run a specific script</h3>
@@ -305,7 +305,7 @@ export default function NmapNseScriptsPage() {
         {/* Writing Scripts */}
         <motion.section className="mt-12 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Writing Custom NSE Scripts</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             NSE scripts are written in Lua. They follow a standard structure with descriptive fields, rule functions that determine when to run, and action functions that perform the actual work. Custom scripts are stored in <InlineCode>/usr/share/nmap/scripts/</InlineCode> or <InlineCode>~/.nmap/scripts/</InlineCode>.
           </p>
           <div className="mt-4">
@@ -339,7 +339,7 @@ end`} language="lua" filename="custom-script.nse" />
             <a href="/nmap/installation" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-cyber-bg text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
               Next: Installation <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/nmap/flags" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+            <a href="/nmap/flags" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

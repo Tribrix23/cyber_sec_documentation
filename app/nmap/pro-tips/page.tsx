@@ -127,7 +127,7 @@ export default function NmapProTipsPage() {
             Nmap Section 11 of 13
           </div>
           <DocHeading level={1}>Pro Tips</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Expert guidance distilled from years of real-world Nmap usage. These tips cover stealth, accuracy, output management, and practical workflows that separate beginners from professionals.
           </p>
         </motion.div>
@@ -139,7 +139,7 @@ export default function NmapProTipsPage() {
             {tips.map((tip) => (
               <div key={tip.title}>
                 <Callout type={tip.type} title={tip.title}>
-                  <p className="text-xs text-cyber-text-muted leading-relaxed mb-2">{tip.content}</p>
+                  <p className="text-xs text-cyber-text leading-relaxed mb-2">{tip.content}</p>
                   <CodeBlock code={tip.command} />
                 </Callout>
               </div>
@@ -156,7 +156,7 @@ export default function NmapProTipsPage() {
                 <h3 className="text-sm font-semibold text-white mb-3">{cl.title}</h3>
                 <ul className="space-y-2">
                   {cl.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-cyber-text-muted">
+                    <li key={i} className="flex items-start gap-2 text-xs text-cyber-text">
                       <span className="w-4 h-4 rounded border border-cyber-border flex items-center justify-center flex-shrink-0 mt-0.5">
                         <i className="ri-check-line text-[8px] text-cyber-green" />
                       </span>
@@ -185,7 +185,7 @@ export default function NmapProTipsPage() {
                 'Respect rate limits and scan gently on production systems',
                 'Delete scan data when the engagement concludes per your agreement',
               ].map((rule, i) => (
-                <li key={i} className="flex items-start gap-2 text-xs text-cyber-text-muted">
+                <li key={i} className="flex items-start gap-2 text-xs text-cyber-text">
                   <span className="w-1 h-1 rounded-full bg-cyber-red mt-1.5 flex-shrink-0" />
                   {rule}
                 </li>
@@ -197,7 +197,7 @@ export default function NmapProTipsPage() {
             <a href="/nmap/quiz" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-cyber-bg text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
               Next: Quiz <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/nmap/command-builder" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+            <a href="/nmap/command-builder" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

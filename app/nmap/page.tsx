@@ -103,8 +103,8 @@ export default function NmapLandingPage() {
             Module 1 — Network Reconnaissance
           </div>
           <DocHeading level={1}>Nmap — Network Mapper</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
-            <strong className="text-white">Nmap</strong> is the world&apos;s most widely used network scanner. It discovers hosts, open ports, running services, operating systems, and vulnerabilities across any network — from a single machine to millions of addresses.
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
+             <strong className="text-cyber-cyan">Nmap</strong> is the world&apos;s most widely used network scanner. It discovers hosts, open ports, running services, operating systems, and vulnerabilities across any network — from a single machine to millions of addresses.
           </p>
         </motion.div>
 
@@ -123,7 +123,7 @@ export default function NmapLandingPage() {
                   </span>
                   <div>
                     <h3 className="text-sm font-semibold text-white group-hover:text-cyber-amber transition-colors">{s.title}</h3>
-                    <p className="text-xs text-cyber-text-muted mt-1 leading-relaxed">{s.desc}</p>
+                    <p className="text-xs text-cyber-text mt-1 leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
               </a>
@@ -134,7 +134,7 @@ export default function NmapLandingPage() {
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <h2 className="text-lg font-semibold text-white mb-4">Quick Start</h2>
           <div className="cyber-card p-5">
-            <p className="text-sm text-cyber-text-muted mb-3">
+            <p className="text-sm text-cyber-text mb-3">
               New to Nmap? Start with these three sections in order:
             </p>
             <ol className="space-y-2">
@@ -150,7 +150,7 @@ export default function NmapLandingPage() {
                     </span>
                     <div>
                       <span className="text-sm font-semibold text-white">{step.title}</span>
-                      <p className="text-xs text-cyber-text-muted">{step.desc}</p>
+                      <p className="text-xs text-cyber-text">{step.desc}</p>
                     </div>
                   </a>
                 </li>

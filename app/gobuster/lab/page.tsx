@@ -145,7 +145,7 @@ export default function GobusterLabPage() {
             Gobuster Section 13 of 13
           </div>
           <DocHeading level={1}>Gobuster Lab</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Apply everything you learned. Type the exact Gobuster command for each of these 15 scenarios. Use hints if you get stuck, but try to solve each task from memory first.
           </p>
         </motion.div>
@@ -157,7 +157,7 @@ export default function GobusterLabPage() {
         <motion.section className="mt-8 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <div className="cyber-card p-5">
             <h3 className="text-sm font-semibold text-white mb-2">How to Practice for Real</h3>
-            <p className="text-xs text-cyber-text-muted leading-relaxed">
+            <p className="text-xs text-cyber-text leading-relaxed">
               These exercises test your command syntax knowledge. For hands-on practice with real targets, set up a vulnerable web application like DVWA, Metasploitable, or a local Apache/Nginx server. Use scanme.nmap.org for safe HTTP testing.
             </p>
           </div>

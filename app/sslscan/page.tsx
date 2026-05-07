@@ -114,8 +114,8 @@ export default function SSLScanPage() {
             SSL/TLS Scanner
           </div>
           <DocHeading level={1}>SSLScan</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
-            <strong className="text-white">SSLScan</strong> is a fast SSL/TLS scanner that queries SSL/TLS services and reports the protocol versions, cipher suites, key exchange parameters, and certificate details.
+           <p className="text-cyber-text leading-relaxed mt-3">
+             <strong className="text-cyber-cyan">SSLScan</strong> is a fast SSL/TLS scanner that queries SSL/TLS services and reports the protocol versions, cipher suites, key exchange parameters, and certificate details.
             It also tests for known vulnerabilities like Heartbleed, POODLE, and BEAST.
             Essential for security audits and compliance checks.
           </p>
@@ -135,7 +135,7 @@ export default function SSLScanPage() {
               'Session renegotiation support',
               'STARTTLS support for email protocols',
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2.5 text-sm text-cyber-text-muted">
+              <div key={i} className="flex items-center gap-2.5 text-sm text-cyber-text">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyber-green flex-shrink-0" />
                 {item}
               </div>
@@ -169,14 +169,14 @@ export default function SSLScanPage() {
         {/* Cipher Strength */}
         <motion.section className="mt-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
           <DocHeading level={2} id="ciphers">Cipher Strength Ratings</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             SSLScan color-codes cipher suites by strength. Here is what each rating means:
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
             {cipherStrengths.map((c) => (
               <div key={c.strength} className="cyber-card p-4">
                 <span className={`text-sm font-bold ${c.color}`}>{c.strength}</span>
-                <p className="text-xs text-cyber-text-muted mt-1">{c.desc}</p>
+                <p className="text-xs text-cyber-text mt-1">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -192,7 +192,7 @@ export default function SSLScanPage() {
                   <span className="text-sm font-bold text-cyber-red">{v.name}</span>
                   <span className="text-[10px] px-1.5 py-0.5 rounded bg-cyber-red/10 text-cyber-red border border-cyber-red/20 font-mono">{v.cve}</span>
                 </div>
-                <p className="text-xs text-cyber-text-muted">{v.desc}</p>
+                <p className="text-xs text-cyber-text">{v.desc}</p>
                 <p className="text-xs text-cyber-amber mt-1.5">
                   <i className="ri-information-line mr-1" />
                   Detection: {v.flag}
@@ -209,7 +209,7 @@ export default function SSLScanPage() {
             {commonFlags.map((f) => (
               <div key={f.flag} className="flex items-start gap-3 p-3 rounded-lg bg-cyber-bg-card/50 border border-cyber-border">
                 <span className="font-mono text-xs px-2 py-1 rounded bg-cyber-bg border border-cyber-border text-cyber-cyan flex-shrink-0 whitespace-nowrap">{f.flag}</span>
-                <span className="text-sm text-cyber-text-muted">{f.desc}</span>
+                <span className="text-sm text-cyber-text">{f.desc}</span>
               </div>
             ))}
           </div>
@@ -238,7 +238,7 @@ export default function SSLScanPage() {
                   <i className="ri-check-double-line text-cyber-green" />
                   <h4 className="text-sm font-semibold text-white">{p.title}</h4>
                 </div>
-                <p className="text-xs text-cyber-text-muted">{p.desc}</p>
+                <p className="text-xs text-cyber-text">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -267,7 +267,7 @@ export default function SSLScanPage() {
               <div className="flex flex-wrap gap-2">
                 {['--heartbleed', '--no-failed', '--show-certificate', '--tls1_2', '--tls1_3', '--ssl3', '--ipv4', '--ipv6'].map((f) => (
                   <button key={f} type="button" onClick={() => toggleFlag(f)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${builderFlags.includes(f) ? 'bg-cyber-green/10 border-cyber-green text-cyber-green' : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-green/50'}`}>
+                    className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${builderFlags.includes(f) ? 'bg-cyber-green/10 border-cyber-green text-cyber-green' : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-green/50'}`}>
                     {f}
                   </button>
                 ))}
@@ -278,7 +278,7 @@ export default function SSLScanPage() {
               <div className="flex flex-wrap gap-2">
                 {['', 'smtp', 'ftp', 'imap', 'pop3'].map((p) => (
                   <button key={p || 'none'} type="button" onClick={() => setBuilderStarttls(p)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${builderStarttls === p ? 'bg-cyber-green/10 border-cyber-green text-cyber-green' : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-green/50'}`}>
+                    className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${builderStarttls === p ? 'bg-cyber-green/10 border-cyber-green text-cyber-green' : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-green/50'}`}>
                     {p || 'None'}
                   </button>
                 ))}

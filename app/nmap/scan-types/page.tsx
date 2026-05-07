@@ -230,7 +230,7 @@ export default function NmapScanTypesPage() {
             Nmap Section 3 of 13
           </div>
           <DocHeading level={1}>Scan Types</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Nmap offers thirteen distinct scan techniques, each designed for different network conditions, target types, and stealth requirements. Choosing the right scan type is one of the most important decisions in any Nmap engagement.
           </p>
         </motion.div>
@@ -238,7 +238,7 @@ export default function NmapScanTypesPage() {
         {/* Scan Type Cards */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Detailed Scan Type Reference</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Click any scan type to expand and read its full technical explanation, including how it works under the hood, when to use it, and common pitfalls.
           </p>
 
@@ -271,7 +271,7 @@ export default function NmapScanTypesPage() {
                         </span>
                       )}
                     </div>
-                    <p className="text-xs text-cyber-text-muted mt-1">{scan.summary}</p>
+                    <p className="text-xs text-cyber-text mt-1">{scan.summary}</p>
 
                     {activeScan === scan.flag && (
                       <motion.div
@@ -279,7 +279,7 @@ export default function NmapScanTypesPage() {
                         animate={{ opacity: 1, height: 'auto' }}
                         className="mt-4 space-y-3"
                       >
-                        <p className="text-xs text-cyber-text-muted leading-relaxed">{scan.detail}</p>
+                        <p className="text-xs text-cyber-text leading-relaxed">{scan.detail}</p>
                         <div className="bg-cyber-bg border border-cyber-border rounded-lg p-3">
                           <span className="text-[10px] text-cyber-text-dim font-mono uppercase tracking-wider">Example</span>
                           <code className="block text-xs font-mono text-cyber-green mt-1">{scan.example}</code>
@@ -300,7 +300,7 @@ export default function NmapScanTypesPage() {
         {/* Comparison Table */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>Scan Type Comparison</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Use this table to quickly compare scan types across speed, stealth, privilege requirements, and best use cases.
           </p>
           <div className="mt-6 overflow-x-auto">
@@ -318,10 +318,10 @@ export default function NmapScanTypesPage() {
                 {comparisonTable.map((row) => (
                   <tr key={row.scan} className="hover:bg-cyber-bg-card/50 transition-colors">
                     <td className="px-4 py-3 font-mono text-cyber-amber text-xs">{row.scan}</td>
-                    <td className="px-4 py-3 text-cyber-text-muted text-xs">{row.speed}</td>
-                    <td className="px-4 py-3 text-cyber-text-muted text-xs">{row.stealth}</td>
-                    <td className="px-4 py-3 text-cyber-text-muted text-xs">{row.needsRoot}</td>
-                    <td className="px-4 py-3 text-cyber-text-muted text-xs">{row.bestFor}</td>
+                    <td className="px-4 py-3 text-cyber-text text-xs">{row.speed}</td>
+                    <td className="px-4 py-3 text-cyber-text text-xs">{row.stealth}</td>
+                    <td className="px-4 py-3 text-cyber-text text-xs">{row.needsRoot}</td>
+                    <td className="px-4 py-3 text-cyber-text text-xs">{row.bestFor}</td>
                   </tr>
                 ))}
               </tbody>
@@ -332,7 +332,7 @@ export default function NmapScanTypesPage() {
         {/* TCP Handshake Deep Dive */}
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>The TCP Three-Way Handshake</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Understanding the TCP handshake is essential for understanding why SYN scans are stealthy and why Connect scans are not. This is the foundation of all TCP scanning.
           </p>
 
@@ -350,11 +350,11 @@ export default function NmapScanTypesPage() {
                     <div key={s.step} className="flex items-center gap-2 p-2 rounded bg-cyber-bg border border-cyber-border">
                       <span className="text-[10px] text-cyber-text-dim font-mono w-28 flex-shrink-0">{s.step}</span>
                       <span className="text-xs font-mono text-cyber-amber">{s.pkt}</span>
-                      <span className="text-[10px] text-cyber-text-muted">{s.desc}</span>
+                      <span className="text-[10px] text-cyber-text">{s.desc}</span>
                     </div>
                   ))}
                 </div>
-                <p className="text-xs text-cyber-text-muted mt-2">The full connection is logged by the OS and the application.</p>
+                <p className="text-xs text-cyber-text mt-2">The full connection is logged by the OS and the application.</p>
               </div>
               <div>
                 <h4 className="text-xs font-semibold text-cyber-text-dim mb-2 uppercase tracking-wider">SYN Scan (Stealth)</h4>
@@ -367,11 +367,11 @@ export default function NmapScanTypesPage() {
                     <div key={s.step} className="flex items-center gap-2 p-2 rounded bg-cyber-bg border border-cyber-border">
                       <span className="text-[10px] text-cyber-text-dim font-mono w-28 flex-shrink-0">{s.step}</span>
                       <span className="text-xs font-mono text-cyber-amber">{s.pkt}</span>
-                      <span className="text-[10px] text-cyber-text-muted">{s.desc}</span>
+                      <span className="text-[10px] text-cyber-text">{s.desc}</span>
                     </div>
                   ))}
                 </div>
-                <p className="text-xs text-cyber-text-muted mt-2">No full connection ever exists. Often not logged by applications.</p>
+                <p className="text-xs text-cyber-text mt-2">No full connection ever exists. Often not logged by applications.</p>
               </div>
             </div>
           </div>
@@ -414,7 +414,7 @@ export default function NmapScanTypesPage() {
             <a href="/nmap/port-states" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-cyber-bg text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
               Next: Port States <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/nmap/how-it-works" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+            <a href="/nmap/how-it-works" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

@@ -67,8 +67,8 @@ export default function GobusterDnsPage() {
             Gobuster Section 2 of 13
           </div>
           <DocHeading level={1}>DNS Subdomain Bruteforce</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
-            The <strong className="text-white">dns</strong> mode discovers subdomains by performing DNS resolution using a wordlist. It is one of the most important reconnaissance techniques for mapping an organization&apos;s full online presence.
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
+                         The <strong className="text-cyber-cyan">dns</strong> mode discovers subdomains by performing DNS resolution using a wordlist. It is one of the most important reconnaissance techniques for mapping an organization&apos;s full online presence.
           </p>
         </motion.div>
 
@@ -78,7 +78,7 @@ export default function GobusterDnsPage() {
             {concepts.map((c) => (
               <div key={c.title} className="cyber-card p-5">
                 <h3 className="text-sm font-semibold text-white mb-2">{c.title}</h3>
-                <p className="text-xs text-cyber-text-muted leading-relaxed">{c.desc}</p>
+                <p className="text-xs text-cyber-text leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -90,7 +90,7 @@ export default function GobusterDnsPage() {
             {commands.map((cmd) => (
               <div key={cmd.title} className="cyber-card p-5">
                 <h3 className="text-sm font-semibold text-white mb-2">{cmd.title}</h3>
-                <p className="text-xs text-cyber-text-muted leading-relaxed mb-3">{cmd.desc}</p>
+                <p className="text-xs text-cyber-text leading-relaxed mb-3">{cmd.desc}</p>
                 <CodeBlock code={cmd.cmd} />
               </div>
             ))}
@@ -115,7 +115,7 @@ export default function GobusterDnsPage() {
             <a href="/gobuster/vhost" className="px-5 py-2.5 rounded-lg bg-cyber-red text-white text-sm font-semibold hover:bg-cyber-red/80 transition-all whitespace-nowrap">
               Next: Virtual Hosts <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/gobuster/directory" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
+            <a href="/gobuster/directory" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

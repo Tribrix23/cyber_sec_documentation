@@ -99,7 +99,7 @@ export default function GobusterProTipsPage() {
             Gobuster Section 11 of 13
           </div>
           <DocHeading level={1}>Pro Tips</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Expert guidance for getting the most out of Gobuster while avoiding common mistakes. These tips cover speed, stealth, accuracy, and responsible disclosure.
           </p>
         </motion.div>
@@ -110,7 +110,7 @@ export default function GobusterProTipsPage() {
             {tips.map((tip) => (
               <div key={tip.title}>
                 <Callout type={tip.type} title={tip.title}>
-                  <p className="text-xs text-cyber-text-muted leading-relaxed mb-2">{tip.content}</p>
+                  <p className="text-xs text-cyber-text leading-relaxed mb-2">{tip.content}</p>
                   <CodeBlock code={tip.command} />
                 </Callout>
               </div>
@@ -133,7 +133,7 @@ export default function GobusterProTipsPage() {
                 'Report findings responsibly and do not exploit them without authorization',
                 'Delete scan data when the engagement concludes per your agreement',
               ].map((rule, i) => (
-                <li key={i} className="flex items-start gap-2 text-xs text-cyber-text-muted">
+                <li key={i} className="flex items-start gap-2 text-xs text-cyber-text">
                   <span className="w-1 h-1 rounded-full bg-cyber-red mt-1.5 flex-shrink-0" />
                   {rule}
                 </li>
@@ -145,7 +145,7 @@ export default function GobusterProTipsPage() {
             <a href="/gobuster/quiz" className="px-5 py-2.5 rounded-lg bg-cyber-red text-white text-sm font-semibold hover:bg-cyber-red/80 transition-all whitespace-nowrap">
               Next: Quiz <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/gobuster/command-builder" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
+            <a href="/gobuster/command-builder" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

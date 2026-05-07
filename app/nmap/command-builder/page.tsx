@@ -152,7 +152,7 @@ export default function NmapCommandBuilderPage() {
             Nmap Section 10 of 13
           </div>
           <DocHeading level={1}>Interactive Command Builder</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Toggle flags, configure options, and generate copy-ready Nmap commands. This tool helps you learn flag combinations and build complex commands visually.
           </p>
         </motion.div>
@@ -183,7 +183,7 @@ export default function NmapCommandBuilderPage() {
                     className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${
                       flags.includes(sf.value)
                         ? 'bg-cyber-amber/10 border-cyber-amber text-cyber-amber'
-                        : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-amber/50'
+                        : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-amber/50'
                     }`}
                   >
                     {sf.label}
@@ -204,7 +204,7 @@ export default function NmapCommandBuilderPage() {
                     className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${
                       flags.includes(tf.value)
                         ? 'bg-cyber-amber/10 border-cyber-amber text-cyber-amber'
-                        : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-amber/50'
+                        : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-amber/50'
                     }`}
                   >
                     {tf.label}
@@ -225,7 +225,7 @@ export default function NmapCommandBuilderPage() {
                     className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${
                       portOpt === po.value
                         ? 'bg-cyber-amber/10 border-cyber-amber text-cyber-amber'
-                        : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-amber/50'
+                        : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-amber/50'
                     }`}
                   >
                     {po.label}
@@ -271,7 +271,7 @@ export default function NmapCommandBuilderPage() {
                     className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${
                       output === oo.value
                         ? 'bg-cyber-amber/10 border-cyber-amber text-cyber-amber'
-                        : 'bg-cyber-bg border-cyber-border text-cyber-text-muted hover:border-cyber-amber/50'
+                        : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-amber/50'
                     }`}
                   >
                     {oo.label}
@@ -308,15 +308,15 @@ export default function NmapCommandBuilderPage() {
         </motion.section>
 
         <motion.section className="mt-8 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-          <Callout type="tip">
-            Try combining <strong className="text-white">-sS</strong>, <strong className="text-white">-sV</strong>, <strong className="text-white">-O</strong>, and <strong className="text-white">--script vuln</strong> for the most comprehensive single-target scan. Add <strong className="text-white">-T4</strong> for speed in lab environments.
+          <Callout type="tip" className='bg-green-400/40'>
+                         Try combining <strong className="text-cyber-cyan">-sS</strong>, <strong className="text-cyber-cyan">-sV</strong>, <strong className="text-cyber-cyan">-O</strong>, and <strong className="text-cyber-cyan">--script vuln</strong> for the most comprehensive single-target scan.              Add <strong className="text-cyber-cyan">-T4</strong> for speed in lab environments.
           </Callout>
 
           <div className="mt-8 flex gap-3">
             <a href="/nmap/pro-tips" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-cyber-bg text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
               Next: Pro Tips <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/nmap/examples" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+            <a href="/nmap/examples" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

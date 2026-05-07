@@ -81,7 +81,7 @@ export default function GobusterFlagsPage() {
             Gobuster Section 6 of 13
           </div>
           <DocHeading level={1}>Common Flags Reference</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Gobuster has a rich set of flags organized by mode. This reference covers every essential flag with a description and a working example you can copy and modify.
           </p>
         </motion.div>
@@ -97,7 +97,7 @@ export default function GobusterFlagsPage() {
                       {f.flag}
                     </code>
                     <div className="flex-1">
-                      <p className="text-sm text-cyber-text-muted">{f.desc}</p>
+                      <p className="text-sm text-cyber-text">{f.desc}</p>
                       <code className="block text-xs font-mono text-cyber-green mt-2">{f.example}</code>
                     </div>
                   </div>
@@ -116,7 +116,7 @@ export default function GobusterFlagsPage() {
             <a href="/gobuster/wordlists" className="px-5 py-2.5 rounded-lg bg-cyber-red text-white text-sm font-semibold hover:bg-cyber-red/80 transition-all whitespace-nowrap">
               Next: Wordlists <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/gobuster/fuzz" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
+            <a href="/gobuster/fuzz" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

@@ -231,7 +231,7 @@ export default function Home() {
                   Tools & Techniques
                 </h1>
 
-                <p className="mt-5 text-lg text-cyber-text-muted leading-relaxed max-w-xl">
+                <p className="mt-5 text-lg text-cyber-text leading-relaxed max-w-xl">
                   Comprehensive interactive documentation for 9 essential cybersecurity tools: Wireshark, Nmap, Gobuster, John the Ripper, Burp Suite, SQLMap, SSLScan, Netcat, and Metasploit.
                   Learn with command builders, live examples, hands-on quizzes, and lab exercises.
                 </p>
@@ -284,7 +284,7 @@ export default function Home() {
                     <div className="w-3 h-3 rounded-full bg-cyber-green" />
                     <span className="ml-2 text-cyber-text-dim">cybersec@devctr:~$</span>
                   </div>
-                  <div className="space-y-1 text-cyber-text-muted min-h-[220px]">
+                  <div className="space-y-1 text-cyber-text min-h-[220px]">
                     <p><span className="text-cyber-cyan">cybersec@devctr</span>:<span className="text-cyber-amber">~</span>$ {typedText}<span className="inline-block w-2 h-4 bg-cyber-cyan ml-0.5 animate-pulse" /></p>
                     <p className="text-cyber-text-dim mt-4"># Tool Overview</p>
                     <div className="grid grid-cols-2 gap-2 mt-2">
@@ -321,7 +321,7 @@ export default function Home() {
               DOCUMENTED TOOLS
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Nine Essential Tools</h2>
-            <p className="mt-3 text-cyber-text-muted max-w-2xl mx-auto">
+            <p className="mt-3 text-cyber-text max-w-2xl mx-auto">
               Every tool documented from installation basics to advanced techniques, with interactive command builders and real-world examples.
             </p>
           </motion.div>
@@ -359,7 +359,7 @@ export default function Home() {
                         {tool.tagline}
                       </span>
                     </div>
-                    <p className="mt-1.5 text-sm text-cyber-text-muted leading-relaxed">
+                    <p className="mt-1.5 text-sm text-cyber-text leading-relaxed">
                       {tool.description}
                     </p>
                     <div className="mt-3 flex flex-wrap gap-2">
@@ -398,7 +398,7 @@ export default function Home() {
                     INTERACTIVE
                   </span>
                   <h2 className="text-2xl md:text-3xl font-bold text-white">Command Builders & Quizzes</h2>
-                  <p className="mt-3 text-cyber-text-muted max-w-xl leading-relaxed">
+                  <p className="mt-3 text-cyber-text max-w-xl leading-relaxed">
                     Toggle flags, set targets, and generate ready-to-use commands for Nmap, Gobuster, John the Ripper, SQLMap, Netcat, SSLScan, and more.
                     Then test your knowledge with tool-specific quizzes and hands-on lab exercises.
                   </p>
@@ -463,7 +463,7 @@ export default function Home() {
                 QUICK ACCESS
               </span>
               <h2 className="text-2xl md:text-3xl font-bold text-white">Jump Right In</h2>
-              <p className="mt-3 text-cyber-text-muted leading-relaxed">
+              <p className="mt-3 text-cyber-text leading-relaxed">
                 Pick a topic and start learning immediately. Each guide includes real examples, interactive builders, and hands-on quizzes.
               </p>
             </div>
@@ -513,7 +513,7 @@ export default function Home() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyber-cyan/5 rounded-full blur-[100px]" />
             <div className="relative z-10">
               <h2 className="text-2xl md:text-3xl font-bold text-white">Start Your Cybersecurity Journey</h2>
-              <p className="mt-3 text-cyber-text-muted max-w-xl mx-auto">
+              <p className="mt-3 text-cyber-text max-w-xl mx-auto">
                 Learn the fundamentals, master 9 essential tools, test your knowledge with quizzes, and practice with hands-on lab exercises.
               </p>
               <button

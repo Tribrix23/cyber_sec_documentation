@@ -144,7 +144,7 @@ export default function NmapQuizPage() {
             Nmap Section 12 of 13
           </div>
           <DocHeading level={1}>Nmap Quiz</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Test your understanding of Nmap with 17 multiple-choice questions covering scan types, flags, port states, timing, NSE scripts, and practical usage. You need 80% to pass.
           </p>
         </motion.div>
@@ -158,7 +158,7 @@ export default function NmapQuizPage() {
             <a href="/nmap/lab" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-cyber-bg text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
               Next: Lab Exercises <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/nmap/pro-tips" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+            <a href="/nmap/pro-tips" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

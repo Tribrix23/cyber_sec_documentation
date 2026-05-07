@@ -57,17 +57,17 @@ export default function GobusterFuzzPage() {
             Gobuster Section 5 of 13
           </div>
           <DocHeading level={1}>Generic Fuzzing</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
-            The <strong className="text-white">fuzz</strong> mode is Gobuster&apos;s most flexible feature. It replaces the <InlineCode>FUZZ</InlineCode> keyword anywhere in an HTTP request with wordlist entries, enabling you to fuzz URLs, query parameters, headers, POST data, and more.
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
+                         The <strong className="text-cyber-cyan">fuzz</strong> mode is Gobuster&apos;s most flexible feature. It replaces the <InlineCode>FUZZ</InlineCode> keyword anywhere in an HTTP request with wordlist entries, enabling you to fuzz URLs, query parameters, headers, POST data, and more.
           </p>
         </motion.div>
 
         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2}>How Fuzzing Works</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             Unlike the dir mode which only appends words to a base URL, the fuzz mode lets you place the <InlineCode>FUZZ</InlineCode> keyword anywhere in the request. Gobuster replaces FUZZ with each wordlist entry and sends the modified request. This makes it incredibly versatile for testing APIs, form fields, authentication endpoints, and custom URL patterns.
           </p>
-          <p className="text-cyber-text-muted leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-3">
             You can use multiple FUZZ keywords (FUZZ1, FUZZ2, etc.) with separate wordlists for each. This allows combinatorial testing where you test every combination of values from multiple wordlists.
           </p>
 
@@ -82,7 +82,7 @@ export default function GobusterFuzzPage() {
             {fuzzExamples.map((ex) => (
               <div key={ex.title} className="cyber-card p-5">
                 <h3 className="text-sm font-semibold text-white mb-2">{ex.title}</h3>
-                <p className="text-xs text-cyber-text-muted leading-relaxed mb-3">{ex.desc}</p>
+                <p className="text-xs text-cyber-text leading-relaxed mb-3">{ex.desc}</p>
                 <CodeBlock code={ex.cmd} />
               </div>
             ))}
@@ -107,7 +107,7 @@ export default function GobusterFuzzPage() {
             <a href="/gobuster/flags" className="px-5 py-2.5 rounded-lg bg-cyber-red text-white text-sm font-semibold hover:bg-cyber-red/80 transition-all whitespace-nowrap">
               Next: Common Flags <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/gobuster/s3" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
+            <a href="/gobuster/s3" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>

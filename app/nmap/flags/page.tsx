@@ -118,7 +118,7 @@ export default function NmapFlagsPage() {
             Nmap Section 6 of 13
           </div>
           <DocHeading level={1}>Common Flags Reference</DocHeading>
-          <p className="text-cyber-text-muted leading-relaxed mt-3 text-lg">
+          <p className="text-cyber-text leading-relaxed mt-3 text-lg">
             Nmap has over 100 command-line flags. This reference organizes the most essential ones into seven categories, each with a description and a working example you can copy and modify.
           </p>
         </motion.div>
@@ -134,7 +134,7 @@ export default function NmapFlagsPage() {
                       {f.flag}
                     </code>
                     <div className="flex-1">
-                      <p className="text-sm text-cyber-text-muted">{f.desc}</p>
+                      <p className="text-sm text-cyber-text">{f.desc}</p>
                       <code className="block text-xs font-mono text-cyber-green mt-2">{f.example}</code>
                     </div>
                   </div>
@@ -153,7 +153,7 @@ export default function NmapFlagsPage() {
             <a href="/nmap/nse-scripts" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-cyber-bg text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
               Next: NSE Scripts <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/nmap/timing" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text-muted hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+            <a href="/nmap/timing" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
               <i className="ri-arrow-left-line mr-1" /> Back
             </a>
           </div>
