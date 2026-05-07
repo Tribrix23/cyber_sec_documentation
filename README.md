@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CyberSec Documentation
 
-## Getting Started
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)](https://vercel.com)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![CyberSec](https://img.shields.io/badge/CyberSec-050508?logo=security&logoColor=00d9ff)](https://cybersec.devctr.com)
 
-First, run the development server:
+Created by **John David L. Perez** — Interactive cybersecurity learning platform at [cybersec.devctr.com](https://cybersec.devctr.com)
+
+## Overview
+
+CyberSec Documentation is an interactive learning platform for cybersecurity professionals and students. Master 9 essential penetration testing tools through comprehensive documentation, command builders, hands-on labs, and knowledge quizzes.
+
+## Features
+
+- **Command Builders** — Toggle flags and generate ready-to-use commands for Nmap, Gobuster, John the Ripper, SQLMap, Netcat, SSLScan, and more
+- **Live Examples** — Real-world command examples with explanations
+- **Knowledge Quizzes** — Test your understanding with tool-specific quizzes (90+ questions)
+- **Hands-on Labs** — Practice with interactive lab exercises
+
+## Tools Covered
+
+| Tool | Tagline | Key Sections |
+|------|---------|--------------|
+| **Wireshark** | Network Protocol Analyzer | Capture Filters, Display Filters, Protocol Analysis, Tshark CLI |
+| **Nmap** | Network Scanner | Scan Types, NSE Scripts, Stealth Scans, Command Builder |
+| **Gobuster** | Directory & Subdomain Bruteforcer | Dir Mode, DNS Mode, Vhost Mode, S3 & Fuzz |
+| **John the Ripper** | Password Cracker | Single Mode, Wordlist, Incremental, Hash Extraction |
+| **Burp Suite** | Web App Security | Proxy, Repeater, Intruder, Scanner |
+| **SQLMap** | SQL Injection Tool | Techniques, Enumeration, Tamper Scripts, OS Shell |
+| **SSLScan** | SSL/TLS Scanner | Protocols, Ciphers, Certificates, Vulnerabilities |
+| **Netcat** | Networking Swiss Army Knife | Connect, Listen, Shells, Transfer |
+| **Metasploit** | Pentest Framework | Exploits, Payloads, Meterpreter, Database |
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org) 16 (App Router)
+- [React](https://react.dev) 19
+- [Tailwind CSS](https://tailwindcss.com) 4
+- [Framer Motion](https://www.framer.com/motion) — Animations
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the documentation.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Linting
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/
+├── nmap/          # 12 documentation pages + lab + quiz
+├── wireshark/     # Network analysis docs
+├── gobuster/      # Enumeration documentation
+├── john-the-ripper/
+├── burp-suite/
+├── sqlmap/
+├── sslscan/
+├── netcat/
+├── metasploit/
+components/
+└── base/          # Reusable UI components
+```
