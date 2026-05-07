@@ -1,5 +1,6 @@
 import './globals.css'
 import Sidebar from '@/components/Sidebar'
+import 'remixicon/fonts/remixicon.css'
 
 export const metadata = {
   title: 'CyberSec Docs',

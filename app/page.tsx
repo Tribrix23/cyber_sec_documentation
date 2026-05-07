@@ -277,7 +277,7 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
               >
-                <div className="code-block p-4 text-xs font-mono">
+                <div className="code-block p-4 text-xs font-mono rounded-lg">
                   <div className="flex items-center gap-2 mb-3 pb-3 border-b border-cyber-border">
                     <div className="w-3 h-3 rounded-full bg-cyber-red" />
                     <div className="w-3 h-3 rounded-full bg-cyber-amber" />

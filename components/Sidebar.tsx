@@ -21,7 +21,7 @@ const navSections: { title: string; items: NavItem[] }[] = [
   {
     title: 'WIRESHARK',
     items: [
-      { label: 'Wireshark Overview', path: '/wireshark', icon: 'ri-filter-3-line' },
+      { label: 'Wireshark Overview', path: '/wireshark', icon: 'ri-shield-check-line' },
       { label: 'Capture Filters', path: '/wireshark/capture-filters', icon: 'ri-filter-3-line' },
       { label: 'Display Filters', path: '/wireshark/display-filters', icon: 'ri-search-line' },
       { label: 'Filter Builder', path: '/wireshark/filter-builder', icon: 'ri-tools-line' },
