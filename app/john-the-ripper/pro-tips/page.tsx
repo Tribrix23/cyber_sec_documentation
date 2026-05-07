@@ -5,6 +5,7 @@ import Callout from '@/components/base/Callout';
 import CodeBlock from '@/components/base/Codeblock';
 import InlineCode from '@/components/base/InlineCode';
 import { motion } from 'framer-motion';
+import React from 'react';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -152,10 +153,10 @@ export default function JohnProTipsPage() {
                     if (j === 0) return part;
                     const [code, ...rest] = part.split('</InlineCode>');
                     return (
-                      <>
+                      <React.Fragment key={j}>
                         <InlineCode>{code}</InlineCode>
                         {rest.join('</InlineCode>')}
-                      </>
+                      </React.Fragment>
                     );
                   })}
                 </p>

@@ -123,7 +123,7 @@ export default function JohnWordlistModePage() {
             <CodeBlock code="crunch 8 8 -f /usr/share/crunch/charset.lst mixalpha-numeric -o candidates.txt" />
           </div>
           <Callout type="tip">
-            Preprocess rockyou.txt: remove duplicates with <InlineCode>sort -u</InlineCode>, filter to relevant length with <InlineCode>awk 'length&gt;=8 &amp;&amp; length&lt;=12'</InlineCode>.
+            {"Preprocess rockyou.txt: remove duplicates with sort -u, filter to relevant length with awk 'length>=8 && length<=12'"}
           </Callout>
         </div>
       </motion.section>

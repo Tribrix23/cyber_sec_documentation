@@ -1,6 +1,6 @@
 'use client'
 import { useRouter } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -131,6 +131,9 @@ export default function Sidebar() {
     navSections.map((s) => s.title)
   );
 
+  // Ref to store nav item DOM elements for scrolling
+  const navItemRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
+
   const toggleSection = (title: string) => {
     setExpandedSections((prev) =>
       prev.includes(title) ? prev.filter((t) => t !== title) : [...prev, title]
@@ -148,34 +151,71 @@ export default function Sidebar() {
     }))
     .filter((section) => section.items.length > 0);
 
+  // Close mobile menu on navigation
   useEffect(() => {
     setIsMobileOpen(false);
+  }, [pathname]);
+
+  // Auto-expand section containing active route on path change
+  useEffect(() => {
+    setExpandedSections((prev) => {
+      const activeSection = navSections.find((section) =>
+        section.items.some((item) => item.path === pathname)
+      );
+      if (activeSection && !prev.includes(activeSection.title)) {
+        return [...prev, activeSection.title];
+      }
+      return prev;
+    });
+  }, [pathname]);
+
+  // Auto-scroll to active nav item after navigation
+  useEffect(() => {
+    // Small delay to allow DOM to update after expansion
+    const timer = setTimeout(() => {
+      const activeElement = navItemRefs.current[pathname];
+      if (activeElement) {
+        activeElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+        });
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   const isActivePath = (path: string) => {
     return pathname === path;
   };
 
- const renderNavItem = (item: NavItem) => {
-     const active = isActivePath(item.path);
-     const classes = `flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors cursor-pointer ${
-       active
-         ? 'nav-active font-medium bg-cyber-cyan/15 text-cyber-cyan'
-         : 'text-cyber-text hover:text-cyber-cyan'
-     }`;
+  const isSectionActive = (sectionItems: NavItem[]) => {
+    return sectionItems.some((item) => isActivePath(item.path));
+  };
 
-     return (
-       <Link
-         href={item.path}
-         className={classes}
-       >
-         <span className="w-5 h-5 flex items-center justify-center shrink-0">
-           <i className={item.icon} />
-         </span>
-         <span className="truncate">{item.label}</span>
-       </Link>
-     );
-   };
+  const renderNavItem = (item: NavItem) => {
+    const active = isActivePath(item.path);
+    const classes = `flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors cursor-pointer ${
+      active
+        ? 'nav-active font-medium bg-cyber-cyan/15 text-cyber-cyan'
+        : 'text-cyber-text hover:text-cyber-cyan'
+    }`;
+
+    return (
+      <Link
+        href={item.path}
+        className={classes}
+        ref={(el) => {
+          navItemRefs.current[item.path] = el;
+        }}
+      >
+        <span className="w-5 h-5 flex items-center justify-center shrink-0">
+          <i className={item.icon} />
+        </span>
+        <span className="truncate">{item.label}</span>
+      </Link>
+    );
+  };
 
   return (
     <>
@@ -239,31 +279,45 @@ export default function Sidebar() {
 
         {/* Navigation */}
         <nav className="flex-1 overflow-y-auto px-3 pb-4">
-          {filteredSections.map((section) => (
-            <div key={section.title} className="mb-3">
-               <button
-                 type="button"
-                 onClick={() => toggleSection(section.title)}
-                 className="flex items-center justify-between w-full px-3 py-2 text-[11px] font-semibold tracking-wider text-cyber-text hover:text-cyber-cyan transition-colors"
-               >
-                <span>{section.title}</span>
-                <i
-                  className={`ri-arrow-down-s-line text-sm transition-transform ${
-                    expandedSections.includes(section.title) ? '' : '-rotate-90'
+          {filteredSections.map((section) => {
+            const sectionIsActive = isSectionActive(section.items);
+            const isExpanded = expandedSections.includes(section.title);
+            
+            return (
+              <div key={section.title} className="mb-3">
+                <button
+                  type="button"
+                  onClick={() => toggleSection(section.title)}
+                  className={`flex items-center justify-between w-full px-3 py-2 text-[11px] font-semibold tracking-wider transition-colors ${
+                    sectionIsActive
+                      ? 'text-cyber-cyan'
+                      : 'text-cyber-text hover:text-cyber-cyan'
                   }`}
-                />
-              </button>
-              {expandedSections.includes(section.title) && (
-                <ul className="mt-1 space-y-0.5">
-                  {section.items.map((item) => (
-                    <li key={item.path}>
-                      {renderNavItem(item)}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
+                >
+                  <span className="flex items-center gap-2">
+                    {sectionIsActive && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyber-cyan flex-shrink-0" />
+                    )}
+                    {section.title}
+                  </span>
+                  <i
+                    className={`ri-arrow-down-s-line text-sm transition-transform ${
+                      isExpanded ? '' : '-rotate-90'
+                    }`}
+                  />
+                </button>
+                {isExpanded && (
+                  <ul className="mt-1 space-y-0.5">
+                    {section.items.map((item) => (
+                      <li key={item.path}>
+                        {renderNavItem(item)}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            );
+          })}
         </nav>
 
         {/* Footer */}
