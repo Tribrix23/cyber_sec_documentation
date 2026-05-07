@@ -93,7 +93,21 @@ const navSections: { title: string; items: NavItem[] }[] = [
   {
     title: 'BURP SUITE',
     items: [
-      { label: 'Burp Suite Docs', path: '/burp-suite', icon: 'ri-bug-line' },
+      { label: 'Burp Suite Overview', path: '/burp-suite', icon: 'ri-bug-line' },
+      { label: 'Installation & Setup', path: '/burp-suite/installation', icon: 'ri-download-line' },
+      { label: 'Proxy', path: '/burp-suite/proxy', icon: 'ri-exchange-line' },
+      { label: 'Repeater', path: '/burp-suite/repeater', icon: 'ri-repeat-line' },
+      { label: 'Intruder', path: '/burp-suite/intruder', icon: 'ri-sword-line' },
+      { label: 'Scanner', path: '/burp-suite/scanner', icon: 'ri-scan-line' },
+      { label: 'Decoder', path: '/burp-suite/decoder', icon: 'ri-code-box-line' },
+      { label: 'Comparer', path: '/burp-suite/comparer', icon: 'ri-arrow-left-right-line' },
+      { label: 'Extensions', path: '/burp-suite/extensions', icon: 'ri-apps-line' },
+      { label: 'Testing Workflow', path: '/burp-suite/workflow', icon: 'ri-road-map-line' },
+      { label: 'Configuration Builder', path: '/burp-suite/command-builder', icon: 'ri-tools-line' },
+      { label: 'Examples', path: '/burp-suite/examples', icon: 'ri-file-list-line' },
+      { label: 'Pro Tips', path: '/burp-suite/pro-tips', icon: 'ri-lightbulb-line' },
+      { label: 'Burp Suite Quiz', path: '/burp-suite/quiz', icon: 'ri-questionnaire-line' },
+      { label: 'Burp Suite Lab', path: '/burp-suite/lab', icon: 'ri-flask-line' },
     ],
   },
   {
@@ -250,7 +264,7 @@ export default function Sidebar() {
             <img
               src="/icon.png"
               alt="CyberSec Documentation Logo"
-              className="object-contain flex"
+              className="object-contain"
               width={30}
               height={30}
             />

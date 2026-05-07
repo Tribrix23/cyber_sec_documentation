@@ -100,7 +100,7 @@ export default function NmapLandingPage() {
         <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.5 }}>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyber-amber/10 border border-cyber-amber/20 text-cyber-amber text-xs font-medium font-mono mb-4">
             <i className="ri-shield-check-line" />
-            Module — Network Reconnaissance
+            Network Reconnaissance
           </div>
           <DocHeading level={1}>Nmap — Network Mapper</DocHeading>
           <p className="text-cyber-text leading-relaxed mt-3 text-lg">

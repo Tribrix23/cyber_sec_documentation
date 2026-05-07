@@ -535,9 +535,11 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <div className="w-7 h-7 rounded overflow-hidden">
               <img
-                src="https://public.readdy.ai/ai/img_res/cc10aa5d-f92d-40c5-8eda-b47e5becc5dd.png"
+                src="/icon.png"
                 alt="Logo"
-                className="w-full h-full object-cover"
+                className="object-contain flex"
+                width={22}
+                height={22}
               />
             </div>
             <span className="text-sm text-cyber-text-dim">
@@ -546,13 +548,6 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-4 text-xs text-cyber-text-dim">
             <span>Not affiliated with any vendor</span>
-            <span className="hidden sm:inline">|</span>
-            <a href="https://www.wireshark.org" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-cyber-cyan transition-colors">
-              Wireshark
-            </a>
-            <a href="https://nmap.org" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-cyber-cyan transition-colors">
-              Nmap
-            </a>
           </div>
         </div>
       </footer>

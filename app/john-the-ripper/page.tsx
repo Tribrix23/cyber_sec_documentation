@@ -101,7 +101,7 @@ export default function JohnTheRipperLandingPage() {
         <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.5 }}>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyber-cyan/10 border border-cyber-cyan/20 text-cyber-cyan text-xs font-medium font-mono mb-4">
             <i className="ri-lock-unlock-line" />
-            Module — Password Cracking
+            Password Cracking
           </div>
           <DocHeading level={1}>John the Ripper</DocHeading>
           <p className="text-cyber-text leading-relaxed mt-3 text-lg">

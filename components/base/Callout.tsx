@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-type CalloutType = 'info' | 'warning' | 'danger' | 'tip';
+type CalloutType = 'info' | 'warning' | 'danger' | 'tip' | 'success';
 
 interface CalloutProps {
   type: CalloutType;
@@ -39,6 +39,14 @@ const styles: Record<CalloutType, { border: string; icon: string; iconColor: str
     icon: 'ri-lightbulb-line',
     iconColor: 'text-cyber-green',
     bg: 'bg-green-400/40',
+    titleColor: 'text-cyber-text',
+    text: 'text-cyber-text',
+  },
+  success: {
+    border: 'border-l-cyber-green',
+    icon: 'ri-lightbulb-line',
+    iconColor: 'text-cyber-green',
+    bg: 'bg-emerald-500/15',
     titleColor: 'text-cyber-text',
     text: 'text-cyber-text',
   },

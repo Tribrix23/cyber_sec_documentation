@@ -100,7 +100,7 @@ export default function GobusterLandingPage() {
         <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.5 }}>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyber-red/10 border border-cyber-red/20 text-cyber-red text-xs font-medium font-mono mb-4">
             <i className="ri-folder-open-line" />
-            Module — Directory & Subdomain Bruteforcing
+            Directory & Subdomain Bruteforcing
           </div>
           <DocHeading level={1}>Gobuster</DocHeading>
           <p className="text-cyber-text leading-relaxed mt-3 text-lg">
