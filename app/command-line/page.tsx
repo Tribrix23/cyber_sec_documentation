@@ -1,6 +1,5 @@
-import Layout from '@/components/feature/Layout';
 import DocHeading from '@/components/base/DocHeading';
-import CodeBlock from '@/components/base/CodeBlock';
+import CodeBlock from '@/components/base/Codeblock';
 import InlineCode from '@/components/base/InlineCode';
 import Callout from '@/components/base/Callout';
 
@@ -46,7 +45,6 @@ const editcapOpts = [
 
 export default function CommandLine() {
   return (
-    <Layout>
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-4xl">
         <DocHeading level={1}>Command Line Tools</DocHeading>
         <p className="text-cyber-text-muted leading-relaxed text-lg">
@@ -214,6 +212,5 @@ mergecap -a -w unsorted.pcap *.pcap`}
           For 24/7 production capture, use dumpcap with ring buffers. Then use tshark or editcap for post-processing. This pattern minimizes dropped packets and disk usage.
         </Callout>
       </div>
-    </Layout>
   );
 }

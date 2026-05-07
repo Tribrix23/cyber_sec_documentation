@@ -1,6 +1,5 @@
-import Layout from '@/components/feature/Layout';
 import DocHeading from '@/components/base/DocHeading';
-import CodeBlock from '@/components/base/CodeBlock';
+import CodeBlock from '@/components/base/Codeblock';
 import InlineCode from '@/components/base/InlineCode';
 import Callout from '@/components/base/Callout';
 
@@ -37,7 +36,6 @@ const advancedFilters = [
 
 export default function CaptureFilters() {
   return (
-    <Layout>
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-4xl">
         <DocHeading level={1}>Capture Filters</DocHeading>
         <p className="text-cyber-text-muted leading-relaxed text-lg">
@@ -197,7 +195,6 @@ tcpdump -i eth0 "tcp port 443 and host 10.0.0.5"`}
         <Callout type="danger" title="Important Limitation">
           Capture filters cannot filter based on application-layer protocols (like HTTP method, DNS query name, or SSL certificate). For those, use display filters after capture.
         </Callout>
-      </div>
-    </Layout>
+      </div> 
   );
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import DocHeading from '@/components/base/DocHeading';
 import Callout from '@/components/base/Callout';
-import CodeBlock from '@/components/base/CodeBlock';
+import CodeBlock from '@/components/base/Codeblock';
 import InlineCode from '@/components/base/InlineCode';
 import { motion, AnimatePresence } from 'framer-motion';
 

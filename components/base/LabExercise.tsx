@@ -157,19 +157,19 @@ export default function LabExercise({ title, tasks }: LabExerciseProps) {
               placeholder="Type the exact command or answer..."
             />
 
-            {submitted && (
-              <motion.div
-                className={`p-3 rounded-lg border ${results[current]?.correct ? 'border-cyber-green bg-cyber-green/10' : 'border-cyber-red bg-cyber-red/10'}`}
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-              >
-                <div className="flex items-center gap-2">
-                  <i className={results[current]?.correct ? 'ri-check-line text-cyber-green' : 'ri-close-line text-cyber-red'} />
-                  <span className={`text-sm font-semibold ${results[current]?.correct ? 'text-cyber-green' : 'text-cyber-red'}`}>
-                    {results[current]?.correct ? 'Correct!' : 'Not quite right'}
-                  </span>
-                </div>
-                {!results[current]?.correct && task.expectedAnswer && (
+{submitted && (
+               <motion.div
+                 className={`p-3 rounded-lg border ${results?.[current]?.correct ? 'border-cyber-green bg-cyber-green/10' : 'border-cyber-red bg-cyber-red/10'}`}
+                 initial={{ opacity: 0, height: 0 }}
+                 animate={{ opacity: 1, height: 'auto' }}
+               >
+                 <div className="flex items-center gap-2">
+                   <i className={results?.[current]?.correct ? 'ri-check-line text-cyber-green' : 'ri-close-line text-cyber-red'} />
+                   <span className={`text-sm font-semibold ${results?.[current]?.correct ? 'text-cyber-green' : 'text-cyber-red'}`}>
+                     {results?.[current]?.correct ? 'Correct!' : 'Not quite right'}
+                   </span>
+                 </div>
+                 {!results?.[current]?.correct && task.expectedAnswer && (
                   <p className="text-xs text-cyber-text-dim mt-1">
                     Expected: <span className="text-cyber-cyan font-mono">{task.expectedAnswer}</span>
                   </p>

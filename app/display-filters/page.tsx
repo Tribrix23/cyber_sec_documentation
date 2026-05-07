@@ -1,6 +1,5 @@
-import Layout from '@/components/feature/Layout';
 import DocHeading from '@/components/base/DocHeading';
-import CodeBlock from '@/components/base/CodeBlock';
+import CodeBlock from '@/components/base/Codeblock';
 import InlineCode from '@/components/base/InlineCode';
 import Callout from '@/components/base/Callout';
 
@@ -37,7 +36,6 @@ const commonFilters = [
 
 export default function DisplayFilters() {
   return (
-    <Layout>
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-4xl">
         <DocHeading level={1}>Display Filters</DocHeading>
         <p className="text-cyber-text-muted leading-relaxed text-lg">
@@ -194,6 +192,5 @@ tcp.analysis.retransmission`}
           filename="Coloring"
         />
       </div>
-    </Layout>
   );
 }

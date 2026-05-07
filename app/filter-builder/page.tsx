@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Layout from '@/components/feature/Layout';
 import DocHeading from '@/components/base/DocHeading';
 import InlineCode from '@/components/base/InlineCode';
 import Callout from '@/components/base/Callout';
@@ -124,7 +123,6 @@ export default function FilterBuilder() {
   };
 
   return (
-    <Layout>
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-4xl">
         <DocHeading level={1}>Filter Builder</DocHeading>
         <p className="text-cyber-text-muted leading-relaxed text-lg">
@@ -291,6 +289,5 @@ export default function FilterBuilder() {
           </ol>
         </div>
       </div>
-    </Layout>
   );
 }

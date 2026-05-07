@@ -1,24 +1,9 @@
-const modules = import.meta.glob('./*/*.ts', { eager: true });
+// Translation messages for each language.
+// Add new languages by importing their files and adding them to the messages object.
+// Example:
+// import en from './en/translation';
+// messages['en'] = { translation: en };
 
 const messages: Record<string, { translation: Record<string, string> }> = {};
-
-Object.keys(modules).forEach((path) => {
-  const match = path.match(/\.\/([^/]+)\/([^/]+)\.ts$/);
-  if (match) {
-    const [, lang] = match;
-    const module = modules[path] as { default?: Record<string, string> };
-    
-    if (!messages[lang]) {
-      messages[lang] = { translation: {} };
-    }
-    
-    if (module.default) {
-      messages[lang].translation = {
-        ...messages[lang].translation,
-        ...module.default
-      };
-    }
-  }
-});
 
 export default messages; 
