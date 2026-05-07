@@ -74,7 +74,20 @@ const navSections: { title: string; items: NavItem[] }[] = [
   {
     title: 'JOHN THE RIPPER',
     items: [
-      { label: 'John the Ripper Docs', path: '/john-the-ripper', icon: 'ri-lock-unlock-line' },
+      { label: 'John the Ripper Overview', path: '/john-the-ripper', icon: 'ri-lock-unlock-line' },
+      { label: 'Installation', path: '/john-the-ripper/installation', icon: 'ri-download-line' },
+      { label: 'Single Crack Mode', path: '/john-the-ripper/single-crack-mode', icon: 'ri-user-line' },
+      { label: 'Wordlist Mode', path: '/john-the-ripper/wordlist-mode', icon: 'ri-file-list-3-line' },
+      { label: 'Incremental Mode', path: '/john-the-ripper/incremental-mode', icon: 'ri-speed-line' },
+      { label: 'External Mode', path: '/john-the-ripper/external-mode', icon: 'ri-code-s-slash-line' },
+      { label: 'Hash Formats', path: '/john-the-ripper/hash-formats', icon: 'ri-database-2-line' },
+      { label: 'Rules', path: '/john-the-ripper/rules', icon: 'ri-magic-line' },
+      { label: 'Hash Extraction', path: '/john-the-ripper/hash-extraction', icon: 'ri-fingerprint-line' },
+      { label: 'Command Builder', path: '/john-the-ripper/command-builder', icon: 'ri-tools-line' },
+      { label: 'Examples', path: '/john-the-ripper/examples', icon: 'ri-file-list-line' },
+      { label: 'Pro Tips', path: '/john-the-ripper/pro-tips', icon: 'ri-lightbulb-line' },
+      { label: 'John the Ripper Quiz', path: '/john-the-ripper/quiz', icon: 'ri-questionnaire-line' },
+      { label: 'John the Ripper Lab', path: '/john-the-ripper/lab', icon: 'ri-flask-line' },
     ],
   },
   {
