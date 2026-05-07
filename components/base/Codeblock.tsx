@@ -21,7 +21,7 @@ export default function CodeBlock({ code, language = 'bash', showLineNumbers = t
   const lines = code.split('\n');
 
   return (
-    <div className="code-block overflow-hidden my-6">
+    <div className="code-block overflow-hidden my-6 rounded-lg">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-2.5 border-b border-cyber-border bg-cyber-bg-light">
         <div className="flex items-center gap-2">

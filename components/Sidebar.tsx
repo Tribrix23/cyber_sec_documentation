@@ -142,11 +142,11 @@ export default function Sidebar() {
     return pathname === path;
   };
 
-  const renderNavItem = (item: NavItem) => {
+const renderNavItem = (item: NavItem) => {
     const active = isActivePath(item.path);
     const classes = `flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors cursor-pointer ${
       active
-        ? 'nav-active font-medium'
+        ? 'nav-active font-medium bg-cyber-cyan/15 text-cyber-cyan'
         : 'text-cyber-text-muted hover:text-cyber-cyan'
     }`;
 
