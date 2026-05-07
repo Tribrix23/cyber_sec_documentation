@@ -193,11 +193,13 @@ export default function Sidebar() {
       >
         {/* Logo */}
         <div className="flex items-center gap-3 px-5 py-5 border-b border-cyber-border">
-          <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-cyber-bg-card">
+          <div className="flex justify-center w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-cyber-bg-card">
             <img
-              src="https://public.readdy.ai/ai/img_res/cc10aa5d-f92d-40c5-8eda-b47e5becc5dd.png"
+              src="/icon.png"
               alt="CyberSec Documentation Logo"
-              className="w-full h-full object-cover"
+              className="object-contain flex"
+              width={30}
+              height={30}
             />
           </div>
           <div className="flex flex-col">

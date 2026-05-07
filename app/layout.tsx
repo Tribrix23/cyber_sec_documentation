@@ -6,6 +6,11 @@ import I18nProvider from '@/components/providers/I18nProvider'
 export const metadata = {
   title: 'CyberSec Docs',
   description: 'Cybersecurity documentation',
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
 }
 
 export default function RootLayout({

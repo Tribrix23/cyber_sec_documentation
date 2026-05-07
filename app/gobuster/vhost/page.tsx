@@ -48,7 +48,7 @@ export default function GobusterVhostPage() {
                 { step: '4. Result Filtering', desc: 'Responses matching the baseline are filtered out. Unique responses are reported as discovered virtual hosts.' },
               ].map((s) => (
                 <div key={s.step} className="flex items-start gap-3 p-3 rounded-lg bg-cyber-bg border border-cyber-border">
-                  <span className="text-xs font-bold text-cyber-red font-mono flex-shrink-0">{s.step.split('.')[0]}</span>
+                  <span className="text-xs font-bold text-cyber-red font-mono shrink-0">{s.step.split('.')[0]}</span>
                   <div>
                     <span className="text-xs font-semibold text-white">{s.step.split('. ')[1]}</span>
                     <p className="text-xs text-cyber-text mt-1">{s.desc}</p>
