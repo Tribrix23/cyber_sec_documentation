@@ -51,7 +51,7 @@ export default function CodeBlock({ code, language = 'bash', showLineNumbers = t
           {lines.map((line, idx) => (
             <div key={idx} className="flex">
               {showLineNumbers && (
-                <span className="inline-block w-8 text-right pr-3 text-cyber-text-dark select-none flex-shrink-0 text-xs pt-0.5">
+                <span className="inline-block w-8 text-right pr-3 text-cyber-text-dark select-none shrink-0 text-xs pt-0.5">
                   {idx + 1}
                 </span>
               )}

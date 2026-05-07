@@ -46,7 +46,7 @@ export default function Callout({ type, children, title }: CalloutProps) {
   return (
     <div className={`my-6 rounded-r-lg border-l-[3px] ${style.border} ${style.bg} p-4`}>
       <div className="flex items-start gap-3">
-        <div className={`w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5 ${style.iconColor}`}>
+        <div className={`w-5 h-5 flex items-center justify-center shrink-0 mt-0.5 ${style.iconColor}`}>
           <i className={style.icon} />
         </div>
         <div className="flex-1 min-w-0">
