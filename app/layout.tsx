@@ -1,7 +1,6 @@
 import './globals.css'
 import Sidebar from '@/components/Sidebar'
 import 'remixicon/fonts/remixicon.css'
-import I18nProvider from '@/components/providers/I18nProvider'
 
 export const metadata = {
   title: 'CyberSec Docs',
@@ -21,13 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-cyber-bg flex">
-        <I18nProvider>
-          <Sidebar />
+        <Sidebar />
 
-          <main className="flex-1 ml-0 md:ml-70 min-h-screen">
-            {children}
-          </main>
-        </I18nProvider>
+        <main className="flex-1 ml-0 md:ml-70 min-h-screen">
+          {children}
+        </main>
       </body>
     </html>
   )
