@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from 'react';
 import DocHeading from '@/components/base/DocHeading';
 import Callout from '@/components/base/Callout';

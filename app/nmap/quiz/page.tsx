@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect } from 'react';
 import DocHeading from '@/components/base/DocHeading';
 import ModuleQuiz from '@/components/base/ModuleQuiz';

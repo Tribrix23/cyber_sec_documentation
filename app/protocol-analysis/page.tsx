@@ -1,3 +1,5 @@
+'use client'
+
 import DocHeading from '@/components/base/DocHeading';
 import CodeBlock from '@/components/base/Codeblock';
 import InlineCode from '@/components/base/InlineCode';
