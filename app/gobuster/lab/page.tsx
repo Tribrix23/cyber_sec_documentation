@@ -1,3 +1,4 @@
+'use client'
 import { useEffect } from 'react';
 import DocHeading from '@/components/base/DocHeading';
 import LabExercise from '@/components/base/LabExercise';

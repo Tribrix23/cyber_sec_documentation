@@ -1,5 +1,8 @@
+'use client'
+import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 interface NavItem {
   label: string;
@@ -106,8 +109,8 @@ const navSections: { title: string; items: NavItem[] }[] = [
 ];
 
 export default function Sidebar() {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const pathname = usePathname();
+  const navigate = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [expandedSections, setExpandedSections] = useState<string[]>(
@@ -133,10 +136,10 @@ export default function Sidebar() {
 
   useEffect(() => {
     setIsMobileOpen(false);
-  }, [location.pathname]);
+  }, [pathname]);
 
   const isActivePath = (path: string) => {
-    return location.pathname === path;
+    return pathname === path;
   };
 
   const renderNavItem = (item: NavItem) => {
@@ -149,7 +152,7 @@ export default function Sidebar() {
 
     return (
       <Link
-        to={item.path}
+        href={item.path}
         className={classes}
       >
         <span className="w-5 h-5 flex items-center justify-center flex-shrink-0">

@@ -1,3 +1,4 @@
+'use client'
 import { useState } from 'react';
 import DocHeading from '@/components/base/DocHeading';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -101,7 +102,7 @@ export default function WiresharkLabPage() {
   const [current, setCurrent] = useState(0);
   const [userAnswer, setUserAnswer] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const [results, setResults] = useState<Record<number, { correct: boolean; answer: string }>>();
+  const [results, setResults] = useState<Record<number, { correct: boolean; answer: string }>>({});
   const [showHint, setShowHint] = useState(false);
   const [finished, setFinished] = useState(false);
 
@@ -137,7 +138,7 @@ export default function WiresharkLabPage() {
     setFinished(false);
   };
 
-  const correctCount = Object.values(results ?? {}).filter((r) => r.correct).length;
+  const correctCount = Object.values(results).filter((r) => r.correct).length;
 
   if (finished) {
     const pct = Math.round((correctCount / total) * 100);

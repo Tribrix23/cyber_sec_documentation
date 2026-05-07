@@ -1,4 +1,5 @@
-import { useNavigate } from 'react-router-dom';
+'use client'
+import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
@@ -147,7 +148,7 @@ const typewriterLines = [
 ];
 
 export default function Home() {
-  const navigate = useNavigate();
+  const navigate = useRouter();
   const [typedLine, setTypedLine] = useState(0);
   const [typedText, setTypedText] = useState('');
   const [typingIndex, setTypingIndex] = useState(0);
@@ -238,7 +239,7 @@ export default function Home() {
                 <div className="mt-8 flex flex-wrap gap-4">
                   <button
                     type="button"
-                    onClick={() => navigate('/getting-started')}
+                    onClick={() => navigate.push('/getting-started')}
                     className="px-6 py-3 bg-cyber-cyan text-cyber-bg font-semibold rounded-lg hover:bg-cyber-cyan-dim transition-all duration-200 flex items-center gap-2 whitespace-nowrap glow-cyan"
                   >
                     Get Started
@@ -336,7 +337,7 @@ export default function Home() {
               <motion.button
                 key={tool.name}
                 type="button"
-                onClick={() => navigate(tool.link)}
+                onClick={() => navigate.push(tool.link)}
                 className="cyber-card p-6 text-left group cursor-pointer relative overflow-hidden"
                 variants={fadeUp}
                 whileHover={{ scale: 1.01, y: -2 }}
@@ -404,7 +405,7 @@ export default function Home() {
                   <div className="mt-6 flex flex-wrap gap-3">
                     <button
                       type="button"
-                      onClick={() => navigate('/nmap#builder')}
+                      onClick={() => navigate.push('/nmap#builder')}
                       className="px-4 py-2 rounded-lg bg-cyber-amber/10 border border-cyber-amber/20 text-cyber-amber text-sm font-medium hover:bg-cyber-amber/20 transition-all whitespace-nowrap"
                     >
                       <i className="ri-shield-check-line mr-1" />
@@ -412,7 +413,7 @@ export default function Home() {
                     </button>
                     <button
                       type="button"
-                      onClick={() => navigate('/sqlmap#builder')}
+                      onClick={() => navigate.push('/sqlmap#builder')}
                       className="px-4 py-2 rounded-lg bg-cyber-red/10 border border-cyber-red/20 text-cyber-red text-sm font-medium hover:bg-cyber-red/20 transition-all whitespace-nowrap"
                     >
                       <i className="ri-database-2-line mr-1" />
@@ -420,7 +421,7 @@ export default function Home() {
                     </button>
                     <button
                       type="button"
-                      onClick={() => navigate('/netcat#builder')}
+                      onClick={() => navigate.push('/netcat#builder')}
                       className="px-4 py-2 rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/20 text-cyber-cyan text-sm font-medium hover:bg-cyber-cyan/20 transition-all whitespace-nowrap"
                     >
                       <i className="ri-terminal-box-line mr-1" />
@@ -428,7 +429,7 @@ export default function Home() {
                     </button>
                     <button
                       type="button"
-                      onClick={() => navigate('/sslscan#builder')}
+                      onClick={() => navigate.push('/sslscan#builder')}
                       className="px-4 py-2 rounded-lg bg-cyber-green/10 border border-cyber-green/20 text-cyber-green text-sm font-medium hover:bg-cyber-green/20 transition-all whitespace-nowrap"
                     >
                       <i className="ri-shield-keyhole-line mr-1" />
@@ -478,7 +479,7 @@ export default function Home() {
                 <motion.button
                   key={link.path}
                   type="button"
-                  onClick={() => navigate(link.path)}
+                  onClick={() => navigate.push(link.path)}
                   className="w-full cyber-card px-5 py-4 flex items-center gap-4 text-left group cursor-pointer"
                   variants={fadeUp}
                   whileHover={{ x: 4 }}
@@ -517,7 +518,7 @@ export default function Home() {
               </p>
               <button
                 type="button"
-                onClick={() => navigate('/getting-started')}
+                onClick={() => navigate.push('/getting-started')}
                 className="mt-6 px-6 py-3 bg-cyber-green text-cyber-bg font-semibold rounded-lg hover:bg-cyber-green-dim transition-all duration-200 flex items-center gap-2 mx-auto whitespace-nowrap glow-green"
               >
                 <i className="ri-book-open-line" />

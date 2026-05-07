@@ -1,3 +1,4 @@
+'use client'
 import { useState } from 'react';
 import DocHeading from '@/components/base/DocHeading';
 import InlineCode from '@/components/base/InlineCode';

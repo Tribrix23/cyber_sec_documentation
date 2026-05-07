@@ -1,5 +1,5 @@
+'use client'
 import { useEffect } from 'react';
-import Layout from '@/components/feature/Layout';
 import DocHeading from '@/components/base/DocHeading';
 import ModuleQuiz from '@/components/base/ModuleQuiz';
 import { motion } from 'framer-motion';

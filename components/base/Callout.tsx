@@ -6,6 +6,7 @@ interface CalloutProps {
   type: CalloutType;
   children: ReactNode;
   title?: string;
+  className?: string;
 }
 
 const styles: Record<CalloutType, { border: string; icon: string; iconColor: string; bg: string; titleColor: string }> = {
@@ -39,23 +40,23 @@ const styles: Record<CalloutType, { border: string; icon: string; iconColor: str
   },
 };
 
-export default function Callout({ type, children, title }: CalloutProps) {
+export default function Callout({ type, children, title, className }: CalloutProps) {
   const style = styles[type];
   const defaultTitle = type === 'info' ? 'Info' : type === 'warning' ? 'Warning' : type === 'danger' ? 'Important' : 'Tip';
 
-  return (
-    <div className={`my-6 rounded-r-lg border-l-[3px] ${style.border} ${style.bg} p-4`}>
-      <div className="flex items-start gap-3">
-        <div className={`w-5 h-5 flex items-center justify-center shrink-0 mt-0.5 ${style.iconColor}`}>
-          <i className={style.icon} />
-        </div>
-        <div className="flex-1 min-w-0">
-          <p className={`text-sm font-semibold ${style.titleColor} mb-1`}>
-            {title || defaultTitle}
-          </p>
-          <div className="text-sm text-cyber-text-muted leading-relaxed">{children}</div>
-        </div>
-      </div>
-    </div>
-  );
+   return (
+     <div className={`my-6 rounded-r-lg border-l-[3px] ${style.border} ${style.bg} p-4 ${className || ''}`}>
+       <div className="flex items-start gap-3">
+         <div className={`w-5 h-5 flex items-center justify-center shrink-0 mt-0.5 ${style.iconColor}`}>
+           <i className={style.icon} />
+         </div>
+         <div className="flex-1 min-w-0">
+           <p className={`text-sm font-semibold ${style.titleColor} mb-1`}>
+             {title || defaultTitle}
+           </p>
+           <div className="text-sm text-cyber-text-muted leading-relaxed">{children}</div>
+         </div>
+       </div>
+     </div>
+   );
 }
