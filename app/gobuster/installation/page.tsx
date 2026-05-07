@@ -136,14 +136,14 @@ export default function GobusterInstallationPage() {
             <InlineCode>gobuster --help</InlineCode> shows all available modes and flags. It is the fastest way to check what features your installed version supports.
           </Callout>
 
-          <div className="mt-8 flex gap-3">
-            <a href="/gobuster/examples" className="px-5 py-2.5 rounded-lg bg-cyber-red text-white text-sm font-semibold hover:bg-cyber-red/80 transition-all whitespace-nowrap">
-              Next: Usage Examples <i className="ri-arrow-right-line ml-1" />
-            </a>
-            <a href="/gobuster/wordlists" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
-              <i className="ri-arrow-left-line mr-1" /> Back
-            </a>
-          </div>
+           <div className="mt-8 flex gap-3">
+              <a href="/gobuster/examples" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-black text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
+               Next: Usage Examples <i className="ri-arrow-right-line ml-1" />
+             </a>
+             <a href="/gobuster/wordlists" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+               <i className="ri-arrow-left-line mr-1" /> Back
+             </a>
+           </div>
         </motion.section>
       </div>
   );

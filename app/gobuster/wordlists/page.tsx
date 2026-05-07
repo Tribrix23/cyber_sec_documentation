@@ -157,7 +157,15 @@ export default function GobusterLandingPage() {
               ))}
             </ol>
           </div>
+         </motion.section>
+
+        <motion.section className="mt-12 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+          <div className="mt-8 flex gap-3">
+            <a href="/gobuster/directory" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-black text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
+              Next: Directory & File Bruteforce <i className="ri-arrow-right-line ml-1" />
+            </a>
+          </div>
         </motion.section>
       </div>
-  );
+   );
 }

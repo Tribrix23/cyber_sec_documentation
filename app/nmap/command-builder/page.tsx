@@ -308,7 +308,7 @@ export default function NmapCommandBuilderPage() {
         </motion.section>
 
         <motion.section className="mt-8 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-          <Callout type="tip" className='bg-green-400/40'>
+          <Callout type="tip" >
                          Try combining <strong className="text-cyber-cyan">-sS</strong>, <strong className="text-cyber-cyan">-sV</strong>, <strong className="text-cyber-cyan">-O</strong>, and <strong className="text-cyber-cyan">--script vuln</strong> for the most comprehensive single-target scan.              Add <strong className="text-cyber-cyan">-T4</strong> for speed in lab environments.
           </Callout>
 

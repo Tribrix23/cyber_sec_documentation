@@ -162,11 +162,11 @@ export default function GobusterLabPage() {
             </p>
           </div>
 
-          <div className="mt-6 flex gap-3">
-            <a href="/gobuster" className="px-5 py-2.5 rounded-lg bg-cyber-red text-white text-sm font-semibold hover:bg-cyber-red/80 transition-all whitespace-nowrap">
-              <i className="ri-home-line mr-1" /> Back to Gobuster Module
-            </a>
-          </div>
+           <div className="mt-6 flex gap-3">
+              <a href="/gobuster" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-black text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
+               <i className="ri-home-line mr-1" /> Back to Gobuster Module
+             </a>
+           </div>
         </motion.section>
       </div>
   );

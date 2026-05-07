@@ -112,14 +112,14 @@ export default function GobusterFlagsPage() {
             For the complete flag reference, run <InlineCode>gobuster --help</InlineCode> or consult the official documentation at <a href="https://github.com/OJ/gobuster" target="_blank" rel="noopener noreferrer nofollow" className="text-cyber-cyan hover:underline">github.com/OJ/gobuster</a>
           </Callout>
 
-          <div className="mt-8 flex gap-3">
-            <a href="/gobuster/wordlists" className="px-5 py-2.5 rounded-lg bg-cyber-red text-white text-sm font-semibold hover:bg-cyber-red/80 transition-all whitespace-nowrap">
-              Next: Wordlists <i className="ri-arrow-right-line ml-1" />
-            </a>
-            <a href="/gobuster/fuzz" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-red hover:text-cyber-red transition-all whitespace-nowrap">
-              <i className="ri-arrow-left-line mr-1" /> Back
-            </a>
-          </div>
+           <div className="mt-8 flex gap-3">
+              <a href="/gobuster/wordlists" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-black text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
+               Next: Wordlists <i className="ri-arrow-right-line ml-1" />
+             </a>
+             <a href="/gobuster/fuzz" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+               <i className="ri-arrow-left-line mr-1" /> Back
+             </a>
+           </div>
         </motion.section>
       </div>
   );
