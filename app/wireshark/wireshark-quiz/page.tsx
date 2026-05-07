@@ -171,14 +171,14 @@ export default function WiresharkQuizPage() {
             <p className="mt-3 text-sm text-cyber-text-dim">
               {pct >= 80 ? 'Excellent! You are ready for the lab exercises.' : pct >= 50 ? 'Good progress! Review the module and try again.' : 'Keep studying — retake the quiz after reviewing.'}
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <button type="button" onClick={handleRestart} className="px-6 py-3 bg-cyber-cyan text-cyber-bg font-semibold rounded-lg hover:bg-cyber-cyan-dim transition-all whitespace-nowrap glow-cyan">
-                <i className="ri-restart-line mr-2" /> Retake Quiz
-              </button>
-              <a href="/wireshark-lab" className="px-6 py-3 bg-cyber-green text-cyber-bg font-semibold rounded-lg hover:bg-cyber-green-dim transition-all whitespace-nowrap">
-                <i className="ri-flask-line mr-2" /> Go to Lab
-              </a>
-            </div>
+             <div className="mt-8 flex flex-wrap justify-center gap-3">
+               <button type="button" onClick={handleRestart} className="px-6 py-3 bg-cyber-cyan text-cyber-bg font-semibold rounded-lg hover:bg-cyber-cyan-dim transition-all whitespace-nowrap glow-cyan">
+                 <i className="ri-restart-line mr-2" /> Retake Quiz
+               </button>
+               <a href="/wireshark/wireshark-lab" className="px-6 py-3 bg-cyber-green text-cyber-bg font-semibold rounded-lg hover:bg-cyber-green-dim transition-all whitespace-nowrap">
+                 <i className="ri-flask-line mr-2" /> Go to Lab
+               </a>
+             </div>
           </motion.div>
         </div>
     );

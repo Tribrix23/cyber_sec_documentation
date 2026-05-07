@@ -196,6 +196,15 @@ tcpdump -i eth0 "tcp port 443 and host 10.0.0.5"`}
         <Callout type="danger" title="Important Limitation">
           Capture filters cannot filter based on application-layer protocols (like HTTP method, DNS query name, or SSL certificate). For those, use display filters after capture.
         </Callout>
-      </div> 
+
+        <div className="mt-8 flex gap-3">
+          <a href="/wireshark/display-filters" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-black text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
+            Next: Display Filters <i className="ri-arrow-right-line ml-1" />
+          </a>
+          <a href="/wireshark/command-line" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+            <i className="ri-arrow-left-line mr-1" /> Back
+          </a>
+        </div>
+      </div>
   );
 }
