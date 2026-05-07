@@ -1,6 +1,5 @@
-import Layout from '@/components/feature/Layout';
 import DocHeading from '@/components/base/DocHeading';
-import CodeBlock from '@/components/base/CodeBlock';
+import CodeBlock from '@/components/base/Codeblock';
 import InlineCode from '@/components/base/InlineCode';
 import Callout from '@/components/base/Callout';
 
@@ -76,7 +75,6 @@ const protocols = [
 
 export default function ProtocolAnalysis() {
   return (
-    <Layout>
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-4xl">
         <DocHeading level={1}>Protocol Analysis</DocHeading>
         <p className="text-cyber-text-muted leading-relaxed text-lg">
@@ -151,6 +149,5 @@ export default function ProtocolAnalysis() {
           When following a TCP stream (<strong>Right-click &gt; Follow &gt; TCP Stream</strong>), the display filter is automatically set to that stream. Click Clear to remove it.
         </Callout>
       </div>
-    </Layout>
   );
 }

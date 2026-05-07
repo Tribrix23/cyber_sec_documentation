@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
-import Layout from '@/components/feature/Layout';
 import DocHeading from '@/components/base/DocHeading';
 import Callout from '@/components/base/Callout';
-import CodeBlock from '@/components/base/CodeBlock';
+import CodeBlock from '@/components/base/Codeblock';
 import { motion } from 'framer-motion';
 
 const fadeUp = {
@@ -109,7 +108,6 @@ export default function NmapWhatIsPage() {
   }, []);
 
   return (
-    <Layout>
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-5xl">
         <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.5 }}>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyber-amber/10 border border-cyber-amber/20 text-cyber-amber text-xs font-medium font-mono mb-4">
@@ -250,6 +248,5 @@ export default function NmapWhatIsPage() {
           </div>
         </motion.section>
       </div>
-    </Layout>
   );
 }

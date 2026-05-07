@@ -1,6 +1,5 @@
-import Layout from '@/components/feature/Layout';
 import DocHeading from '@/components/base/DocHeading';
-import CodeBlock from '@/components/base/CodeBlock';
+import CodeBlock from '@/components/base/Codeblock';
 import InlineCode from '@/components/base/InlineCode';
 import Callout from '@/components/base/Callout';
 
@@ -33,7 +32,6 @@ const faqs = [
 
 export default function Troubleshooting() {
   return (
-    <Layout>
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-4xl">
         <DocHeading level={1}>Troubleshooting</DocHeading>
         <p className="text-cyber-text-muted leading-relaxed text-lg">
@@ -130,6 +128,5 @@ editcap -c 50000 huge.pcap chunk.pcap`}
           The Wireshark community is incredibly active. Visit the <a href="https://ask.wireshark.org" target="_blank" rel="noopener noreferrer nofollow" className="text-cyber-cyan hover:underline">Ask Wireshark</a> forum or check the <a href="https://wiki.wireshark.org" target="_blank" rel="noopener noreferrer nofollow" className="text-cyber-cyan hover:underline">official wiki</a> for detailed guides.
         </Callout>
       </div>
-    </Layout>
   );
 }

@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import Layout from '@/components/feature/Layout';
 import { motion } from 'framer-motion';
 
 const fadeUp = {
@@ -188,8 +187,8 @@ export default function Home() {
   }, [typedLine, typingIndex, isDeleting]);
 
   return (
-    <Layout>
-      {/* Hero Section */}
+      <div>
+        {/* Hero Section */}
       <section className="relative min-h-[600px] flex items-center overflow-hidden">
         {/* Background grid pattern */}
         <div className="absolute inset-0 opacity-[0.04]">
@@ -556,6 +555,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </Layout>
+    </div>
   );
 }

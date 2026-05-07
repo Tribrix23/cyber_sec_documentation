@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Layout from '@/components/feature/Layout';
 import DocHeading from '@/components/base/DocHeading';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -156,8 +155,7 @@ export default function WiresharkQuizPage() {
   if (finished) {
     const pct = Math.round((correctCount / total) * 100);
     return (
-      <Layout>
-        <div className="px-6 md:px-12 lg:px-16 py-10 max-w-3xl mx-auto">
+      <div className="px-6 md:px-12 lg:px-16 py-10 max-w-3xl mx-auto">
           <motion.div className="cyber-card p-8 md:p-12 text-center" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: 'spring', stiffness: 200 }}>
             <div className="w-20 h-20 rounded-full bg-cyber-green/10 flex items-center justify-center mx-auto mb-6">
               <i className="ri-trophy-line text-4xl text-cyber-green" />
@@ -182,12 +180,10 @@ export default function WiresharkQuizPage() {
             </div>
           </motion.div>
         </div>
-      </Layout>
     );
   }
 
   return (
-    <Layout>
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-3xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyber-amber/10 border border-cyber-amber/20 text-cyber-amber text-xs font-medium font-mono mb-4">
@@ -240,6 +236,5 @@ export default function WiresharkQuizPage() {
           )}
         </div>
       </div>
-    </Layout>
   );
 }

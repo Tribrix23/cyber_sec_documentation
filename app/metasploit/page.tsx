@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import Layout from '@/components/feature/Layout';
 import DocHeading from '@/components/base/DocHeading';
 import Callout from '@/components/base/Callout';
-import CodeBlock from '@/components/base/CodeBlock';
+import CodeBlock from '@/components/base/Codeblock';
 import InlineCode from '@/components/base/InlineCode';
 import { motion } from 'framer-motion';
 
@@ -129,7 +128,6 @@ exploit`;
   };
 
   return (
-    <Layout>
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-5xl">
         {/* Header */}
         <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.5 }}>
@@ -446,6 +444,5 @@ exploit`;
           </div>
         </motion.section>
       </div>
-    </Layout>
   );
 }

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Layout from '@/components/feature/Layout';
 import DocHeading from '@/components/base/DocHeading';
 import Callout from '@/components/base/Callout';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -23,7 +22,7 @@ interface QuizCategory {
   questions: Question[];
 }
 
-import { wireshark, nmap, gobuster, john, burp, sqlmap, sslscan, netcat, metasploit } from '@/mocks/quiz';
+import { wireshark, nmap, gobuster, john, burp, sqlmap, sslscan, netcat, metasploit } from '@/components/mocks/quiz';
 
 const categories: QuizCategory[] = [
   wireshark, nmap, gobuster, john, burp, sqlmap, sslscan, netcat, metasploit,
@@ -121,9 +120,8 @@ export default function Quiz() {
     const totalCorrect = Object.values(scores).flat().filter(Boolean).length;
     const totalQuestions = categories.reduce((sum, c) => sum + c.questions.length, 0);
 
-    return (
-      <Layout>
-        <div className="px-6 md:px-12 lg:px-16 py-10 max-w-5xl mx-auto">
+  return (
+      <div className="px-6 md:px-12 lg:px-16 py-10 max-w-5xl mx-auto">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.5 }}>
             <DocHeading level={1}>Quiz Hub</DocHeading>
             <p className="text-cyber-text-muted leading-relaxed mt-3">
@@ -220,14 +218,12 @@ export default function Quiz() {
 
 
         </div>
-      </Layout>
     );
   }
 
   // Results View
   if (view === 'results' && category) {
     return (
-      <Layout>
         <div className="px-6 md:px-12 lg:px-16 py-10 max-w-3xl mx-auto">
           <motion.div
             className="cyber-card p-8 md:p-12 text-center"
@@ -289,13 +285,11 @@ export default function Quiz() {
             </div>
           </motion.div>
         </div>
-      </Layout>
     );
   }
 
   // Quiz View
   return (
-    <Layout>
       <div className="px-6 md:px-12 lg:px-16 py-10 max-w-3xl mx-auto">
         <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.4 }}>
           <div className="flex items-center gap-3 mb-4">
@@ -439,6 +433,5 @@ export default function Quiz() {
           </button>
         </div>
       </div>
-    </Layout>
   );
 }
