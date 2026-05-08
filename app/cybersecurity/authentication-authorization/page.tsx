@@ -123,7 +123,7 @@ const accessControlModels = [
   {
     model: 'Policy-Based Access Control (PBAC)',
     principle: 'Combines RBAC and ABAC with real-time policy engine.',
-    example: 'Google\u2019s BeyondCorp Zero Trust model: Access based on device health, user identity, and context—not network location.',
+    example: 'Google&apos;s BeyondCorp Zero Trust model: Access based on device health, user identity, and context—not network location.',
     trend: 'Modern identity providers (Okta, Azure AD) moving toward PBAC for cloud and remote workforce security.',
   },
 ];
@@ -144,7 +144,7 @@ const sessionManagement = [
   },
   {
     vulnerability: 'Session Fixation',
-    description: 'Attacker sets victim\u2019s session ID before login (via link or app vulnerability). Victim logs in, attacker uses same session ID to hijack authenticated session.',
+    description: 'Attacker sets victim&apos;s session ID before login (via link or app vulnerability). Victim logs in, attacker uses same session ID to hijack authenticated session.',
     fix: 'Regenerate session ID on authentication. Never accept session ID from URL parameter.',
   },
   {

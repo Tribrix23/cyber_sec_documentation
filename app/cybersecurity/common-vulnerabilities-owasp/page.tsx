@@ -19,7 +19,7 @@ const owaspCategories = [
     cwe: 'CWE-284 (Improper Access Control)',
     prevalence: 'Affects 34% of applications. Highest severity impact possible (data breach, account takeover).',
     realIncidents: [
-      'Facebook/Instagram (2018): Privacy bug allowed changing any video\u2019s privacy settings via access control flaw in GraphQL API permitting unauthorized access to private videos.',
+      'Facebook/Instagram (2018): Privacy bug allowed changing any video&apos;s privacy settings via access control flaw in GraphQL API permitting unauthorized access to private videos.',
       'Twitter (2020): Privilege escalation vulnerability allowed any user to turn on \u201cProtect your tweets\u201d setting for any account via API bug.',
     ],
     prevention: [
@@ -145,7 +145,7 @@ const owaspCategories = [
       'Remove unused dependencies\u2014smaller attack surface',
       'Regular patch cycles\u2014security updates applied within SLA (typically 30 days for critical)',
       'Virtual patching (WAF rule) when immediate patch unavailable',
-      'SBOM (Software Bill of Materials) inventory\u2014know exactly what\u2019s in your software',
+      'SBOM (Software Bill of Materials) inventory\u2014know exactly what&apos;s in your software',
     ],
     testing: 'Use OWASP Dependency-Check, npm audit, bundler-audit. Check versions against NVD for known CVEs.',
     icon: 'ri-database-2-line',
@@ -546,7 +546,7 @@ export default function CommonVulnerabilitiesOwaspPage() {
             { title: 'OWASP Top 10 2021 Official Document', desc: 'Complete OWASP Top 10 with detailed risk ratings, example flaws, testing guidance for each category.', link: 'https://owasp.org/Top10' },
             { title: 'OWASP Web Security Testing Guide', desc: '900+ pages of comprehensive penetration testing procedures for every OWASP category with step-by-step instructions.', link: 'https://owasp.org/www-project-web-security-testing-guide' },
             { title: 'Burp Suite Professional', desc: 'Industry-standard web app security testing platform used by 70%+ of professional pentesters. Includes scanner, proxy, intruder, repeater.', link: 'https://portswigger.net/burp' },
-            { title: 'CWE / SANS Top 25 Most Dangerous Software Errors', desc: 'MITRE\u2019s Common Weakness Enumeration catalog with detailed descriptions, examples, and mitigations for each weakness.', link: 'https://cwe.mitre.org/top25' },
+            { title: 'CWE / SANS Top 25 Most Dangerous Software Errors', desc: 'MITRE&apos;s Common Weakness Enumeration catalog with detailed descriptions, examples, and mitigations for each weakness.', link: 'https://cwe.mitre.org/top25' },
           ].map((res) => (
             <div key={res.title} className="cyber-card p-4">
               <a href={res.link} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-cyber-cyan hover:text-cyber-amber transition-colors">

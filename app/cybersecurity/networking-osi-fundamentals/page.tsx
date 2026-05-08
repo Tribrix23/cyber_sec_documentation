@@ -25,7 +25,7 @@ const osiLayers = [
     name: 'Presentation',
     description: 'Data translation, encryption, compression, and formatting. Converts data into a format the Application layer can understand.',
     keyProtocols: ['SSL/TLS (Encryption)', 'JPEG/PNG (Image formats)', 'MPEG (Video)', 'ASCII/Unicode (Character encoding)'],
-    realWorldIncident: 'ROCA (2017): Infineon TPM vulnerability in RSA key generation algorithm allowed attackers to factor private keys by exploiting weaknesses in the presentation layer\u2019s data transformation process, affecting Estonia\u2019s national ID cards and other systems.',
+    realWorldIncident: 'ROCA (2017): Infineon TPM vulnerability in RSA key generation algorithm allowed attackers to factor private keys by exploiting weaknesses in the presentation layer&apos;s data transformation process, affecting Estonia&apos;s national ID cards and other systems.',
     analogy: 'Like translating a letter into a foreign language or encrypting it so only the recipient can read it.',
     pdu: 'Data',
   },
@@ -43,7 +43,7 @@ const osiLayers = [
     name: 'Transport',
     description: 'End-to-end communication, reliability, flow control, error recovery. TCP (reliable) vs UDP (fast but unreliable).',
     keyProtocols: ['TCP (Connection-oriented)', 'UDP (Connectionless)', 'SCTP (Multi-streaming)'],
-    realWorldIncident: 'TCP SYN Flood (1996): First major DoS attack exploited TCP\u2019s three-way handshake by sending SYN packets without completing handshake, exhausting server resources. Led to SYN cookies and modern DDoS mitigation techniques.',
+    realWorldIncident: 'TCP SYN Flood (1996): First major DoS attack exploited TCP&apos;s three-way handshake by sending SYN packets without completing handshake, exhausting server resources. Led to SYN cookies and modern DDoS mitigation techniques.',
     analogy: 'Like postal service\u2014TCP is registered mail with receipt (guaranteed delivery), UDP is regular mail (may or may not arrive).',
     pdu: 'Segments (TCP) / Datagrams (UDP)',
   },
@@ -185,7 +185,7 @@ const networkingAttacks = [
     attack: 'BGP Hijacking',
     method: 'Announce fake IP prefixes to reroute internet traffic through attacker-controlled networks.',
     techniques: ['Prefix hijacking', 'Subprefix hijacking', 'Session hijacking'],
-    realIncident: 'Google traffic rerouted via Russia (2017): Russian ISP (Tele2) accidentally announced BGP routes that diverted 2% of Google\u2019s traffic through their network for 4 minutes. Demonstrated fragility of internet routing. More serious: 2008 Pakistan Telecom deliberately hijacked YouTube, making it globally unavailable.',
+    realIncident: 'Google traffic rerouted via Russia (2017): Russian ISP (Tele2) accidentally announced BGP routes that diverted 2% of Google&apos;s traffic through their network for 4 minutes. Demonstrated fragility of internet routing. More serious: 2008 Pakistan Telecom deliberately hijacked YouTube, making it globally unavailable.',
     defense: 'RPKI (Resource Public Key Infrastructure) for route validation, BGP monitoring services, multi-homing with diverse providers.',
   },
 ];
@@ -284,9 +284,9 @@ export default function NetworkingOsiFundamentalsPage() {
 
       {/* TCP/IP Model Comparison */}
       <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-        <DocHeading level={2}>TCP/IP Model: The Internet\u2019s Architecture</DocHeading>
+        <DocHeading level={2}>TCP/IP Model: The Internet&apos;s Architecture</DocHeading>
         <p className="text-cyber-text leading-relaxed mt-3">
-          The <strong className="text-cyber-cyan">TCP/IP model (DoD model)</strong> is a 4-layer model that describes how the actual internet works. It\u2019s the practical implementation behind the theoretical OSI model.
+          The <strong className="text-cyber-cyan">TCP/IP model (DoD model)</strong> is a 4-layer model that describes how the actual internet works. It&apos;s the practical implementation behind the theoretical OSI model.
         </p>
 
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">

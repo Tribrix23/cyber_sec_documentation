@@ -116,7 +116,7 @@ export default function FoundationsSecurityMindsetPage() {
         </div>
         <DocHeading level={1}>Foundations of Cybersecurity & Security Mindset</DocHeading>
         <p className="text-cyber-text leading-relaxed mt-3 text-lg">
-          Cybersecurity is not just tools and technologies—it\u2019s a <strong className="text-cyber-cyan">mindset</strong>. Before you can defend systems, you must think like an attacker. Before you can secure data, you must understand what makes it valuable. This module establishes the mental frameworks, core principles, and foundational concepts that underpin every other module in this curriculum.
+          Cybersecurity is not just about tools and technologies it is a <strong className="text-cyber-cyan">mindset</strong>. Before you can defend systems, you must learn to think like an attacker. Before you can secure data, you must understand why it is valuable and how it can be exploited. This module introduces the mental frameworks, core security principles, and foundational concepts that serve as the backbone of every topic in this curriculum.
         </p>
       </motion.div>
 
@@ -180,7 +180,7 @@ export default function FoundationsSecurityMindsetPage() {
       <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
         <DocHeading level={2}>Understanding Attack Vectors</DocHeading>
         <p className="text-cyber-text leading-relaxed mt-3">
-          Attackers don\u2019t hack systems—they <em>exploit weaknesses</em>. Understanding common attack vectors helps you visualize where defenses must exist.
+          Attackers do not simply hack systems they <em>exploit weaknesses</em>. These weaknesses may exist in software, networks, configurations, or even human behavior. By understanding common attack vectors, you can better identify where vulnerabilities exist and where defensive measures must be implemented to protect systems, data, and users.
         </p>
 
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -244,7 +244,7 @@ export default function FoundationsSecurityMindsetPage() {
       <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
         <DocHeading level={2}>Security as a Continuous Process</DocHeading>
         <p className="text-cyber-text leading-relaxed mt-3">
-          Security is not a product you buy—it\u2019s a process you maintain. The NIST Cybersecurity Framework outlines five core functions that form a continuous cycle.
+          Security is not a product you buy it is a process you maintain. The NIST Cybersecurity Framework outlines five core functions that form a continuous cycle.
         </p>
 
         <div className="mt-6 cyber-card p-5">

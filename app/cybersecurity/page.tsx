@@ -330,7 +330,7 @@ export default function CybersecurityLandingPage() {
             },
             {
               title: 'For Security Practitioners',
-              desc: 'Use advanced modules to deepen specialized knowledge. Reference real incident case studies and threat intelligence examples for your organization\u2019s security program development.',
+              desc: 'Use advanced modules to deepen specialized knowledge. Reference real incident case studies and threat intelligence examples for your organization&apos;s security program development.',
             },
             {
               title: 'For Students & Career Changers',

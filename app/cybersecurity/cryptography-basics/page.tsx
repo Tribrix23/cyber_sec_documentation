@@ -28,7 +28,7 @@ const cryptoPrimitives = [
     howWorks: 'Plaintext + Public Key = Ciphertext. Only holder of corresponding Private Key can decrypt.',
     algorithms: ['RSA (1024/2048/4096-bit, most common)', 'ECC (Elliptic Curve, 256-bit = RSA 3072)', 'DSA (Digital Signature Algorithm)', 'Diffie-Hellman (key agreement)'],
     useCases: ['Digital signatures', 'Key exchange (TLS handshake)', 'SSH authentication', 'PGP/GPG email encryption', 'SSL/TLS certificates'],
-    realIncident: 'Heartbleed (2014): OpenSSL bug exposed private keys from memory. Attackers could impersonate any victim\u2019s server or decrypt past/future TLS sessions because private keys were compromised—asymmetric crypto broken by side-channel.',
+    realIncident: 'Heartbleed (2014): OpenSSL bug exposed private keys from memory. Attackers could impersonate any victim&apos;s server or decrypt past/future TLS sessions because private keys were compromised—asymmetric crypto broken by side-channel.',
     pros: 'No key distribution problem—publish public key freely. Enables digital signatures and certificates.',
     cons: 'Much slower (1000x), limited data size (can only encrypt small amounts, usually just symmetric key)',
     icon: 'ri-key-2-line',
@@ -77,7 +77,7 @@ const encryptionScenarios = [
   {
     scenario: 'PGP Email',
     symmetric: 'AES for message body encryption with session key',
-    asymmetric: 'RSA/ECC receiver\u2019s public key encrypts session key',
+    asymmetric: 'RSA/ECC receiver&apos;s public key encrypts session key',
     hashing: 'SHA-256 for signature verification and key IDs',
     outcome: 'End-to-end encrypted email where only recipient can read contents.',
   },
@@ -103,7 +103,7 @@ const tlsDeepDive = [
   },
   {
     phase: '3. Key Exchange',
-    description: 'RSA: Client encrypts pre-master secret with server\u2019s public key. ECDHE: Both compute shared secret via elliptic curve math.',
+    description: 'RSA: Client encrypts pre-master secret with server&apos;s public key. ECDHE: Both compute shared secret via elliptic curve math.',
     security: 'Eavesdroppers can\u2019t derive pre-master secret without private key (RSA) or solving elliptic curve discrete log (ECDHE).',
   },
   {
@@ -122,7 +122,7 @@ const pkiComponents = [
   {
     component: 'Certificate Authority (CA)',
     role: 'Trusted third party that digitally signs X.509 certificates after verifying applicant identity.',
-    example: 'Let\u2019s Encrypt (free automated CA), DigiCert, GlobalSign, Entrust.',
+    example: 'Let&apos;s Encrypt (free automated CA), DigiCert, GlobalSign, Entrust.',
     trust: 'Root CA certificate is pre-installed in browsers/OS trust stores. Chain of trust verification.',
   },
   {
@@ -138,7 +138,7 @@ const pkiComponents = [
   {
     component: 'End Entity',
     role: 'The actual certificate holder—webserver, user, code signing entity.',
-    example: 'Amazon\u2019s SSL certificate for amazon.com presented during HTTPS handshake.',
+    example: 'Amazon&apos;s SSL certificate for amazon.com presented during HTTPS handshake.',
   },
 ];
 
@@ -369,9 +369,9 @@ export default function CryptographyBasicsPage() {
 
       {/* Public Key Infrastructure (PKI) */}
       <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-        <DocHeading level={2}>Public Key Infrastructure (PKI): The Web\u2019s Trust Framework</DocHeading>
+        <DocHeading level={2}>Public Key Infrastructure (PKI): The Web&apos;s Trust Framework</DocHeading>
         <p className="text-cyber-text leading-relaxed mt-3">
-          PKI is the system that issues, manages, validates, and revokes digital certificates. HTTPS websites trust browsers because browsers trust Certificate Authorities (CAs) that have audited and signed the website\u2019s certificate.
+          PKI is the system that issues, manages, validates, and revokes digital certificates. HTTPS websites trust browsers because browsers trust Certificate Authorities (CAs) that have audited and signed the website&apos;s certificate.
         </p>
 
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
