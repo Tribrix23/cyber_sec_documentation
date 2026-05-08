@@ -76,6 +76,7 @@ const courseModules = [
   { name: 'John the Ripper', icon: 'ri-lock-unlock-line', color: 'text-cyber-green', desc: 'Password cracking with wordlists, rules, and incremental brute force' },
   { name: 'Burp Suite', icon: 'ri-bug-line', color: 'text-cyber-amber', desc: 'Web proxy, repeater, intruder, and automated vulnerability scanning' },
   { name: 'SQLMap', icon: 'ri-database-2-line', color: 'text-cyber-red', desc: 'Automated SQL injection detection, exploitation, and database enumeration' },
+  { name: 'Cloudsploit', icon: 'ri-shield-keyhole-line', color: 'text-cyber-cyan', desc: 'Cloud security scanning and misconfiguration detection' },
   { name: 'SSLScan', icon: 'ri-shield-keyhole-line', color: 'text-cyber-green', desc: 'SSL/TLS cipher analysis, certificate inspection, and vulnerability detection' },
   { name: 'Netcat', icon: 'ri-terminal-box-line', color: 'text-cyber-cyan', desc: 'Networking Swiss Army knife: shells, transfers, scanning, and debugging' },
   { name: 'Metasploit', icon: 'ri-fire-line', color: 'text-cyber-amber', desc: 'Exploitation framework, payloads, Meterpreter, and post-exploitation' },
@@ -455,9 +456,9 @@ Brute force: Password guessing (rate limiting + lockout)
 {/* Section 6: Course Structure */}
          <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
            <DocHeading level={2} id="course-structure">How This Course Works</DocHeading>
-           <p className="text-cyber-text leading-relaxed mt-3">
-             Each tool module follows a consistent learning path designed to take you from zero knowledge to hands-on proficiency. Every module contains:
-           </p>
+<p className="text-cyber-text leading-relaxed mt-3">
+              Each tool module follows a consistent learning path designed to take you from zero knowledge to hands-on proficiency. Every module contains concepts, interactive builders, quizzes, and hands-on lab exercises. Ten tools are covered, including Cloudsploit for cloud security scanning.
+            </p>
 
            <motion.div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" variants={fadeInStagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
              {[

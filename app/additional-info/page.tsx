@@ -225,7 +225,7 @@ const essentialTools = [
   { name: 'John the Ripper', purpose: 'Password cracking' },
   { name: 'Gobuster', purpose: 'Directory and subdomain enumeration' },
   { name: 'Hashcat', purpose: 'Advanced password recovery (GPU)' },
-  { name: 'Aircrack-ng', purpose: 'Wireless security assessment' },
+  { name: 'Cloudsploit', purpose: 'Cloud security scanning and misconfiguration detection' },
   { name: 'Netcat', purpose: 'Networking Swiss Army knife' },
 ];
 
@@ -738,7 +738,7 @@ sudo -l                      # List sudo privileges`}
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <a href="/getting-started" className="px-5 py-2.5 bg-cyber-cyan text-cyber-bg font-semibold rounded-lg hover:bg-cyber-cyan-dim transition-all whitespace-nowrap glow-cyan">
                 <i className="ri-rocket-line mr-2" />
-                Getting Started
+                CyberSec Fundamentals
               </a>
               <a href="/wireshark" className="px-5 py-2.5 border border-cyber-amber text-cyber-amber font-semibold rounded-lg hover:bg-cyber-amber/10 transition-all whitespace-nowrap">
                 <i className="ri-radar-line mr-2" />

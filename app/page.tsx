@@ -135,7 +135,7 @@ const stats = [
   { value: '10', label: 'Core Tools' },
   { value: '50+', label: 'Documentation Pages' },
   { value: '10+', label: 'Interactive Builders' },
-  { value: '100+', label: 'Quiz Questions' },
+  { value: '10+', label: 'Quiz Questions' },
 ];
 
 const quickLinks = [
@@ -332,7 +332,7 @@ export default function Home() {
             <span className="inline-block px-3 py-1 rounded-full bg-cyber-amber/10 text-cyber-amber text-xs font-medium font-mono mb-3">
               DOCUMENTED TOOLS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">Nine Essential Tools</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Ten Essential Tools</h2>
             <p className="mt-3 text-cyber-text max-w-2xl mx-auto">
               Every tool documented from installation basics to advanced techniques, with interactive command builders and real-world examples.
             </p>
@@ -455,15 +455,39 @@ export default function Home() {
                        <i className="ri-terminal-box-line mr-1" />
                        Netcat Builder
                      </button>
-                     <button
-                       type="button"
-                       onClick={() => navigate.push('/sslscan#builder')}
-                       className="px-4 py-2 rounded-lg bg-cyber-green/10 border border-cyber-green/20 text-cyber-green text-sm font-medium hover:bg-cyber-green/20 transition-all whitespace-nowrap"
-                     >
-                       <i className="ri-shield-keyhole-line mr-1" />
-                       SSLScan Builder
-                     </button>
-                   </div>
+<button
+                        type="button"
+                        onClick={() => navigate.push('/sslscan#builder')}
+                        className="px-4 py-2 rounded-lg bg-cyber-green/10 border border-cyber-green/20 text-cyber-green text-sm font-medium hover:bg-cyber-green/20 transition-all whitespace-nowrap"
+                      >
+                        <i className="ri-shield-keyhole-line mr-1" />
+                        SSLScan Builder
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => navigate.push('/john-the-ripper#builder')}
+                        className="px-4 py-2 rounded-lg bg-cyber-green/10 border border-cyber-green/20 text-cyber-green text-sm font-medium hover:bg-cyber-green/20 transition-all whitespace-nowrap"
+                      >
+                        <i className="ri-lock-unlock-line mr-1" />
+                        John the Ripper Builder
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => navigate.push('/burp-suite#builder')}
+                        className="px-4 py-2 rounded-lg bg-cyber-amber/10 border border-cyber-amber/20 text-cyber-amber text-sm font-medium hover:bg-cyber-amber/20 transition-all whitespace-nowrap"
+                      >
+                        <i className="ri-bug-line mr-1" />
+                        Burp Suite Builder
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => navigate.push('/metasploit#builder')}
+                        className="px-4 py-2 rounded-lg bg-cyber-amber/10 border border-cyber-amber/20 text-cyber-amber text-sm font-medium hover:bg-cyber-amber/20 transition-all whitespace-nowrap"
+                      >
+                        <i className="ri-fire-line mr-1" />
+                        Metasploit Builder
+                      </button>
+                    </div>
                 </div>
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 rounded-full bg-cyber-cyan/10 flex items-center justify-center">
@@ -541,9 +565,9 @@ export default function Home() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyber-cyan/5 rounded-full blur-[100px]" />
             <div className="relative z-10">
               <h2 className="text-2xl md:text-3xl font-bold text-white">Start Your Cybersecurity Journey</h2>
-              <p className="mt-3 text-cyber-text max-w-xl mx-auto">
-                Learn the fundamentals, master 9 essential tools, test your knowledge with quizzes, and practice with hands-on lab exercises.
-              </p>
+<p className="mt-3 text-cyber-text max-w-xl mx-auto">
+                 Learn the fundamentals, master 10 essential tools, test your knowledge with quizzes, and practice with hands-on lab exercises.
+               </p>
               <button
                 type="button"
                 onClick={() => navigate.push('/getting-started')}
