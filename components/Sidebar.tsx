@@ -66,7 +66,7 @@ export default function Sidebar() {
 
   const renderNavItem = (item: NavItem) => {
     const active = isActivePath(item.path);
-    const classes = `flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors cursor-pointer ${
+    const classes = `flex items-center gap-2.5 sm:gap-3 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-md text-xs sm:text-sm transition-colors cursor-pointer ${
       active
         ? 'nav-active font-medium bg-cyber-cyan/15 text-cyber-cyan'
         : 'text-cyber-text hover:text-cyber-cyan'
@@ -80,25 +80,25 @@ export default function Sidebar() {
           navItemRefs.current[item.path] = el;
         }}
       >
-        <span className="w-5 h-5 flex items-center justify-center shrink-0">
+        <span className="w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center shrink-0">
           <i className={item.icon} />
         </span>
-        <span className="truncate">{item.label}</span>
+        <span className="truncate text-xs sm:text-sm">{item.label}</span>
       </Link>
     );
   };
 
   return (
     <>
-      {/* Mobile hamburger */}
-      <button
-        type="button"
-        className="fixed top-4 left-4 z-50 md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-cyber-bg-card border border-cyber-border text-cyber-cyan"
-        onClick={() => setIsMobileOpen(!isMobileOpen)}
-        aria-label="Toggle navigation"
-      >
-        <i className={isMobileOpen ? 'ri-close-line text-xl' : 'ri-menu-line text-xl'} />
-      </button>
+{/* Mobile hamburger */}
+       <button
+         type="button"
+         className="fixed top-3 left-3 z-50 md:hidden w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg bg-cyber-bg-card border border-cyber-border text-cyber-cyan"
+         onClick={() => setIsMobileOpen(!isMobileOpen)}
+         aria-label="Toggle navigation"
+       >
+         <i className={isMobileOpen ? 'ri-close-line text-lg sm:text-xl' : 'ri-menu-line text-lg sm:text-xl'} />
+       </button>
 
       {/* Mobile overlay */}
       {isMobileOpen && (
@@ -110,88 +110,88 @@ export default function Sidebar() {
       )}
 
       {/* Sidebar */}
-      <aside
-        className={`fixed top-0 left-0 z-40 h-full w-70 bg-cyber-bg-light border-r border-cyber-border flex flex-col transition-transform duration-300 ${
+<aside
+        className={`fixed top-0 left-0 z-40 h-full w-64 sm:w-70 bg-cyber-bg-light border-r border-cyber-border flex flex-col transition-transform duration-300 ${
           isMobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
         }`}
-      >
-        {/* Logo */}
-        <div className="flex items-center gap-3 px-5 py-5 border-b border-cyber-border">
-          <div className="flex justify-center w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-cyber-bg-card">
-            <img
-              src="/icon.png"
-              alt="CyberSec Documentation Logo"
-              className="object-contain"
-              width={30}
-              height={30}
-            />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-semibold text-cyber-text tracking-tight">
-              cybersec.devctr
-            </span>
-            <span className="text-[11px] text-cyber-text font-mono">Security Tool Docs</span>
-          </div>
-        </div>
+       >
+         {/* Logo */}
+         <div className="flex items-center gap-2.5 sm:gap-3 px-4 sm:px-5 py-4 sm:py-5 border-b border-cyber-border">
+           <div className="flex justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg overflow-hidden shrink-0 bg-cyber-bg-card">
+             <img
+               src="/icon.png"
+               alt="CyberSec Documentation Logo"
+               className="object-contain"
+               width={28}
+               height={28}
+             />
+           </div>
+           <div className="flex flex-col">
+             <span className="text-xs sm:text-sm font-semibold text-cyber-text tracking-tight">
+               cybersec.devctr
+             </span>
+             <span className="text-[10px] sm:text-[11px] text-cyber-text font-mono">Security Tool Docs</span>
+           </div>
+         </div>
 
-        {/* Navigation */}
-        <nav className="flex-1 overflow-y-auto px-3 pb-4">
-          {navSections.map((section) => {
-            const sectionIsActive = isSectionActive(section.items);
-            const isExpanded = expandedSections.includes(section.title);
-            
-            return (
-              <div key={section.title} className="mb-3">
-                <button
-                  type="button"
-                  onClick={() => toggleSection(section.title)}
-                  className={`flex items-center justify-between w-full px-3 py-2 text-[11px] font-semibold tracking-wider transition-colors ${
-                    sectionIsActive
-                      ? 'text-cyber-cyan'
-                      : 'text-cyber-text hover:text-cyber-cyan'
-                  }`}
-                >
-                  <span className="flex items-center gap-2">
-                    {sectionIsActive && (
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyber-cyan flex-shrink-0" />
-                    )}
-                    {section.title}
-                  </span>
-                  <i
-                    className={`ri-arrow-down-s-line text-sm transition-transform ${
-                      isExpanded ? '' : '-rotate-90'
-                    }`}
-                  />
-                </button>
-                {isExpanded && (
-                  <ul className="mt-1 space-y-0.5">
-                    {section.items.map((item) => (
-                      <li key={item.path}>
-                        {renderNavItem(item)}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            );
-          })}
-        </nav>
+{/* Navigation */}
+         <nav className="flex-1 overflow-y-auto px-2.5 sm:px-3 pb-3 sm:pb-4">
+           {navSections.map((section) => {
+             const sectionIsActive = isSectionActive(section.items);
+             const isExpanded = expandedSections.includes(section.title);
+             
+             return (
+               <div key={section.title} className="mb-2 sm:mb-3">
+                 <button
+                   type="button"
+                   onClick={() => toggleSection(section.title)}
+                   className={`flex items-center justify-between w-full px-2.5 sm:px-3 py-1.5 sm:py-2 text-[10px] sm:text-[11px] font-semibold tracking-wider transition-colors ${
+                     sectionIsActive
+                       ? 'text-cyber-cyan'
+                       : 'text-cyber-text hover:text-cyber-cyan'
+                   }`}
+                 >
+                   <span className="flex items-center gap-1.5 sm:gap-2">
+                     {sectionIsActive && (
+                       <span className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-cyber-cyan flex-shrink-0" />
+                     )}
+                     {section.title}
+                   </span>
+                   <i
+                     className={`ri-arrow-down-s-line text-xs sm:text-sm transition-transform ${
+                       isExpanded ? '' : '-rotate-90'
+                     }`}
+                   />
+                 </button>
+                 {isExpanded && (
+                   <ul className="mt-0.5 sm:mt-1 space-y-0.5">
+                     {section.items.map((item) => (
+                       <li key={item.path}>
+                         {renderNavItem(item)}
+                       </li>
+                     ))}
+                   </ul>
+                 )}
+               </div>
+             );
+           })}
+         </nav>
 
-        {/* Footer */}
-        <div className="px-4 py-3 border-t border-cyber-border">
-          <div className="flex items-center justify-between text-xs text-cyber-text">
-            <span className="font-mono">v3.1.0</span>
-            <a
-              href="https://nmap.org"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              className="flex items-center gap-1.5 hover:text-cyber-cyan transition-colors"
-            >
-              <i className="ri-external-link-line" />
-              nmap.org
-            </a>
-          </div>
-        </div>
+{/* Footer */}
+         <div className="px-3 sm:px-4 py-2.5 sm:py-3 border-t border-cyber-border">
+           <div className="flex items-center justify-between text-[10px] xs:text-xs sm:text-xs text-cyber-text">
+             <span className="font-mono">v3.1.0</span>
+             <a
+               href="https://nmap.org"
+               target="_blank"
+               rel="noopener noreferrer nofollow"
+               className="flex items-center gap-1 hover:text-cyber-cyan transition-colors"
+             >
+               <i className="ri-external-link-line text-xs" />
+               <span className="hidden xs:inline">nmap.org</span>
+             </a>
+           </div>
+         </div>
       </aside>
     </>
   )

@@ -87,17 +87,17 @@ export default function GettingStarted() {
   const [activeLayer, setActiveLayer] = useState<number | null>(null);
 
   return (
-      <div className="px-6 md:px-12 lg:px-16 py-10 max-w-5xl">
+      <div className="px-4 sm:px-6 md:px-12 lg:px-16 py-8 sm:py-10 max-w-5xl">
         {/* Header */}
         <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.5 }}>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyber-cyan/10 border border-cyber-cyan/20 text-cyber-cyan text-xs font-medium font-mono mb-4">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-cyber-cyan/10 border border-cyber-cyan/20 text-cyber-cyan text-[10px] sm:text-xs font-medium font-mono mb-3 sm:mb-4">
             <i className="ri-book-open-line" />
             Getting Started
           </div>
           <DocHeading level={1}>Cybersecurity Fundamentals</DocHeading>
-           <p className="text-cyber-text leading-relaxed mt-3 text-lg">
-             Welcome to <strong className="text-cyber-cyan">cybersec.devctr.com</strong> — your interactive learning platform for mastering essential offensive and defensive security tools. Before diving into tools, you need to understand the foundations.
-           </p>
+<p className="text-cyber-text leading-relaxed mt-2.5 sm:mt-3 text-sm sm:text-lg">
+              Welcome to <strong className="text-cyber-cyan">cybersec.devctr.com</strong> — your interactive learning platform for mastering essential offensive and defensive security tools. Before diving into tools, you need to understand the foundations.
+            </p>
         </motion.div>
 
         {/* Section 1: What is Cybersecurity */}
@@ -109,76 +109,76 @@ export default function GettingStarted() {
           <p className="text-cyber-text leading-relaxed mt-3">
             It encompasses multiple domains including network security, application security, information security, operational security, and disaster recovery. In this course we focus primarily on the <strong className="text-cyber-cyan">network and application layers</strong> where the tools you will learn operate.
           </p>
-          <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {[
-              'Network Security — Firewalls, IDS/IPS, segmentation',
-              'Application Security — Secure coding, pentesting, bug bounty',
-              'Information Security — Data protection, encryption, DLP',
-              'Operational Security — Procedures, policies, access control',
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2.5 text-sm text-cyber-text">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyber-cyan flex-shrink-0" />
-                {item}
-              </div>
-            ))}
-          </div>
+<div className="mt-4 sm:mt-5 grid grid-cols-1 xs:grid-cols-2 gap-2.5 sm:gap-3">
+             {[
+               'Network Security — Firewalls, IDS/IPS, segmentation',
+               'Application Security — Secure coding, pentesting, bug bounty',
+               'Information Security — Data protection, encryption, DLP',
+               'Operational Security — Procedures, policies, access control',
+             ].map((item, i) => (
+               <div key={i} className="flex items-center gap-2 text-xs sm:text-sm text-cyber-text">
+                 <span className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-cyber-cyan flex-shrink-0" />
+                 {item}
+               </div>
+             ))}
+           </div>
         </motion.section>
 
         {/* Section 2: The CIA Triad */}
-        <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+        <motion.section className="mt-8 sm:mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <DocHeading level={2} id="cia-triad">The CIA Triad</DocHeading>
-          <p className="text-cyber-text leading-relaxed mt-3">
+          <p className="text-cyber-text leading-relaxed mt-2.5 sm:mt-3 text-xs sm:text-sm">
             The CIA Triad is the foundational model for information security policy. Every security control exists to protect one or more of these three principles:
           </p>
 
-          <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="cyber-card p-5 border-l-[3px] border-l-cyber-cyan">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-8 h-8 rounded bg-cyber-cyan/10 flex items-center justify-center text-cyber-cyan">
-                  <i className="ri-lock-line" />
+          <div className="mt-4 sm:mt-5 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+            <div className="cyber-card p-4 sm:p-5 border-l-[3px] border-l-cyber-cyan">
+              <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded bg-cyber-cyan/10 flex items-center justify-center text-cyber-cyan">
+                  <i className="ri-lock-line text-xs sm:text-sm" />
                 </div>
-                <h4 className="text-white font-semibold">Confidentiality</h4>
+                <h4 className="text-white font-semibold text-xs sm:text-sm">Confidentiality</h4>
               </div>
-              <p className="text-sm text-cyber-text leading-relaxed">
+              <p className="text-xs text-cyber-text leading-relaxed">
                 Ensures that information is accessible only to those authorized to have access. Encryption, access controls, and authentication mechanisms enforce confidentiality.
               </p>
-              <p className="text-xs text-cyber-text-dim mt-2 font-mono">
+              <p className="text-[10px] sm:text-xs text-cyber-text-dim mt-1.5 sm:mt-2 font-mono">
                 Example: HTTPS (TLS) encrypts web traffic so only the browser and server can read it.
               </p>
             </div>
 
-            <div className="cyber-card p-5 border-l-[3px] border-l-cyber-green">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-8 h-8 rounded bg-cyber-green/10 flex items-center justify-center text-cyber-green">
-                  <i className="ri-check-double-line" />
+            <div className="cyber-card p-4 sm:p-5 border-l-[3px] border-l-cyber-green">
+              <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded bg-cyber-green/10 flex items-center justify-center text-cyber-green">
+                  <i className="ri-check-double-line text-xs sm:text-sm" />
                 </div>
-                <h4 className="text-white font-semibold">Integrity</h4>
+                <h4 className="text-white font-semibold text-xs sm:text-sm">Integrity</h4>
               </div>
-              <p className="text-sm text-cyber-text leading-relaxed">
+              <p className="text-xs text-cyber-text leading-relaxed">
                 Ensures the accuracy and completeness of data. Integrity controls prevent unauthorized modification, corruption, or deletion of information.
               </p>
-              <p className="text-xs text-cyber-text-dim mt-2 font-mono">
+              <p className="text-[10px] sm:text-xs text-cyber-text-dim mt-1.5 sm:mt-2 font-mono">
                 Example: File hashes (SHA-256) verify a downloaded file was not tampered with.
               </p>
             </div>
 
-            <div className="cyber-card p-5 border-l-[3px] border-l-cyber-amber">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-8 h-8 rounded bg-cyber-amber/10 flex items-center justify-center text-cyber-amber">
-                  <i className="ri-time-line" />
+            <div className="cyber-card p-4 sm:p-5 border-l-[3px] border-l-cyber-amber">
+              <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded bg-cyber-amber/10 flex items-center justify-center text-cyber-amber">
+                  <i className="ri-time-line text-xs sm:text-sm" />
                 </div>
-                <h4 className="text-white font-semibold">Availability</h4>
+                <h4 className="text-white font-semibold text-xs sm:text-sm">Availability</h4>
               </div>
-              <p className="text-sm text-cyber-text leading-relaxed">
+              <p className="text-xs text-cyber-text leading-relaxed">
                 Ensures that authorized users can access systems and data when needed. Redundancy, load balancing, and DDoS protection maintain availability.
               </p>
-              <p className="text-xs text-cyber-text-dim mt-2 font-mono">
+              <p className="text-[10px] sm:text-xs text-cyber-text-dim mt-1.5 sm:mt-2 font-mono">
                 Example: CDN and rate limiting keep a website online during traffic spikes.
               </p>
             </div>
           </div>
 
-          <Callout type="info" className="mt-5">
+          <Callout type="info" className="mt-4 sm:mt-5">
             Beyond the CIA Triad, modern security also considers <strong className="text-cyber-cyan">Non-repudiation</strong> (proof of action), <strong className="text-cyber-cyan">Authentication</strong> (proving identity), and <strong className="text-cyber-cyan">Authorization</strong> (permission to act).
           </Callout>
         </motion.section>
