@@ -168,7 +168,19 @@ const navSections: { title: string; items: NavItem[] }[] = [
   {
     title: 'METASPLOIT',
     items: [
-      { label: 'Metasploit Documentation', path: '/metasploit', icon: 'ri-fire-line' },
+      { label: 'Metasploit Overview', path: '/metasploit', icon: 'ri-fire-line' },
+      { label: 'Installation', path: '/metasploit/installation', icon: 'ri-download-line' },
+      { label: 'Module Types', path: '/metasploit/module-types', icon: 'ri-box-3-line' },
+      { label: 'Essential Commands', path: '/metasploit/commands', icon: 'ri-terminal-line' },
+      { label: 'Payloads', path: '/metasploit/payloads', icon: 'ri-rocket-line' },
+      { label: 'Meterpreter', path: '/metasploit/meterpreter', icon: 'ri-terminal-box-line' },
+      { label: 'Exploit Workflow', path: '/metasploit/workflow', icon: 'ri-road-map-line' },
+      { label: 'Database', path: '/metasploit/database', icon: 'ri-database-2-line' },
+      { label: 'Examples', path: '/metasploit/examples', icon: 'ri-file-list-line' },
+      { label: 'Command Builder', path: '/metasploit/command-builder', icon: 'ri-tools-line' },
+      { label: 'Pro Tips', path: '/metasploit/pro-tips', icon: 'ri-lightbulb-line' },
+      { label: 'Metasploit Quiz', path: '/metasploit/quiz', icon: 'ri-questionnaire-line' },
+      { label: 'Metasploit Lab', path: '/metasploit/lab', icon: 'ri-flask-line' },
     ],
   },
 ];

