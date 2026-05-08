@@ -161,7 +161,7 @@ export default function CareerPathsFuturePage() {
       <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.5 }}>
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyber-purple/10 border border-cyber-purple/20 text-cyber-purple text-xs font-medium font-mono mb-4">
           <i className="ri-compass-3-line" />
-          Module 17 of 20 — Professional Practice
+          Module 20 of 20 — Professional Practice
         </div>
         <DocHeading level={1}>Career Paths & The Future of Cybersecurity</DocHeading>
         <p className="text-cyber-text leading-relaxed mt-3 text-lg">
@@ -366,11 +366,11 @@ export default function CareerPathsFuturePage() {
       {/* Navigation */}
       <motion.section className="mt-12 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
         <div className="flex gap-3 justify-between items-center">
-          <a href="/cybersecurity/security-architecture" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
-            <i className="ri-arrow-left-line mr-1" /> Module 16
+          <a href="/cybersecurity/threat-intelligence" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+            <i className="ri-arrow-left-line mr-1" /> Threat Intelligence
           </a>
-          <a href="/cybersecurity/compliance-legal-ethics" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-black text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
-            Next: Compliance & Legal <i className="ri-arrow-right-line ml-1" />
+          <a href="/cybersecurity/final-exam" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-black text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
+            Next: Final Exam <i className="ri-arrow-right-line ml-1" />
           </a>
         </div>
       </motion.section>

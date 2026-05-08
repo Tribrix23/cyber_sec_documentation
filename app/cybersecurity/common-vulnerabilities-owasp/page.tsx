@@ -565,11 +565,11 @@ export default function CommonVulnerabilitiesOwaspPage() {
             <i className="ri-book-open-line" /> Module 5 of 20
           </div>
           <div className="flex gap-3">
-            <a href="/cybersecurity/authentication-authorization" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
-              <i className="ri-arrow-left-line mr-1" /> Auth & Access Control
+            <a href="/cybersecurity/quiz-1" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+              <i className="ri-arrow-left-line mr-1" /> Quiz 1
             </a>
-            <a href="/cybersecurity/quiz-1" className="px-5 py-2.5 rounded-lg bg-cyber-red text-black text-sm font-semibold hover:bg-cyber-red/80 transition-all whitespace-nowrap">
-              Next: Quiz 1 <i className="ri-arrow-right-line ml-1" />
+            <a href="/cybersecurity/malware-threat-landscape" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-black text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
+             Next: Malware & Threats <i className="ri-arrow-right-line ml-1" />
             </a>
           </div>
         </div>

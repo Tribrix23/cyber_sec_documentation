@@ -269,15 +269,20 @@ export default function SecurityArchitecturePage() {
 
       {/* Navigation */}
       <motion.section className="mt-12 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-        <div className="flex gap-3 justify-between items-center">
-          <a href="/cybersecurity/encryption-cryptanalysis" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
-            <i className="ri-arrow-left-line mr-1" /> Module 15
-          </a>
-          <a href="/cybersecurity/quiz-4" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-black text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
-            Next: Quiz 4 <i className="ri-arrow-right-line ml-1" />
-          </a>
-        </div>
-      </motion.section>
+              <div className="flex gap-3 justify-between items-center">
+                <div className="text-sm text-cyber-text">
+                  <i className="ri-book-open-line" /> Module 16 of 20
+                </div>
+                <div className="flex gap-3">
+                  <a href="/cybersecurity/encryption-cryptanalysis" className="px-5 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
+                    <i className="ri-arrow-left-line mr-1" /> Encryption
+                  </a>
+                  <a href="/cybersecurity/quiz-4" className="px-5 py-2.5 rounded-lg bg-cyber-amber text-black text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
+                    Next: Quiz 4 <i className="ri-arrow-right-line ml-1" />
+                  </a>
+                </div>
+              </div>
+            </motion.section>
     </div>
   );
 }
