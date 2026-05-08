@@ -66,8 +66,8 @@ export default function Dock() {
             onClick={() => setIsOpen(true)}
           />
           <div className="flex items-center gap-1 text-xs text-cyber-text-dim">
-            <i className="ri-information-line" />
-            <span>Info</span>
+            <i className="ri-information-line text-white" />
+            <span className='text-white'>Info</span>
           </div>
         </button>
       </div>
