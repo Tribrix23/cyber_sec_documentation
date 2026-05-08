@@ -132,7 +132,17 @@ const navSections: { title: string; items: NavItem[] }[] = [
   {
     title: 'SSLSCAN',
     items: [
-      { label: 'SSLScan Documentation', path: '/sslscan', icon: 'ri-shield-keyhole-line' },
+      { label: 'SSLScan Overview', path: '/sslscan', icon: 'ri-shield-keyhole-line' },
+      { label: 'Installation', path: '/sslscan/installation', icon: 'ri-download-line' },
+      { label: 'Protocol Versions', path: '/sslscan/protocol-versions', icon: 'ri-stack-line' },
+      { label: 'Cipher Suites', path: '/sslscan/cipher-suites', icon: 'ri-lock-line' },
+      { label: 'Vulnerabilities', path: '/sslscan/vulnerabilities', icon: 'ri-alert-line' },
+      { label: 'Common Flags', path: '/sslscan/flags', icon: 'ri-flag-line' },
+      { label: 'Usage Examples', path: '/sslscan/examples', icon: 'ri-file-list-line' },
+      { label: 'Command Builder', path: '/sslscan/command-builder', icon: 'ri-tools-line' },
+      { label: 'Pro Tips', path: '/sslscan/pro-tips', icon: 'ri-lightbulb-line' },
+      { label: 'SSLScan Quiz', path: '/sslscan/quiz', icon: 'ri-questionnaire-line' },
+      { label: 'SSLScan Lab', path: '/sslscan/lab', icon: 'ri-flask-line' },
     ],
   },
   {
