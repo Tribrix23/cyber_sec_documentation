@@ -27,7 +27,7 @@ const tools = [
     color: 'text-cyber-cyan',
     bg: 'bg-cyber-cyan/10',
     border: 'border-cyber-cyan/20',
-    link: '/getting-started',
+    link: '/wireshark',
     sections: ['Capture Filters', 'Display Filters', 'Protocol Analysis', 'Tshark CLI'],
   },
   {

@@ -11,6 +11,19 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
+const fadeInStagger = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
+const fadeInItem = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const osiLayers = [
   { num: 7, name: 'Application', proto: 'HTTP, HTTPS, FTP, DNS, SMTP', desc: 'User-facing protocols and data exchange' },
   { num: 6, name: 'Presentation', proto: 'SSL/TLS, MIME', desc: 'Data formatting, encryption, compression' },
@@ -49,6 +62,11 @@ const terminology = [
   { term: 'Threat Actor', def: 'An individual or group with intent and capability to attack systems.' },
   { term: 'Indicators of Compromise (IoC)', def: 'Artifacts observed on a network or OS that indicate a potential intrusion.' },
   { term: 'Kill Chain', def: 'A model describing the stages of a cyberattack from reconnaissance to exfiltration.' },
+  { term: 'Red Team', def: 'Security professionals who simulate real attacks to test defenses.' },
+  { term: 'Blue Team', def: 'Security defenders who protect systems and detect intrusions.' },
+  { term: 'Purple Team', def: 'Collaboration between red and blue teams to improve security posture.' },
+  { term: 'TTP', def: 'Tactics, Techniques, and Procedures used by threat actors.' },
+  { term: 'IOC', def: 'Indicators of Compromise - forensic artifacts of an attack.' },
 ];
 
 const courseModules = [
@@ -239,7 +257,7 @@ export default function GettingStarted() {
                 <li className="flex gap-2"><span className="text-cyber-green">+</span> Supports multicast and broadcast</li>
                 <li className="flex gap-2"><span className="text-cyber-red">-</span> No guaranteed delivery or ordering</li>
                 <li className="flex gap-2"><span className="text-cyber-red">-</span> Used by: DNS, DHCP, NTP, VoIP, gaming</li>
-              </ul>
+</ul>
             </div>
           </div>
 
@@ -267,6 +285,10 @@ export default function GettingStarted() {
               </tbody>
             </table>
           </div>
+
+          <Callout type="tip" className="mt-4">
+            <strong className="text-cyber-cyan">Remember these ports:</strong> 22 (SSH), 23 (Telnet), 53 (DNS), 80 (HTTP), 443 (HTTPS), 445 (SMB), 3389 (RDP). These appear frequently in pentests and CTFs.
+          </Callout>
 
           <DocHeading level={3} id="ip-subnet">IP Addressing &amp; Subnetting</DocHeading>
           <p className="text-cyber-text leading-relaxed mt-3">
@@ -297,137 +319,201 @@ export default function GettingStarted() {
           </div>
         </motion.section>
 
-        {/* Section 4: Common Terminology */}
-        <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-          <DocHeading level={2} id="terminology">Essential Terminology</DocHeading>
-          <p className="text-cyber-text leading-relaxed mt-3">
-            Every field has its vocabulary. Understanding these terms is essential before reading security reports, CVEs, or tool documentation.
-          </p>
-          <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
-            {terminology.map((t, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setActiveTerm(activeTerm === i ? null : i)}
-                className={`cyber-card p-4 text-left cursor-pointer ${activeTerm === i ? 'border-cyber-cyan' : ''}`}
-              >
-                <div className="flex items-start gap-3">
-                  <div className="w-7 h-7 rounded bg-cyber-bg border border-cyber-border flex items-center justify-center flex-shrink-0">
-                    <i className="ri-bookmark-line text-cyber-cyan text-xs" />
+{/* Section 4: Common Terminology */}
+         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+           <DocHeading level={2} id="terminology">Essential Terminology</DocHeading>
+           <p className="text-cyber-text leading-relaxed mt-3">
+             Every field has its vocabulary. Understanding these terms is essential before reading security reports, CVEs, or tool documentation.
+           </p>
+           <motion.div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3" variants={fadeInStagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+             {terminology.map((t, i) => (
+               <motion.button
+                 key={i}
+                 type="button"
+                 onClick={() => setActiveTerm(activeTerm === i ? null : i)}
+                 className={`cyber-card p-4 text-left cursor-pointer transition-all ${activeTerm === i ? 'border-cyber-cyan bg-cyber-bg-card/50' : 'hover:border-cyber-cyan/50'}`}
+                 variants={fadeInItem}
+               >
+                 <div className="flex items-start gap-3">
+                   <div className="w-7 h-7 rounded bg-cyber-bg border border-cyber-border flex items-center justify-center flex-shrink-0">
+                     <i className="ri-bookmark-line text-cyber-cyan text-xs" />
+                   </div>
+                   <div className="flex-1 min-w-0">
+                     <h4 className="text-sm font-semibold text-white">{t.term}</h4>
+                     <AnimatePresence>
+                       {activeTerm === i && (
+                         <motion.p
+                           className="text-xs text-cyber-text mt-2 leading-relaxed"
+                           initial={{ opacity: 0, height: 0 }}
+                           animate={{ opacity: 1, height: 'auto' }}
+                           exit={{ opacity: 0, height: 0 }}
+                         >
+                           {t.def}
+                         </motion.p>
+                       )}
+                     </AnimatePresence>
+                   </div>
+                   <i className={`ri-arrow-down-s-line text-cyber-text-dim transition-transform ${activeTerm === i ? 'rotate-180' : ''}`} />
+                 </div>
+               </motion.button>
+             ))}
+           </motion.div>
+         </motion.section>
+
+{/* Section 5: The Kill Chain */}
+         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+           <DocHeading level={2} id="kill-chain">The Cyber Kill Chain</DocHeading>
+           <p className="text-cyber-text leading-relaxed mt-3">
+             Developed by Lockheed Martin, the Cyber Kill Chain describes the stages of a typical cyber intrusion. Defenders try to <strong className="text-cyber-cyan">break the chain</strong> at any stage; attackers try to advance through it.
+           </p>
+
+           <motion.div className="mt-5 space-y-3" variants={fadeInStagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+             {[
+               { stage: '1. Reconnaissance', desc: 'Gathering information about the target: IP ranges, employees, technologies, open ports.', color: 'border-l-cyber-text-muted' },
+               { stage: '2. Weaponization', desc: 'Creating or obtaining an exploit and pairing it with a payload (e.g., malicious PDF or macro).', color: 'border-l-cyber-text-dim' },
+               { stage: '3. Delivery', desc: 'Transmitting the weapon to the target: email attachment, USB drive, compromised website.', color: 'border-l-cyber-amber' },
+               { stage: '4. Exploitation', desc: 'Triggering the vulnerability to execute code on the target system.', color: 'border-l-cyber-red' },
+               { stage: '5. Installation', desc: 'Establishing persistence: creating backdoors, scheduled tasks, registry keys.', color: 'border-l-cyber-red' },
+               { stage: '6. Command & Control (C2)', desc: 'Opening a communication channel for remote control of the compromised system.', color: 'border-l-cyber-red' },
+               { stage: '7. Actions on Objectives', desc: 'Achieving the attacker\'s goal: data exfiltration, ransomware, lateral movement.', color: 'border-l-cyber-red' },
+             ].map((s, i) => (
+               <motion.div key={i} className={`cyber-card p-4 border-l-[3px] ${s.color}`} variants={fadeInItem}>
+                 <h4 className="text-sm font-semibold text-white mb-1">{s.stage}</h4>
+                 <p className="text-xs text-cyber-text leading-relaxed">{s.desc}</p>
+               </motion.div>
+             ))}
+           </motion.div>
+
+           <Callout type="info" className="mt-4">
+             Tools in this course map to specific kill chain stages: <strong className="text-cyber-cyan">Nmap</strong> = Reconnaissance, <strong className="text-cyber-cyan">Metasploit</strong> = Exploitation &amp; Installation, <strong className="text-cyber-cyan">Netcat</strong> = C2, <strong className="text-cyber-cyan">Wireshark</strong> = Detection across all stages.
+           </Callout>
+         </motion.section>
+
+         {/* Section 7: Quick Reference */}
+         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+           <DocHeading level={2} id="quick-reference">Quick Reference Cheatsheet</DocHeading>
+           <p className="text-cyber-text leading-relaxed mt-3">
+             Keep this handy. These are the most common commands and concepts you'll use throughout the course.
+           </p>
+
+           <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+             <div className="cyber-card p-5">
+               <h3 className="text-sm font-semibold text-cyber-cyan mb-3 flex items-center gap-2">
+                 <i className="ri-terminal-line" />
+                 Essential CLI Commands
+               </h3>
+               <CodeBlock
+                 code={`# Network discovery
+ping 10.0.0.1          # Test connectivity
+traceroute 8.8.8.8   # Trace network path
+nslookup google.com  # DNS lookup
+whois example.com    # Domain registration
+
+# File analysis
+file suspicious.exe    # Check file type
+hashdeep file.iso      # Calculate hashes
+strings malware.bin    # Extract strings
+hexdump -C file.bin    # Hex view
+
+# System info
+uname -a               # System info (Linux)
+ipconfig /all          # Network config (Windows)
+netstat -an            # Active connections`}
+                 language="bash"
+               />
+             </div>
+
+             <div className="cyber-card p-5">
+               <h3 className="text-sm font-semibold text-cyber-cyan mb-3 flex items-center gap-2">
+                 <i className="ri-shield-keyhole-line" />
+                 Security Fundamentals
+               </h3>
+               <CodeBlock
+                 code={`# CIA Triad
+Confidentiality: Only authorized access (encryption)
+Integrity: Data accuracy (hashes, signatures)
+Availability: Systems up when needed (redundancy)
+
+# Common attack types
+MITM: Intercept traffic (use encrypted channels)
+DoS: Service unavailable (rate limiting + DDoS protection)
+Phishing: Social engineering (user training + MFA)
+Brute force: Password guessing (rate limiting + lockout)
+
+# Incident response
+1. Identify: What happened?
+2. Contain: Stop the spread
+3. Eradicate: Remove the threat
+4. Recover: Restore systems
+5. Lessons learned: Prevent recurrence`}
+                 language="text"
+               />
+             </div>
+           </div>
+         </motion.section>
+
+{/* Section 6: Course Structure */}
+         <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+           <DocHeading level={2} id="course-structure">How This Course Works</DocHeading>
+           <p className="text-cyber-text leading-relaxed mt-3">
+             Each tool module follows a consistent learning path designed to take you from zero knowledge to hands-on proficiency. Every module contains:
+           </p>
+
+           <motion.div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" variants={fadeInStagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+             {[
+               { step: '01', title: 'Learn', desc: 'Read the documentation sections covering concepts, flags, and techniques.', icon: 'ri-book-read-line', color: 'text-cyber-cyan' },
+               { step: '02', title: 'Interactive Builder', desc: 'Use the command builder to generate and understand tool commands.', icon: 'ri-tools-line', color: 'text-cyber-amber' },
+               { step: '03', title: 'Quiz', desc: 'Test your understanding with 10-15 multiple-choice questions per module.', icon: 'ri-questionnaire-line', color: 'text-cyber-green' },
+               { step: '04', title: 'Lab', desc: 'Complete hands-on exercises where you type real commands and answers.', icon: 'ri-flask-line', color: 'text-cyber-red' },
+             ].map((s) => (
+               <motion.div key={s.step} className="cyber-card p-5 text-center" variants={fadeInItem}>
+                 <div className={`w-10 h-10 rounded-full bg-cyber-bg border border-cyber-border flex items-center justify-center mx-auto mb-3 ${s.color}`}>
+                   <i className={s.icon} />
+                 </div>
+                 <span className="text-[10px] font-mono text-cyber-text-dim">{s.step}</span>
+                 <h4 className="text-sm font-semibold text-white mt-1">{s.title}</h4>
+<p className="text-xs text-cyber-text mt-1.5">{s.desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" variants={fadeInStagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              {courseModules.map((mod) => (
+                <motion.div key={mod.name} className="cyber-card p-4 flex items-start gap-3" variants={fadeInItem}>
+                  <div className={`w-9 h-9 rounded-lg bg-cyber-bg border border-cyber-border flex items-center justify-center flex-shrink-0 ${mod.color}`}>
+                    <i className={mod.icon} />
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h4 className="text-sm font-semibold text-white">{t.term}</h4>
-                    <AnimatePresence>
-                      {activeTerm === i && (
-                        <motion.p
-                          className="text-xs text-cyber-text mt-2 leading-relaxed"
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
-                          exit={{ opacity: 0, height: 0 }}
-                        >
-                          {t.def}
-                        </motion.p>
-                      )}
-                    </AnimatePresence>
+                  <div>
+                    <h4 className="text-sm font-semibold text-white">{mod.name}</h4>
+                    <p className="text-xs text-cyber-text mt-1">{mod.desc}</p>
                   </div>
-                  <i className={`ri-arrow-down-s-line text-cyber-text-dim transition-transform ${activeTerm === i ? 'rotate-180' : ''}`} />
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.section>
+
+          {/* CTA */}
+          <motion.section className="mt-12 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+            <div className="cyber-card p-8 text-center relative overflow-hidden">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyber-cyan/5 rounded-full blur-[100px]" />
+              <div className="relative z-10">
+                <h3 className="text-xl font-bold text-white">Ready to Begin?</h3>
+                <p className="mt-2 text-cyber-text max-w-lg mx-auto">
+                  Start with the Wireshark module or jump directly into any tool. Each module is self-contained and includes interactive builders, quizzes, and labs.
+                </p>
+                <div className="mt-6 flex flex-wrap justify-center gap-3">
+                  <a href="/additional-info" className="px-5 py-2.5 bg-cyber-cyan text-cyber-bg font-semibold rounded-lg hover:bg-cyber-cyan-dim transition-all whitespace-nowrap glow-cyan">
+                    <i className="ri-information-line mr-2" />
+                    Read Additional Info
+                  </a>
+                  <a href="/wireshark" className="px-5 py-2.5 border border-cyber-amber text-cyber-amber font-semibold rounded-lg hover:bg-cyber-amber/10 transition-all whitespace-nowrap">
+                    <i className="ri-radar-line mr-2" />
+                    Jump to Wireshark
+                  </a>
                 </div>
-              </button>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* Section 5: The Kill Chain */}
-        <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-          <DocHeading level={2} id="kill-chain">The Cyber Kill Chain</DocHeading>
-          <p className="text-cyber-text leading-relaxed mt-3">
-            Developed by Lockheed Martin, the Cyber Kill Chain describes the stages of a typical cyber intrusion. Defenders try to break the chain at any stage; attackers try to advance through it.
-          </p>
-
-          <div className="mt-5 space-y-3">
-            {[
-              { stage: '1. Reconnaissance', desc: 'Gathering information about the target: IP ranges, employees, technologies, open ports.', color: 'border-l-cyber-text-muted' },
-              { stage: '2. Weaponization', desc: 'Creating or obtaining an exploit and pairing it with a payload (e.g., malicious PDF or macro).', color: 'border-l-cyber-text-dim' },
-              { stage: '3. Delivery', desc: 'Transmitting the weapon to the target: email attachment, USB drive, compromised website.', color: 'border-l-cyber-amber' },
-              { stage: '4. Exploitation', desc: 'Triggering the vulnerability to execute code on the target system.', color: 'border-l-cyber-red' },
-              { stage: '5. Installation', desc: 'Establishing persistence: creating backdoors, scheduled tasks, registry keys.', color: 'border-l-cyber-red' },
-              { stage: '6. Command & Control (C2)', desc: 'Opening a communication channel for remote control of the compromised system.', color: 'border-l-cyber-red' },
-              { stage: '7. Actions on Objectives', desc: 'Achieving the attacker\'s goal: data exfiltration, ransomware, lateral movement.', color: 'border-l-cyber-red' },
-            ].map((s, i) => (
-              <div key={i} className={`cyber-card p-4 border-l-[3px] ${s.color}`}>
-                <h4 className="text-sm font-semibold text-white mb-1">{s.stage}</h4>
-                <p className="text-xs text-cyber-text leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <Callout type="info" className="mt-4">
-            Tools in this course map to specific kill chain stages: <strong className="text-cyber-cyan">Nmap</strong> = Reconnaissance, <strong className="text-cyber-cyan">Metasploit</strong> = Exploitation &amp; Installation, <strong className="text-cyber-cyan">Netcat</strong> = C2, <strong className="text-cyber-cyan">Wireshark</strong> = Detection across all stages.
-          </Callout>
-        </motion.section>
-
-        {/* Section 6: Course Structure */}
-        <motion.section className="mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-          <DocHeading level={2} id="course-structure">How This Course Works</DocHeading>
-          <p className="text-cyber-text leading-relaxed mt-3">
-            Each tool module follows a consistent learning path designed to take you from zero knowledge to hands-on proficiency. Every module contains:
-          </p>
-
-          <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { step: '01', title: 'Learn', desc: 'Read the documentation sections covering concepts, flags, and techniques.', icon: 'ri-book-read-line', color: 'text-cyber-cyan' },
-              { step: '02', title: 'Interactive Builder', desc: 'Use the command builder to generate and understand tool commands.', icon: 'ri-tools-line', color: 'text-cyber-amber' },
-              { step: '03', title: 'Quiz', desc: 'Test your understanding with 10-15 multiple-choice questions per module.', icon: 'ri-questionnaire-line', color: 'text-cyber-green' },
-              { step: '04', title: 'Lab', desc: 'Complete hands-on exercises where you type real commands and answers.', icon: 'ri-flask-line', color: 'text-cyber-red' },
-            ].map((s) => (
-              <div key={s.step} className="cyber-card p-5 text-center">
-                <div className={`w-10 h-10 rounded-full bg-cyber-bg border border-cyber-border flex items-center justify-center mx-auto mb-3 ${s.color}`}>
-                  <i className={s.icon} />
-                </div>
-                <span className="text-[10px] font-mono text-cyber-text-dim">{s.step}</span>
-                <h4 className="text-sm font-semibold text-white mt-1">{s.title}</h4>
-                <p className="text-xs text-cyber-text mt-1.5">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {courseModules.map((mod) => (
-              <div key={mod.name} className="cyber-card p-4 flex items-start gap-3">
-                <div className={`w-9 h-9 rounded-lg bg-cyber-bg border border-cyber-border flex items-center justify-center flex-shrink-0 ${mod.color}`}>
-                  <i className={mod.icon} />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-white">{mod.name}</h4>
-                  <p className="text-xs text-cyber-text mt-1">{mod.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* CTA */}
-        <motion.section className="mt-12 mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-          <div className="cyber-card p-8 text-center relative overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyber-cyan/5 rounded-full blur-[100px]" />
-            <div className="relative z-10">
-              <h3 className="text-xl font-bold text-white">Ready to Begin?</h3>
-              <p className="mt-2 text-cyber-text max-w-lg mx-auto">
-                Start with the Wireshark module or jump directly into any tool. Each module is self-contained and includes interactive builders, quizzes, and labs.
-              </p>
-              <div className="mt-6 flex flex-wrap justify-center gap-3">
-                <a href="/getting-started" className="px-5 py-2.5 bg-cyber-cyan text-cyber-bg font-semibold rounded-lg hover:bg-cyber-cyan-dim transition-all whitespace-nowrap glow-cyan">
-                  <i className="ri-radar-line mr-2" />
-                  Start with Wireshark
-                </a>
-                <a href="/nmap" className="px-5 py-2.5 border border-cyber-amber text-cyber-amber font-semibold rounded-lg hover:bg-cyber-amber/10 transition-all whitespace-nowrap">
-                  <i className="ri-shield-check-line mr-2" />
-                  Jump to Nmap
-                </a>
               </div>
             </div>
-          </div>
-        </motion.section>
-      </div>
-  );
-}
+          </motion.section>
+        </div>
+      );
+    }

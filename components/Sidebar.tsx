@@ -16,6 +16,7 @@ const navSections: { title: string; items: NavItem[] }[] = [
     items: [
       { label: 'Home', path: '/', icon: 'ri-home-4-line' },
       { label: 'CyberSec Fundamentals', path: '/getting-started', icon: 'ri-rocket-line' },
+       { label: 'Additional Information', path: '/additional-info', icon: 'ri-information-line' },
     ],
   },
   {
