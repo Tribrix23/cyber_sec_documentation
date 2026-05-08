@@ -37,6 +37,7 @@ const navSections: { title: string; items: NavItem[] }[] = [
     title: 'NMAP',
     items: [
       { label: 'Nmap Overview', path: '/nmap', icon: 'ri-shield-check-line' },
+      { label: 'Installation', path: '/nmap/installation', icon: 'ri-download-line' },
       { label: 'What is Nmap', path: '/nmap/what-is-nmap', icon: 'ri-information-line' },
       { label: 'How Nmap Works', path: '/nmap/how-it-works', icon: 'ri-settings-3-line' },
       { label: 'Scan Types', path: '/nmap/scan-types', icon: 'ri-radar-line' },
@@ -44,7 +45,6 @@ const navSections: { title: string; items: NavItem[] }[] = [
       { label: 'Timing Templates', path: '/nmap/timing', icon: 'ri-time-line' },
       { label: 'Common Flags', path: '/nmap/flags', icon: 'ri-flag-line' },
       { label: 'NSE Scripts', path: '/nmap/nse-scripts', icon: 'ri-code-s-slash-line' },
-      { label: 'Installation', path: '/nmap/installation', icon: 'ri-download-line' },
       { label: 'Usage Examples', path: '/nmap/examples', icon: 'ri-file-list-line' },
       { label: 'Command Builder', path: '/nmap/command-builder', icon: 'ri-tools-line' },
       { label: 'Pro Tips', path: '/nmap/pro-tips', icon: 'ri-lightbulb-line' },
@@ -56,6 +56,7 @@ const navSections: { title: string; items: NavItem[] }[] = [
     title: 'GOBUSTER',
     items: [
       { label: 'Gobuster Overview', path: '/gobuster', icon: 'ri-folder-open-line' },
+      { label: 'Installation', path: '/gobuster/installation', icon: 'ri-download-line' },
       { label: 'Directory Bruteforce', path: '/gobuster/directory', icon: 'ri-folder-3-line' },
       { label: 'DNS Subdomain', path: '/gobuster/dns', icon: 'ri-earth-line' },
       { label: 'Virtual Hosts', path: '/gobuster/vhost', icon: 'ri-server-line' },
@@ -63,7 +64,6 @@ const navSections: { title: string; items: NavItem[] }[] = [
       { label: 'Fuzzing', path: '/gobuster/fuzz', icon: 'ri-bug-line' },
       { label: 'Common Flags', path: '/gobuster/flags', icon: 'ri-flag-line' },
       { label: 'Wordlists', path: '/gobuster/wordlists', icon: 'ri-file-list-3-line' },
-      { label: 'Installation', path: '/gobuster/installation', icon: 'ri-download-line' },
       { label: 'Usage Examples', path: '/gobuster/examples', icon: 'ri-file-list-line' },
       { label: 'Command Builder', path: '/gobuster/command-builder', icon: 'ri-tools-line' },
       { label: 'Pro Tips', path: '/gobuster/pro-tips', icon: 'ri-lightbulb-line' },
@@ -113,7 +113,20 @@ const navSections: { title: string; items: NavItem[] }[] = [
   {
     title: 'SQLMAP',
     items: [
-      { label: 'SQLMap Documentation', path: '/sqlmap', icon: 'ri-database-2-line' },
+      { label: 'SQLMap Overview', path: '/sqlmap', icon: 'ri-database-2-line' },
+      { label: 'Installation', path: '/sqlmap/installation', icon: 'ri-download-line' },
+      { label: 'Injection Techniques', path: '/sqlmap/injection-techniques', icon: 'ri-code-s-slash-line' },
+      { label: 'Tamper Scripts', path: '/sqlmap/tamper-scripts', icon: 'ri-shield-keyhole-line' },
+      { label: 'Detection & Enumeration', path: '/sqlmap/detection', icon: 'ri-radar-line' },
+      { label: 'Database Enumeration', path: '/sqlmap/database-enumeration', icon: 'ri-database-2-line' },
+      { label: 'Data Extraction', path: '/sqlmap/data-extraction', icon: 'ri-download-cloud-line' },
+      { label: 'OS Commands', path: '/sqlmap/os-commands', icon: 'ri-terminal-box-line' },
+      { label: 'Common Flags', path: '/sqlmap/flags', icon: 'ri-flag-line' },      
+      { label: 'Usage Examples', path: '/sqlmap/examples', icon: 'ri-file-list-line' },
+      { label: 'Command Builder', path: '/sqlmap/command-builder', icon: 'ri-tools-line' },
+      { label: 'Pro Tips', path: '/sqlmap/pro-tips', icon: 'ri-lightbulb-line' },
+      { label: 'SQLMap Quiz', path: '/sqlmap/quiz', icon: 'ri-questionnaire-line' },
+      { label: 'SQLMap Lab', path: '/sqlmap/lab', icon: 'ri-flask-line' },
     ],
   },
   {
