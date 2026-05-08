@@ -145,12 +145,26 @@ const navSections: { title: string; items: NavItem[] }[] = [
       { label: 'SSLScan Lab', path: '/sslscan/lab', icon: 'ri-flask-line' },
     ],
   },
-  {
-    title: 'NETCAT',
-    items: [
-      { label: 'Netcat Documentation', path: '/netcat', icon: 'ri-terminal-box-line' },
-    ],
-  },
+    {
+      title: 'NETCAT',
+      items: [
+        { label: 'Netcat Overview', path: '/netcat', icon: 'ri-terminal-box-line' },
+        { label: 'Installation', path: '/netcat/installation', icon: 'ri-download-line' },
+        { label: 'Basic Usage', path: '/netcat/basic-usage', icon: 'ri-terminal-line' },
+        { label: 'Connection Types', path: '/netcat/connection-types', icon: 'ri-link' },
+        { label: 'File Transfer', path: '/netcat/file-transfer', icon: 'ri-file-copy-line' },
+        { label: 'Port Scanning', path: '/netcat/port-scanning', icon: 'ri-target-line' },
+        { label: 'Banner Grabbing', path: '/netcat/banner-grabbing', icon: 'ri-printer-line' },
+        { label: 'Chat Application', path: '/netcat/chat', icon: 'ri-chat-3-line' },
+        { label: 'Remote Shell', path: '/netcat/remote-shell', icon: 'ri-terminal-box-line' },
+        { label: 'Flags & Options', path: '/netcat/flags', icon: 'ri-flag-line' },
+        { label: 'Usage Examples', path: '/netcat/examples', icon: 'ri-file-list-line' },
+        { label: 'Command Builder', path: '/netcat/command-builder', icon: 'ri-tools-line' },
+        { label: 'Pro Tips', path: '/netcat/pro-tips', icon: 'ri-lightbulb-line' },
+        { label: 'Netcat Quiz', path: '/netcat/quiz', icon: 'ri-questionnaire-line' },
+        { label: 'Netcat Lab', path: '/netcat/lab', icon: 'ri-flask-line' },
+      ],
+    },
   {
     title: 'METASPLOIT',
     items: [
