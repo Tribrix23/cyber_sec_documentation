@@ -24,8 +24,7 @@ export default function RootLayout({
         <Sidebar />
         <Dock />
 
-        <main className="flex-1 min-h-screen md:ml-70">
-          <div className="md:hidden h-12" />
+        <main className="flex-1 ml-0 md:ml-70 min-h-screen">
           {children}
         </main>
       </body>
