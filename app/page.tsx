@@ -86,6 +86,17 @@ const tools = [
     sections: ['Techniques', 'Enumeration', 'Tamper Scripts', 'OS Shell'],
   },
   {
+    name: 'Cloudsploit',
+    tagline: 'Cloud Security Scanner',
+    description: 'Scan AWS, Azure, and GCP for misconfigurations. Detect exposed resources, weak permissions, and compliance violations.',
+    icon: 'ri-shield-keyhole-line',
+    color: 'text-cyber-cyan',
+    bg: 'bg-cyber-cyan/10',
+    border: 'border-cyber-cyan/20',
+    link: '/cloudsploit',
+    sections: ['AWS Scanners', 'Azure Scanners', 'GCP Scanners', 'Command Builder'],
+  },
+  {
     name: 'SSLScan',
     tagline: 'SSL/TLS Scanner',
     description: 'Analyze SSL/TLS configurations, cipher suites, certificate chains, and detect vulnerabilities like Heartbleed.',
@@ -121,10 +132,10 @@ const tools = [
 ];
 
 const stats = [
-  { value: '9', label: 'Core Tools' },
+  { value: '10', label: 'Core Tools' },
   { value: '50+', label: 'Documentation Pages' },
-  { value: '9', label: 'Command Builders' },
-  { value: '90+', label: 'Quiz Questions' },
+  { value: '10+', label: 'Interactive Builders' },
+  { value: '100+', label: 'Quiz Questions' },
 ];
 
 const quickLinks = [
@@ -132,6 +143,7 @@ const quickLinks = [
   { id: 'nmap-builder', label: 'Nmap Command Builder', path: '/nmap', desc: 'Generate Nmap commands interactively' },
   { id: 'filter-builder', label: 'Filter Builder', path: '/filter-builder', desc: 'Build Wireshark display filters visually' },
   { id: 'sqlmap', label: 'SQLMap Interactive', path: '/sqlmap', desc: 'Configure SQL injection commands with builder' },
+  { id: 'cloudsploit-builder', label: 'Cloudsploit Command Builder', path: '/cloudsploit/command-builder', desc: 'Build cloud security scan commands with flags' },
   { id: 'netcat', label: 'Netcat Builder', path: '/netcat', desc: 'Generate netcat connect/listen/shell commands' },
   { id: 'metasploit', label: 'Metasploit Workflow', path: '/metasploit', desc: 'Build exploit resource scripts step by step' },
   { id: 'wireshark-quiz', label: 'Wireshark Quiz', path: '/wireshark-quiz', desc: 'Test your Wireshark knowledge with 17 questions' },
@@ -232,7 +244,7 @@ export default function Home() {
                 </h1>
 
                 <p className="mt-5 text-lg text-cyber-text leading-relaxed max-w-xl">
-                  Comprehensive interactive documentation for 9 essential cybersecurity tools: Wireshark, Nmap, Gobuster, John the Ripper, Burp Suite, SQLMap, SSLScan, Netcat, and Metasploit.
+                  Comprehensive interactive documentation for 10 essential cybersecurity tools: Wireshark, Nmap, Gobuster, John the Ripper, Burp Suite, SQLMap, Cloudsploit, SSLScan, Netcat, and Metasploit.
                   Learn with command builders, live examples, hands-on quizzes, and lab exercises.
                 </p>
 
@@ -402,40 +414,56 @@ export default function Home() {
                     Toggle flags, set targets, and generate ready-to-use commands for Nmap, Gobuster, John the Ripper, SQLMap, Netcat, SSLScan, and more.
                     Then test your knowledge with tool-specific quizzes and hands-on lab exercises.
                   </p>
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    <button
-                      type="button"
-                      onClick={() => navigate.push('/nmap#builder')}
-                      className="px-4 py-2 rounded-lg bg-cyber-amber/10 border border-cyber-amber/20 text-cyber-amber text-sm font-medium hover:bg-cyber-amber/20 transition-all whitespace-nowrap"
-                    >
-                      <i className="ri-shield-check-line mr-1" />
-                      Nmap Builder
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => navigate.push('/sqlmap#builder')}
-                      className="px-4 py-2 rounded-lg bg-cyber-red/10 border border-cyber-red/20 text-cyber-red text-sm font-medium hover:bg-cyber-red/20 transition-all whitespace-nowrap"
-                    >
-                      <i className="ri-database-2-line mr-1" />
-                      SQLMap Builder
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => navigate.push('/netcat#builder')}
-                      className="px-4 py-2 rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/20 text-cyber-cyan text-sm font-medium hover:bg-cyber-cyan/20 transition-all whitespace-nowrap"
-                    >
-                      <i className="ri-terminal-box-line mr-1" />
-                      Netcat Builder
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => navigate.push('/sslscan#builder')}
-                      className="px-4 py-2 rounded-lg bg-cyber-green/10 border border-cyber-green/20 text-cyber-green text-sm font-medium hover:bg-cyber-green/20 transition-all whitespace-nowrap"
-                    >
-                      <i className="ri-shield-keyhole-line mr-1" />
-                      SSLScan Builder
-                    </button>
-                  </div>
+                   <div className="mt-6 flex flex-wrap gap-3">
+                     <button
+                       type="button"
+                       onClick={() => navigate.push('/nmap#builder')}
+                       className="px-4 py-2 rounded-lg bg-cyber-amber/10 border border-cyber-amber/20 text-cyber-amber text-sm font-medium hover:bg-cyber-amber/20 transition-all whitespace-nowrap"
+                     >
+                       <i className="ri-shield-check-line mr-1" />
+                       Nmap Builder
+                     </button>
+                     <button
+                       type="button"
+                       onClick={() => navigate.push('/gobuster/command-builder')}
+                       className="px-4 py-2 rounded-lg bg-cyber-red/10 border border-cyber-red/20 text-cyber-red text-sm font-medium hover:bg-cyber-red/20 transition-all whitespace-nowrap"
+                     >
+                       <i className="ri-folder-open-line mr-1" />
+                       Gobuster Builder
+                     </button>
+                     <button
+                       type="button"
+                       onClick={() => navigate.push('/sqlmap#builder')}
+                       className="px-4 py-2 rounded-lg bg-cyber-red/10 border border-cyber-red/20 text-cyber-red text-sm font-medium hover:bg-cyber-red/20 transition-all whitespace-nowrap"
+                     >
+                       <i className="ri-database-2-line mr-1" />
+                       SQLMap Builder
+                     </button>
+                     <button
+                       type="button"
+                       onClick={() => navigate.push('/cloudsploit/command-builder')}
+                       className="px-4 py-2 rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/20 text-cyber-cyan text-sm font-medium hover:bg-cyber-cyan/20 transition-all whitespace-nowrap"
+                     >
+                       <i className="ri-shield-keyhole-line mr-1" />
+                       Cloudsploit Builder
+                     </button>
+                     <button
+                       type="button"
+                       onClick={() => navigate.push('/netcat#builder')}
+                       className="px-4 py-2 rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/20 text-cyber-cyan text-sm font-medium hover:bg-cyber-cyan/20 transition-all whitespace-nowrap"
+                     >
+                       <i className="ri-terminal-box-line mr-1" />
+                       Netcat Builder
+                     </button>
+                     <button
+                       type="button"
+                       onClick={() => navigate.push('/sslscan#builder')}
+                       className="px-4 py-2 rounded-lg bg-cyber-green/10 border border-cyber-green/20 text-cyber-green text-sm font-medium hover:bg-cyber-green/20 transition-all whitespace-nowrap"
+                     >
+                       <i className="ri-shield-keyhole-line mr-1" />
+                       SSLScan Builder
+                     </button>
+                   </div>
                 </div>
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 rounded-full bg-cyber-cyan/10 flex items-center justify-center">
