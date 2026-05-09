@@ -740,9 +740,9 @@ sudo -l                      # List sudo privileges`}
                 <i className="ri-rocket-line mr-2" />
                 CyberSec Fundamentals
               </a>
-              <a href="/wireshark" className="px-5 py-2.5 border border-cyber-amber text-cyber-amber font-semibold rounded-lg hover:bg-cyber-amber/10 transition-all whitespace-nowrap">
+              <a href="/cybersecurity" className="px-5 py-2.5 border border-cyber-amber text-cyber-amber font-semibold rounded-lg hover:bg-cyber-amber/10 transition-all whitespace-nowrap">
                 <i className="ri-radar-line mr-2" />
-                Begin with Wireshark
+                Begin with Cybersecurity
               </a>
             </div>
           </div>

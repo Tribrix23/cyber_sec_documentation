@@ -19,32 +19,44 @@ export const navSections: NavSection[] = [
     ],
   },
   {
-    title: 'CYBERSECURITY MODULES',
+   title: 'CYBERSECURITY MODULES',
     items: [
+      { label: 'Cybersecurity Overview', path: '/cybersecurity', icon: 'ri-shield-check-line' },
+
       { label: 'Cybersecurity Foundations', path: '/cybersecurity/foundations-security-mindset', icon: 'ri-book-line' },
       { label: 'Networking & OSI', path: '/cybersecurity/networking-osi-fundamentals', icon: 'ri-book-line' },
       { label: 'Cryptography Basics', path: '/cybersecurity/cryptography-basics', icon: 'ri-book-line' },
       { label: 'Authentication & Access Control', path: '/cybersecurity/authentication-authorization', icon: 'ri-book-line' },
+
+      { label: 'Quiz 1', path: '/cybersecurity/quiz-1', icon: 'ri-questionnaire-line' },
 
       { label: 'Vulnerabilities & OWASP', path: '/cybersecurity/common-vulnerabilities-owasp', icon: 'ri-book-line' },
       { label: 'Malware & Threats', path: '/cybersecurity/malware-threat-landscape', icon: 'ri-book-line' },
       { label: 'Incident Response & Forensics', path: '/cybersecurity/incident-response-forensics', icon: 'ri-book-line' },
       { label: 'Security Operations (SOC)', path: '/cybersecurity/security-operations-soc', icon: 'ri-book-line' },
 
+      { label: 'Quiz 2', path: '/cybersecurity/quiz-2', icon: 'ri-questionnaire-line' },
+
       { label: 'Penetration Testing', path: '/cybersecurity/pentesting-methodologies', icon: 'ri-book-line' },
       { label: 'Web App Security', path: '/cybersecurity/web-app-security', icon: 'ri-book-line' },
       { label: 'Wireless & Network Security', path: '/cybersecurity/wireless-network-security', icon: 'ri-book-line' },
       { label: 'Cloud & DevOps Security', path: '/cybersecurity/cloud-devops-security', icon: 'ri-book-line' },
 
+      { label: 'Quiz 3', path: '/cybersecurity/quiz-3', icon: 'ri-questionnaire-line' },
+
       { label: 'Mobile & IoT Security', path: '/cybersecurity/mobile-iot-security', icon: 'ri-book-line' },
       { label: 'Social Engineering', path: '/cybersecurity/social-engineering', icon: 'ri-book-line' },
       { label: 'Encryption & Cryptanalysis', path: '/cybersecurity/encryption-cryptanalysis', icon: 'ri-book-line' },
       { label: 'Security Architecture', path: '/cybersecurity/security-architecture', icon: 'ri-book-line' },
+
+      { label: 'Quiz 4', path: '/cybersecurity/quiz-4', icon: 'ri-questionnaire-line' },
       
       { label: 'Cybersecurity Law & Ethics', path: '/cybersecurity/compliance-legal-ethics', icon: 'ri-book-line' },
       { label: 'DevSecOps & Secure SDLC', path: '/cybersecurity/devsecops-secure-sdlc', icon: 'ri-book-line' },
       { label: 'Threat Intelligence', path: '/cybersecurity/threat-intelligence', icon: 'ri-book-line' },
       { label: 'Cybersecurity Careers', path: '/cybersecurity/career-paths-future', icon: 'ri-book-line' },
+      
+       { label: 'Final Exam', path: '/cybersecurity/final-exam', icon: 'ri-questionnaire-line' },
     ],
   },
   {
