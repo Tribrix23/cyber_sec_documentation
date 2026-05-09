@@ -649,7 +649,7 @@ export default function AdditionalInfo() {
             },
             {
               title: 'Understand Before You Copy',
-              desc: 'Don&apos;t just copy-paste commands from the internet. Understand each flag and option so you can adapt when conditions change.',
+              desc: 'Dont just copy-paste commands from the internet. Understand each flag and option so you can adapt when conditions change.',
               icon: 'ri-search-eye-line',
             },
             {
