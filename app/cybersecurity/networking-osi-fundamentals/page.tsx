@@ -344,7 +344,12 @@ export default function NetworkingOsiFundamentalsPage() {
             <p className="text-xs text-cyber-text mb-3">
               Subnet mask defines network vs host bits. CIDR (Classless Inter-Domain Routing) notation: /24 means 24 bits for network.
             </p>
-            <CodeBlock code="192.168.1.0/24\n255.255.255.0 = 24 network bits\n\n192.168.1.0/26\n255.255.255.192 = 26 network bits\n= 4 subnets with 62 hosts each" />
+            <CodeBlock code={`192.168.1.0/24
+255.255.255.0 = 24 network bits
+
+192.168.1.0/26
+255.255.255.192 = 26 network bits
+= 4 subnets with 62 hosts each`} />
           </div>
         </div>
 
