@@ -375,9 +375,6 @@ export default function CybersecurityLandingPage() {
             <a href="/cybersecurity/foundations-security-mindset" className="px-6 py-2.5 rounded-lg bg-cyber-amber text-black text-sm font-semibold hover:bg-cyber-amber/80 transition-all whitespace-nowrap">
               Start Learning <i className="ri-arrow-right-line ml-1" />
             </a>
-            <a href="/cybersecurity/quiz-1" className="px-6 py-2.5 rounded-lg border border-cyber-border text-sm font-semibold text-cyber-text hover:border-cyber-amber hover:text-cyber-amber transition-all whitespace-nowrap">
-              Try Quiz 1 <i className="ri-questionnaire-line ml-1" />
-            </a>
           </div>
         </div>
       </motion.section>

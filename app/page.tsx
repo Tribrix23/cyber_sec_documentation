@@ -132,10 +132,10 @@ const tools = [
 ];
 
 const stats = [
+  { value: '20', label: 'Course Modules' },
   { value: '10', label: 'Core Tools' },
   { value: '50+', label: 'Documentation Pages' },
   { value: '10+', label: 'Interactive Builders' },
-  { value: '10+', label: 'Quiz Questions' },
 ];
 
 const quickLinks = [
@@ -148,6 +148,8 @@ const quickLinks = [
   { id: 'metasploit', label: 'Metasploit Workflow', path: '/metasploit', desc: 'Build exploit resource scripts step by step' },
   { id: 'wireshark-quiz', label: 'Wireshark Quiz', path: '/wireshark-quiz', desc: 'Test your Wireshark knowledge with 17 questions' },
   { id: 'nmap-quiz', label: 'Nmap Quiz', path: '/nmap/quiz', desc: 'Test your Nmap knowledge inline on the docs page' },
+  { id: 'cybersecurity-curriculum', label: 'Cybersecurity Curriculum', path: '/cybersecurity', desc: 'Explore our 20-module comprehensive cybersecurity course' },
+  { id: 'foundations-module', label: 'Foundations Module', path: '/cybersecurity/foundations-security-mindset', desc: 'Start with Module 1: Security mindset and core principles' },
 ];
 
 const typewriterLines = [
@@ -236,17 +238,16 @@ export default function Home() {
                   Interactive Cybersecurity Documentation
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
-                  Master{' '}
-                  <span className="text-cyber-cyan">Cybersecurity</span>
-                  <br />
-                  Tools & Techniques
-                </h1>
+<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
+  Master{' '}
+  <span className="text-cyber-cyan">Cybersecurity</span>
+  <br />
+  Tools & Curriculum
+</h1>
 
-                <p className="mt-5 text-lg text-cyber-text leading-relaxed max-w-xl">
-                  Comprehensive interactive documentation for 10 essential cybersecurity tools: Wireshark, Nmap, Gobuster, John the Ripper, Burp Suite, SQLMap, Cloudsploit, SSLScan, Netcat, and Metasploit.
-                  Learn with command builders, live examples, hands-on quizzes, and lab exercises.
-                </p>
+<p className="mt-5 text-lg text-cyber-text leading-relaxed max-w-xl">
+  Learn 10 essential cybersecurity tools through interactive documentation and follow a complete 20-module cybersecurity curriculum. Master tools like Wireshark, Nmap, and Metasploit while building foundational to advanced security knowledge.
+</p>
 
                 <div className="mt-8 flex flex-wrap gap-4">
                   <button
@@ -313,13 +314,47 @@ export default function Home() {
                     <p className="text-cyber-green"><i className="ri-check-line mr-1" />Knowledge Quizzes</p>
                   </div>
                 </div>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
+           </motion.div>
+         </div>
+         </div>
+         </div>
+       </section>
 
-      {/* Tools Showcase */}
+       {/* Cybersecurity Curriculum Banner */}
+       <section className="px-6 md:px-12 lg:px-16 py-16 border-t border-cyber-border bg-cyber-bg">
+         <div className="max-w-6xl mx-auto">
+           <motion.div
+             className="cyber-card p-8 md:p-12 text-center relative overflow-hidden"
+             initial="hidden"
+             whileInView="visible"
+             viewport={{ once: true }}
+             variants={fadeUp}
+           >
+             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyber-amber/5 rounded-full blur-[100px]" />
+             <div className="relative z-10">
+               <span className="inline-block px-3 py-1 rounded-full bg-cyber-cyan/10 text-cyber-cyan text-xs font-medium font-mono mb-3">
+                 COMPLETE CURRICULUM
+               </span>
+               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                 20-Module Cybersecurity Learning Path
+               </h2>
+               <p className="text-cyber-text max-w-xl mx-auto leading-relaxed">
+                 Go beyond tool mastery with our comprehensive cybersecurity curriculum. Covering foundations, offensive security, advanced domains, and professional practice. Complete with quizzes, hands-on exercises, and a final certification exam.
+               </p>
+               <div className="mt-6 flex justify-center gap-4 flex-wrap">
+                 <a
+                   href="/cybersecurity"
+                   className="px-6 py-3 bg-cyber-cyan text-cyber-bg font-semibold rounded-lg hover:bg-cyber-cyan-dim transition-all duration-200 flex items-center gap-2 mx-auto whitespace-nowrap glow-cyan"
+                 >
+                   Explore Curriculum <i className="ri-arrow-right-line" />
+                 </a>
+               </div>
+             </div>
+           </motion.div>
+         </div>
+       </section>
+
+       {/* Tools Showcase */}
       <section className="px-6 md:px-12 lg:px-16 py-16 border-t border-cyber-border">
         <div className="max-w-6xl mx-auto">
           <motion.div
