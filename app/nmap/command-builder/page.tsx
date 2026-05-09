@@ -11,21 +11,43 @@ const fadeUp = {
 };
 
 const scanFlags = [
-  { value: '-sS', label: 'SYN Scan (-sS)', default: true },
-  { value: '-sT', label: 'Connect Scan (-sT)' },
-  { value: '-sU', label: 'UDP Scan (-sU)' },
-  { value: '-sV', label: 'Version Detection (-sV)', default: true },
-  { value: '-O', label: 'OS Detection (-O)' },
-  { value: '-A', label: 'Aggressive (-A)' },
-  { value: '-sC', label: 'Default Scripts (-sC)' },
-  { value: '-Pn', label: 'Skip Host Discovery (-Pn)' },
-  { value: '-n', label: 'No DNS (-n)' },
-  { value: '-v', label: 'Verbose (-v)' },
-  { value: '-vv', label: 'Very Verbose (-vv)' },
-  { value: '-f', label: 'Fragment (-f)' },
-  { value: '--traceroute', label: 'Traceroute' },
-  { value: '--reason', label: 'Show Reasons' },
-  { value: '-6', label: 'IPv6 (-6)' },
+  { value: '-sS', label: 'SYN Scan (-sS)', default: true, description: 'TCP SYN scan - stealthy, default scan type' },
+  { value: '-sT', label: 'Connect Scan (-sT)', description: 'TCP connect scan - completes TCP handshake' },
+  { value: '-sU', label: 'UDP Scan (-sU)', description: 'UDP scan - discovers UDP services' },
+  { value: '-sV', label: 'Version Detection (-sV)', default: true, description: 'Probe open ports to determine service/version info' },
+  { value: '-O', label: 'OS Detection (-O)', description: 'Enable OS detection using TCP/IP fingerprinting' },
+  { value: '-A', label: 'Aggressive (-A)', description: 'Enable OS detection, version detection, script scanning, and traceroute' },
+  { value: '-sC', label: 'Default Scripts (-sC)', description: 'Run default NSE scripts (equivalent to --script=default)' },
+  { value: '-Pn', label: 'Skip Host Discovery (-Pn)', description: 'Skip host discovery and treat all hosts as online' },
+  { value: '-n', label: 'No DNS (-n)', description: 'Never do DNS resolution' },
+  { value: '-v', label: 'Verbose (-v)', description: 'Increase verbosity level (use -vv or more for greater effect)' },
+  { value: '-vv', label: 'Very Verbose (-vv)', description: 'Increase verbosity level more' },
+  { value: '-f', label: 'Fragment (-f)', description: 'Fragment packets (use with --mtu to specify size)' },
+  { value: '--traceroute', label: 'Traceroute', description: 'Trace path to host' },
+  { value: '--reason', label: 'Show Reasons', description: 'Display the reason a port is in a particular state' },
+  { value: '-6', label: 'IPv6 (-6)', description: 'Enable IPv6 scanning' },
+  { value: '-sN', label: 'TCP NULL Scan (-sN)', description: 'TCP NULL scan - stealth scan with no flags set' },
+  { value: '-sF', label: 'TCP FIN Scan (-sF)', description: 'TCP FIN scan - stealth scan with just FIN flag set' },
+  { value: '-sX', label: 'TCP Xmas Scan (-sX)', description: 'TCP Xmas scan - stealth scan with FIN, PSH, and URG flags set' },
+  { value: '-sA', label: 'TCP ACK Scan (-sA)', description: 'TCP ACK scan - used to map firewall rulesets' },
+  { value: '-sW', label: 'TCP Window Scan (-sW)', description: 'TCP Window scan - exploits TCP window size implementation' },
+  { value: '-sM', label: 'TCP Maimon Scan (-sM)', description: 'TCP Maimon scan - stealth scan with FIN/ACK flags' },
+  { value: '--scanflags', label: 'Custom TCP Flags (--scanflags)', description: 'Specify custom TCP scan flags' },
+  { value: '-sI', label: 'Idle Scan (-sI)', description: 'Idle scan - uses a zombie host for stealth scanning' },
+  { value: '-sY', label: 'SCTP INIT Scan (-sY)', description: 'SCTP INIT scan' },
+  { value: '-sZ', label: 'SCTP COOKIE-ECHO Scan (-sZ)', description: 'SCTP COOKIE-ECHO scan' },
+  { value: '-sO', label: 'IP Protocol Scan (-sO)', description: 'IP protocol scan - determines supported IP protocols' },
+  { value: '-b', label: 'FTP Bounce Scan (-b)', description: 'FTP bounce scan - uses an FTP proxy' },
+  { value: '-D', label: 'Decoy Scan (-D)', description: 'Cloak a scan with decoys' },
+  { value: '-S', label: 'Source IP Spoof (-S)', description: 'Spoof source IP address' },
+  { value: '-e', label: 'Specify Interface (-e)', description: 'Use specific network interface' },
+  { value: '-g', label: 'Source Port Spoof (-g)', description: 'Spoof source port number' },
+  { value: '--source-port', label: 'Source Port (--source-port)', description: 'Use given source port' },
+  { value: '--data-length', label: 'Append Random Data (--data-length)', description: 'Append random data to sent packets' },
+  { value: '--ip-options', label: 'IP Options (--ip-options)', description: 'Send packets with specified IP options' },
+  { value: '--ttl', label: 'Set TTL (--ttl)', description: 'Set IP time-to-live field' },
+  { value: '--spoof-mac', label: 'Spoof MAC Address (--spoof-mac)', description: 'Spoof MAC address' },
+  { value: '--badsum', label: 'Bad Checksum (--badsum)', description: 'Send packets with bogus TCP/UDP checksums' },
 ];
 
 const timingFlags = [
@@ -75,19 +97,20 @@ export default function NmapCommandBuilderPage() {
   const [output, setOutput] = useState('');
   const [outputFile, setOutputFile] = useState('scan-results');
   const [copied, setCopied] = useState(false);
+   const [explanation, setExplanation] = useState('');
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+   const toggleFlag = (flag: string) => {
+     setFlags((prev) => {
+       if (prev.includes(flag)) {
+         return prev.filter((f) => f !== flag);
+       }
+       return [...prev, flag];
+     });
+   };
 
-  const toggleFlag = (flag: string) => {
-    setFlags((prev) => {
-      if (prev.includes(flag)) {
-        return prev.filter((f) => f !== flag);
-      }
-      return [...prev, flag];
-    });
-  };
+   useEffect(() => {
+    setExplanation(generateExplanation());
+  }, [target, flags, portOpt, customPorts, script, output, outputFile]);
 
   const getCommand = () => {
     const parts = ['nmap'];
@@ -109,26 +132,171 @@ export default function NmapCommandBuilderPage() {
       parts.push('-p-');
     } else if (portOpt === '-F') {
       parts.push('-F');
-    } else if (portOpt === 'custom' && customPorts) {
-      parts.push(`-p ${customPorts}`);
+    } else if (portOpt === 'custom' && customPorts.trim()) {
+      parts.push(`-p ${customPorts.trim()}`);
     }
 
-    // Script
-    if (script) {
-      parts.push(`--script ${script}`);
+    // Script - support multiple scripts
+    if (script.trim()) {
+      // Handle comma-separated scripts
+      const scripts = script.split(',').map(s => s.trim()).filter(s => s);
+      if (scripts.length > 0) {
+        parts.push(`--script ${scripts.join(',')}`);
+      }
     }
 
     // Output
     if (output === '-oA') {
-      parts.push(`-oA ${outputFile}`);
-    } else if (output && outputFile) {
-      parts.push(`${output} ${outputFile}.${output === '-oN' ? 'txt' : output === '-oX' ? 'xml' : 'gnmap'}`);
+      if (outputFile.trim()) {
+        parts.push(`-oA ${outputFile.trim()}`);
+      }
+    } else if (output && outputFile.trim()) {
+      let ext = 'txt';
+      if (output === '-oX') ext = 'xml';
+      else if (output === '-oG') ext = 'gnmap';
+      parts.push(`${output} ${outputFile.trim()}.${ext}`);
     }
 
-    // Target
-    parts.push(target);
+    // Target - required field
+    if (target.trim()) {
+      parts.push(target.trim());
+    }
 
     return parts.join(' ');
+  };
+
+  const generateExplanation = () => {
+    if (!target.trim()) {
+      return 'Please enter a target IP address or hostname';
+    }
+
+    const explanationParts = [];
+    
+    // Start with target
+    explanationParts.push(`Scanning ${target.trim()}`);
+
+    // Scan type explanation
+    const hasSS = flags.includes('-sS');
+    const hasST = flags.includes('-sT');
+    const hasSU = flags.includes('-sU');
+    const hasSN = flags.includes('-sN');
+    const hasSF = flags.includes('-sF');
+    const hasSX = flags.includes('-sX');
+    const hasSA = flags.includes('-sA');
+    const hasSW = flags.includes('-sW');
+    const hasSM = flags.includes('-sM');
+    
+    if (hasSS) explanationParts.push('using SYN scan (stealthy TCP scan)');
+    else if (hasST) explanationParts.push('using TCP connect scan (completes TCP handshake)');
+    else if (hasSU) explanationParts.push('using UDP scan');
+    else if (hasSN) explanationParts.push('using TCP NULL scan');
+    else if (hasSF) explanationParts.push('using TCP FIN scan');
+    else if (hasSX) explanationParts.push('using TCP Xmas scan');
+    else if (hasSA) explanationParts.push('using TCP ACK scan (firewall testing)');
+    else if (hasSW) explanationParts.push('using TCP Window scan');
+    else if (hasSM) explanationParts.push('using TCP Maimon scan');
+    else explanationParts.push('using default SYN scan');
+
+    // Port explanation
+    if (portOpt === '-p-') {
+      explanationParts.push('scanning all 65,535 ports');
+    } else if (portOpt === '-F') {
+      explanationParts.push('scanning top 100 ports');
+    } else if (portOpt === 'custom' && customPorts.trim()) {
+      explanationParts.push(`scanning ports ${customPorts.trim()}`);
+    } else {
+      explanationParts.push('scanning top 1,000 ports');
+    }
+
+    // Version detection
+    if (flags.includes('-sV')) {
+      explanationParts.push('with service/version detection');
+    }
+
+    // OS detection
+    if (flags.includes('-O')) {
+      explanationParts.push('with OS detection');
+    }
+
+    // Aggressive mode
+    if (flags.includes('-A')) {
+      explanationParts.push('with aggressive scanning (OS detection, version detection, scripts, traceroute)');
+    }
+
+    // Script scanning
+    if (script.trim()) {
+      const scripts = script.split(',').map(s => s.trim()).filter(s => s);
+      if (scripts.length > 0) {
+        explanationParts.push(`running NSE scripts: ${scripts.join(', ')}`);
+      }
+    }
+
+    // Host discovery
+    if (flags.includes('-Pn')) {
+      explanationParts.push('skipping host discovery (treating all hosts as online)');
+    } else {
+      explanationParts.push('with host discovery');
+    }
+
+    // DNS resolution
+    if (flags.includes('-n')) {
+      explanationParts.push('without DNS resolution');
+    }
+
+    // Timing
+    const timingMatch = flags.find(f => f.startsWith('-T'));
+    if (timingMatch) {
+      const timingMap: Record<string, string> = {
+        '-T0': 'paranoid (very slow)',
+        '-T1': 'sneaky (very slow)',
+        '-T2': 'polite (slow)',
+        '-T3': 'normal (default)',
+        '-T4': 'aggressive (faster)',
+        '-T5': 'insane (very fast)'
+      };
+      explanationParts.push(`using ${timingMap[timingMatch]} timing template`);
+    }
+
+    // Output
+    if (output === '-oA') {
+      if (outputFile.trim()) {
+        explanationParts.push(`saving results in all formats (${outputFile.trim()}.{{nmap,xm,gnmap}})`);
+      }
+    } else if (output && outputFile.trim()) {
+      let formatName = 'normal output';
+      if (output === '-oX') formatName = 'XML format';
+      else if (output === '-oG') formatName = 'grepable format';
+      explanationParts.push(`saving results in ${formatName} (${outputFile.trim()}.${output === '-oX' ? 'xml' : output === '-oG' ? 'gnmap' : 'txt'})`);
+    }
+
+    // Verbosity
+    if (flags.includes('-vv')) {
+      explanationParts.push('with verbose output');
+    } else if (flags.includes('-v')) {
+      explanationParts.push('with verbose output');
+    }
+
+    // Fragment packets
+    if (flags.includes('-f')) {
+      explanationParts.push('with packet fragmentation');
+    }
+
+    // Traceroute
+    if (flags.includes('--traceroute')) {
+      explanationParts.push('with traceroute');
+    }
+
+    // Show reasons
+    if (flags.includes('--reason')) {
+      explanationParts.push('showing reasons for port states');
+    }
+
+    // IPv6
+    if (flags.includes('-6')) {
+      explanationParts.push('using IPv6');
+    }
+
+    return explanationParts.join(' ');
   };
 
   const copyCommand = () => {
@@ -171,26 +339,27 @@ export default function NmapCommandBuilderPage() {
               />
             </div>
 
-            {/* Scan Flags */}
-            <div className="mb-5">
-              <label className="text-sm font-semibold text-white block mb-2">Scan Flags</label>
-              <div className="flex flex-wrap gap-2">
-                {scanFlags.map((sf) => (
-                  <button
-                    key={sf.value}
-                    type="button"
-                    onClick={() => toggleFlag(sf.value)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${
-                      flags.includes(sf.value)
-                        ? 'bg-cyber-amber/10 border-cyber-amber text-cyber-amber'
-                        : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-amber/50'
-                    }`}
-                  >
-                    {sf.label}
-                  </button>
-                ))}
+        {/* Scan Flags */}
+        <div className="mb-5">
+          <label className="text-sm font-semibold text-white block mb-2">Scan Flags</label>
+          <div className="flex flex-wrap gap-2">
+            {scanFlags.map((sf) => (
+              <div key={sf.value} className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => toggleFlag(sf.value)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all whitespace-nowrap ${
+                    flags.includes(sf.value)
+                      ? 'bg-cyber-amber/10 border-cyber-amber text-cyber-amber'
+                      : 'bg-cyber-bg border-cyber-border text-cyber-text hover:border-cyber-amber/50'
+                  }`}
+                >
+                  {sf.label}
+                </button>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
 
             {/* Timing */}
             <div className="mb-5">
@@ -303,6 +472,11 @@ export default function NmapCommandBuilderPage() {
                 </button>
               </div>
               <code className="text-sm font-mono text-cyber-green break-all">{getCommand()}</code>
+              {explanation && (
+                <div className="mt-2 text-xs text-cyber-text/70">
+                  <i className="ri-information-line mr-1" /> {explanation}
+                </div>
+              )}
             </div>
           </div>
         </motion.section>
